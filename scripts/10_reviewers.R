@@ -1,4 +1,7 @@
-# RANDOM STUFF FOR REVIEWERS ----
+# 10 - Additional figures for GEB reviewers
+# November 2025
+
+# PACKAGES ----
 
 # Load in the required packages
 library(tidyverse)
@@ -14,9 +17,6 @@ library(gridExtra)
 # devtools::install_github("MikkoVihtakari/ggOceanMaps")
 library(ggOceanMaps)
 library(viridis)
-
-
-setwd("~/TundraDivHub")
 
 
 # THEME 4: MAPS produced using ggOceanMaps ----
@@ -37,12 +37,13 @@ theme_4_map <- function(){
         plot.background = element_rect(fill = "white", color = NA))
 }
 
-# MEAN TRAIT STUFF ----
+
+# MEAN AND SD TRAIT TABLE ----
 
 # Load in trait data
-funcgroups <- read.csv("scripts/josephjeverest/FuncDiv_v3/data/output_fg_export_traits.csv")
+funcgroups <- read.csv("data/output_fg_export_traits.csv")
 
-traits <- read.csv("scripts/josephjeverest/FuncDiv_v3/data/output_06_TRY_TTT_clean.csv") %>% 
+traits <- read.csv("data/output_06_TRY_TTT_clean.csv") %>% 
   left_join(., funcgroups, by = c("NAME" = "NAME")) %>% 
   mutate(FuncGroup = ifelse(str_detect(FuncGroup, pattern = "hrub"), "Shrub", FuncGroup)) %>% 
   filter(!is.na(FuncGroup)) %>% 
@@ -60,13 +61,13 @@ sd.traits <- traits %>%
   pivot_wider(names_from = "TraitName", values_from = "SD")
 
 # Export to table
-write.csv(sd.traits, file = "scripts/josephjeverest/FuncDiv_v3/data/AAA_sd_table.csv", row.names = FALSE)
+write.csv(sd.traits, file = "data/AAA_sd_table.csv", row.names = FALSE)
 
 
 # LENGTH OF TIME PLOT ----
 
 # Load final temporal data
-temporal <- read.csv("scripts/josephjeverest/FuncDiv_v3/data/AAA_temporal_input.csv")
+temporal <- read.csv("data/AAA_temporal_input.csv")
 
 # Work out legnth of years each sampled for
 years <- temporal %>% 
@@ -82,13 +83,13 @@ years <- temporal %>%
     theme_1())
 
 # Export to png
-ggsave(duration.plot, filename = "scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript/duration_plot.png", width = 8, height = 5)
+ggsave(duration.plot, filename = "figures/outputs_new/manuscript/duration_plot.png", width = 8, height = 5)
 
 
 # MAP OF ITEX SITES - SPATIAL ----
 
 # Import the ITEX and FD data for the latest year at each plot ONLY
-spatial <- read.csv("scripts/josephjeverest/FuncDiv_v3/data/output_08_fd_output_combined_nonPCA_3_latest_years.csv")
+spatial <- read.csv("data/output_08_fd_output_combined_nonPCA_3_latest_years.csv")
 
 spatial.map <- spatial %>% 
   mutate(SITE = ifelse(SITE %in% c("BARROW"), "Utqiagvik", SITE)) %>% 
@@ -132,13 +133,13 @@ spatial.map.transform <- transform_coord(spatial.map, lon = "LONG", lat = "LAT",
     theme_4_map())
 
 # Export map
-ggsave(output.spatial, file = "scripts/josephjeverest/FuncDiv_v3/figures/itex_sites_spatial.png", height = 8, width = 8)
+ggsave(output.spatial, file = "figures/itex_sites_spatial.png", height = 8, width = 8)
 
 
 # MAP OF ITEX SITES - TEMPORAL ----
 
 # Load final temporal data
-temporal <- read.csv("scripts/josephjeverest/FuncDiv_v3/data/AAA_temporal_input.csv")
+temporal <- read.csv("data/AAA_temporal_input.csv")
 
 # Modify data
 temporal.map <- temporal %>% 
@@ -183,6 +184,6 @@ temporal.map.transform <- transform_coord(temporal.map, lon = "LONG", lat = "LAT
     theme_4_map())
 
 # Export map
-ggsave(output.temporal, file = "scripts/josephjeverest/FuncDiv_v3/figures/itex_sites_temporal.png", height = 8, width = 8)
+ggsave(output.temporal, file = "figures/itex_sites_temporal.png", height = 8, width = 8)
 
 

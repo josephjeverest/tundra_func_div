@@ -1,6 +1,5 @@
 # 00 - ggplot themes created for FuncDiv outputs
-# Joseph Everest
-# February 2021, adapted February 2022
+# February 2021, adapted February 2022, November 2025
 
 # PACKAGES ----
 

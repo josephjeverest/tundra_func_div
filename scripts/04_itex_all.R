@@ -1,5 +1,4 @@
 # 04 - Adding Climate and Permafrost Data to ITEX dataframe
-# Joseph Everest
 # March 2021, adapted October 2021, February 2022
 
 

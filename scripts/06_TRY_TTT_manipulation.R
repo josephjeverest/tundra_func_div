@@ -1,5 +1,4 @@
 # 06 - Trait data manipulation and gap-filling
-# Joseph Everest
 # March 2021, adapted November 2021, February 2022, March 2022
 
   # NOTE: TRY data is taxon checked and trimmed to the relevant columns in script 05 to make it easier to work with

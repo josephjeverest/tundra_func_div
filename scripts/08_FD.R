@@ -1,5 +1,4 @@
 # 08 - Calculating FD indices
-# Joseph Everest
 # December 2021, adapted March 2022, July 2023
 
 

@@ -1,6 +1,5 @@
-# Simulation Study: RQ1 - FD over Space
-# Joseph Everest
-# December 2022
+# 11 - Simulation Study
+# December 2022, adapted November 2025
 
 
 # LOAD PACKAGES, THEMES, FUNCTIONS & TRAIT SELECTION ----
@@ -11,11 +10,10 @@ library(gridExtra)
 library(devtools)
 library(FD)
 
-setwd("~/TundraDivHub")
-
 # Load themes and functions
-source("scripts/josephjeverest/FuncDiv_v3/scripts/00_ggplot_themes.R")
-source("scripts/josephjeverest/FuncDiv_v3/scripts/08_FD_FUNCTION.R")
+source("scripts/00_ggplot_themes.R")
+source("scripts/08_FD_FUNCTION.R")
+
 
 # Use PCA or not (now deemed that PCA is incorrect; default = FALSE)
 run.with.PCA <- FALSE
@@ -53,7 +51,7 @@ if (run.with.PCA == TRUE){
 # IMPORT DATA ----
 
 # Import manually created simulation dataset(s)
-simul.ALL <- read.csv("scripts/josephjeverest/FuncDiv_v3/data/input_simulation_plots_FEve_3.csv")
+simul.ALL <- read.csv("data/input_simulation_plots_FEve_3.csv")
 
 # MUTATE DATA ----
 
@@ -87,7 +85,7 @@ itex_rownames_simulation_ALL <- rownames.ALL
 # Run FD calculations on simulated FRic data
 FD.calc(itex_rownames_simulation_ALL)
 
-output.ALL <- read.csv("scripts/josephjeverest/FuncDiv_v3/data/output_08_fd_output_simulation_ALL_nonPCA_min.csv") %>%
+output.ALL <- read.csv("data/output_08_fd_output_simulation_ALL_nonPCA_min.csv") %>%
   mutate(PLOT = rownames(.)) %>% 
   relocate(PLOT, .before = ) %>% 
   dplyr::select(PLOT, FRic, FEve, FDis) %>% 
@@ -111,7 +109,7 @@ output.tidy <- output.ALL %>%
   dplyr::select(-DESCRIPTION)
 
 # Export output
-write.csv(output.tidy, file = "scripts/josephjeverest/FuncDiv_v3/data/output_08_fd_output_simulation_ALL_figures.csv", row.names = FALSE)
+write.csv(output.tidy, file = "data/output_08_fd_output_simulation_ALL_figures.csv", row.names = FALSE)
  
 
 # PRODUCE PLOTS ----
@@ -168,6 +166,6 @@ panel.ALL <- arrangeGrob(output.plots.ALL[[1]], output.plots.ALL[[2]], output.pl
                          ncol = 2, widths = c(1,1), heights = c(1,1,1), top = "")
 
 # Export the panel to image
-ggsave(panel.ALL, file = "scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/simulation_ALL.png",
+ggsave(panel.ALL, file = "figures/outputs_new/simulation_ALL.png",
        width = 20, height = 25)
 

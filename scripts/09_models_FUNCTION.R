@@ -1,5 +1,4 @@
-# 09 - FUNCTIONS: Spatial Models
-# Joseph Everest
+# 09 - FUNCTIONS: All Models
 # December 2021, adapted February 2022, November 2022, July 2023, February 2024, January 2025
 
 
@@ -51,7 +50,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
                                  FRic.distribution, "_", x.var, pc.filepath, ".RData"))
     
   } # End of run and not censored
@@ -59,7 +58,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
   if (run.FRic == FALSE & censored == "No"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                 FRic.distribution, "_", x.var, pc.filepath, ".RData")))
     
   } # End of import and not censored
@@ -79,7 +78,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
                                                   max_treedepth = treedepth))
     
     # Export model output
-    save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
                                  "censored_", x.var, pc.filepath, ".RData"))
     
   } # End of run and censored
@@ -87,7 +86,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
   if (run.FRic == FALSE & censored == "Yes"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                 "censored_", x.var, pc.filepath, ".RData")))
     
   } # End of import and censored
@@ -209,7 +208,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FEve.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+    save(FEve.mod, file = paste0("data/model_outputs_new/m_FEve_",
                                  x.var, pc.filepath, ".RData"))
     
   } # End of run and not censored
@@ -217,7 +216,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
   if (run.FEve == FALSE & quadratic == "No"){
     
     # Load in model output
-    FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+    FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                 x.var, pc.filepath, ".RData")))
     
   } # End of import and not censored
@@ -232,7 +231,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FEve.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+    save(FEve.mod, file = paste0("data/model_outputs_new/m_FEve_",
                                  "quadratic_", x.var, pc.filepath, ".RData"))
     
   } # End of run and censored
@@ -240,7 +239,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
   if (run.FEve == FALSE & quadratic == "Yes"){
     
     # Export model output
-    FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+    FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                 "quadratic_", x.var, pc.filepath, ".RData")))
     
   } # End of import and censored
@@ -365,13 +364,13 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
                                  max_treedepth = treedepth))
     
     # Export model output
-    save(SR.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+    save(SR.mod, file = paste0("data/model_outputs_new/m_SR_",
                                x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+    SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
                               x.var, pc.filepath, ".RData")))
     
   }
@@ -447,13 +446,13 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FDis.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+    save(FDis.mod, file = paste0("data/model_outputs_new/m_FDis_",
                                x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+    FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
                                 x.var, pc.filepath, ".RData")))
     
   }
@@ -516,7 +515,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
   if (censored == "No" & quadratic == "No"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
                                              x.var, pc.filepath, ".png"), width = 15, height = 14)
     
   }
@@ -525,7 +524,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
   if (censored == "No" & quadratic == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
                                              x.var, "_quadratic", pc.filepath, ".png"), width = 15, height = 14)
     
   }
@@ -534,7 +533,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
   if (censored == "Yes" & quadratic == "No"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
                                              x.var, "_censored", pc.filepath, ".png"), width = 15, height = 14)
     
   }
@@ -543,7 +542,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
   if (censored == "Yes" & quadratic == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
                                              x.var, "_censored_quadratic", pc.filepath, ".png"), width = 15, height = 14)
     
   }
@@ -605,13 +604,13 @@ bayesian.spatial.quadratic <- function(run.FRic, censored, run.FEve, run.SR, run
                                                     max_treedepth = treedepth))
       
       # Export model output
-      save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+      save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
                                    "censored_quadratic_", x.var, pc.filepath, ".RData"))
       
     } else {
       
       # Load in model output
-      FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+      FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                   "censored_quadratic_", x.var, pc.filepath, ".RData")))
       
     } # End of import and censored
@@ -664,13 +663,13 @@ bayesian.spatial.quadratic <- function(run.FRic, censored, run.FEve, run.SR, run
                                      max_treedepth = treedepth))
       
       # Export model output
-      save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+      save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
                                    "quadratic_", x.var, pc.filepath, ".RData"))
       
     } else {
       
       # Export model output
-      FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+      FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                   "quadratic_", x.var, pc.filepath, ".RData")))
       
     } # End of import and censored
@@ -743,13 +742,13 @@ bayesian.spatial.quadratic <- function(run.FRic, censored, run.FEve, run.SR, run
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FEve.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+    save(FEve.mod, file = paste0("data/model_outputs_new/m_FEve_",
                                  "quadratic_", x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Export model output
-    FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+    FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                 "quadratic_", x.var, pc.filepath, ".RData")))
     
   } # End of import and censored
@@ -820,13 +819,13 @@ bayesian.spatial.quadratic <- function(run.FRic, censored, run.FEve, run.SR, run
                                  max_treedepth = treedepth))
     
     # Export model output
-    save(SR.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+    save(SR.mod, file = paste0("data/model_outputs_new/m_SR_",
                                "quadratic_", x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Export model output
-    SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+    SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
                               "quadratic_", x.var, pc.filepath, ".RData")))
     
   } # End of import and censored
@@ -896,13 +895,13 @@ bayesian.spatial.quadratic <- function(run.FRic, censored, run.FEve, run.SR, run
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FDis.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+    save(FDis.mod, file = paste0("data/model_outputs_new/m_FDis_",
                                  "quadratic_", x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Export model output
-    FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+    FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
                                 "quadratic_", x.var, pc.filepath, ".RData")))
     
   } # End of import and censored
@@ -957,13 +956,13 @@ bayesian.spatial.quadratic <- function(run.FRic, censored, run.FEve, run.SR, run
   if (censored == "No") {
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
                                              x.var, "_ALL_quadratic", pc.filepath,".png"), width = 15, height = 14)
     
   } else {
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
                                              x.var, "_censored_ALL_quadratic", pc.filepath,".png"), width = 15, height = 14)
     
   }
@@ -1011,7 +1010,7 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
                                  FRic.distribution, "_", x.var, pc.filepath, ".RData"))
     
   } # End of run and not censored
@@ -1019,7 +1018,7 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
   if (run.FRic == FALSE & censored == "No"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                 FRic.distribution, "_", x.var, pc.filepath, ".RData")))
     
   } # End of import and not censored
@@ -1039,7 +1038,7 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
                                                   max_treedepth = treedepth))
     
     # Export model output
-    save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
                                  "censored_", x.var, pc.filepath, ".RData"))
     
   } # End of run and censored
@@ -1047,7 +1046,7 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
   if (run.FRic == FALSE & censored == "Yes"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                 "censored_", x.var, pc.filepath, ".RData")))
     
   } # End of import and censored
@@ -1098,13 +1097,13 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FEve.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+    save(FEve.mod, file = paste0("data/model_outputs_new/m_FEve_",
                                  x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+    FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                 x.var, pc.filepath, ".RData")))
     
   }
@@ -1139,13 +1138,13 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
                                  max_treedepth = treedepth))
     
     # Export model output
-    save(SR.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+    save(SR.mod, file = paste0("data/model_outputs_new/m_SR_",
                                x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+    SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
                               x.var, pc.filepath, ".RData")))
     
   }
@@ -1180,13 +1179,13 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FDis.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+    save(FDis.mod, file = paste0("data/model_outputs_new/m_FDis_",
                                  x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+    FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
                                 x.var, pc.filepath, ".RData")))
     
   }
@@ -1216,7 +1215,7 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
   if (censored == "No"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
                                              x.var, pc.filepath, ".png"), width = 15, height = 14)
     
   } # End of censored == "No"
@@ -1224,7 +1223,7 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
   if (censored == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
                                              x.var, "_censored", pc.filepath, ".png"), width = 15, height = 14)
     
   } # End of censored == "Yes"
@@ -1269,13 +1268,13 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes",
+    save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_slopes",
                                  pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes",
+    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes",
                                 pc.filepath, ".RData")))
     
   }
@@ -1327,13 +1326,13 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FEve.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes",
+    save(FEve.mod, file = paste0("data/model_outputs_new/m_FEve_slopes",
                                  pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes",
+    FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes",
                                 pc.filepath, ".RData")))
     
   }
@@ -1385,13 +1384,13 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
                                  max_treedepth = treedepth))
     
     # Export model output
-    save(SR.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes",
+    save(SR.mod, file = paste0("data/model_outputs_new/m_SR_slopes",
                                pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes",
+    SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes",
                               pc.filepath, ".RData")))
     
   }
@@ -1443,13 +1442,13 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FDis.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes",
+    save(FDis.mod, file = paste0("data/model_outputs_new/m_FDis_slopes",
                                  pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes",
+    FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes",
                                 pc.filepath, ".RData")))
     
   }
@@ -1492,7 +1491,7 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
   combined.panel.FD <- grid.arrange(FRic.plot, FEve.plot, SR.plot, FDis.plot, ncol = 2)
   
   # Export panel
-  ggsave(combined.panel.FD, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_FD_change",
+  ggsave(combined.panel.FD, filename = paste0("figures/outputs_new/combined_FD_change",
                                               pc.filepath, ".png"), width = 15, height = 14)
   
   # Shrubs ----
@@ -1508,13 +1507,13 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
                                          max_treedepth = treedepth))
     
     # Export model output
-    save(ShrubCover.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_ShrubCover_slopes",
+    save(ShrubCover.mod, file = paste0("data/model_outputs_new/m_ShrubCover_slopes",
                                        pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    ShrubCover.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_ShrubCover_slopes",
+    ShrubCover.mod <- get(load(paste0("data/model_outputs_new/m_ShrubCover_slopes",
                                       pc.filepath, ".RData")))
     
   }
@@ -1566,13 +1565,13 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
                                              max_treedepth = treedepth))
     
     # Export model output
-    save(GraminoidCover.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_GraminoidCover_slopes",
+    save(GraminoidCover.mod, file = paste0("data/model_outputs_new/m_GraminoidCover_slopes",
                                            pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    GraminoidCover.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_GraminoidCover_slopes",
+    GraminoidCover.mod <- get(load(paste0("data/model_outputs_new/m_GraminoidCover_slopes",
                                           pc.filepath, ".RData")))
     
   }
@@ -1624,13 +1623,13 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
                                         max_treedepth = treedepth))
     
     # Export model output
-    save(ForbCover.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_ForbCover_slopes",
+    save(ForbCover.mod, file = paste0("data/model_outputs_new/m_ForbCover_slopes",
                                       pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    ForbCover.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_ForbCover_slopes",
+    ForbCover.mod <- get(load(paste0("data/model_outputs_new/m_ForbCover_slopes",
                                      pc.filepath, ".RData")))
     
   }
@@ -1673,7 +1672,7 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
   combined.panel.Cover <- grid.arrange(ShrubCover.plot, GraminoidCover.plot, ForbCover.plot, ncol = 3)
   
   # Export panel
-  ggsave(combined.panel.Cover, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_Cover_change",
+  ggsave(combined.panel.Cover, filename = paste0("figures/outputs_new/combined_Cover_change",
                                                  pc.filepath, ".png"), width = 23, height = 7)
   
 }
@@ -1707,13 +1706,13 @@ bayesian.temporal.continuous <- function(run.FRic, run.FEve, run.SR, run.FDis, x
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_",
+    save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_slopes_",
                                  x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_",
+    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes_",
                                 x.var, pc.filepath, ".RData")))
     
   }
@@ -1775,13 +1774,13 @@ bayesian.temporal.continuous <- function(run.FRic, run.FEve, run.SR, run.FDis, x
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FEve.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_",
+    save(FEve.mod, file = paste0("data/model_outputs_new/m_FEve_slopes_",
                                  x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_",
+    FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes_",
                                 x.var, pc.filepath, ".RData")))
     
   }
@@ -1843,13 +1842,13 @@ bayesian.temporal.continuous <- function(run.FRic, run.FEve, run.SR, run.FDis, x
                                  max_treedepth = treedepth))
     
     # Export model output
-    save(SR.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_",
+    save(SR.mod, file = paste0("data/model_outputs_new/m_SR_slopes_",
                                x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_",
+    SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes_",
                               x.var, pc.filepath, ".RData")))
     
   }
@@ -1911,13 +1910,13 @@ bayesian.temporal.continuous <- function(run.FRic, run.FEve, run.SR, run.FDis, x
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FDis.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_",
+    save(FDis.mod, file = paste0("data/model_outputs_new/m_FDis_slopes_",
                                  x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_",
+    FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes_",
                                 x.var, pc.filepath, ".RData")))
     
   }
@@ -1971,7 +1970,7 @@ bayesian.temporal.continuous <- function(run.FRic, run.FEve, run.SR, run.FDis, x
   combined.panel <- grid.arrange(FRic.plot, FEve.plot, SR.plot, FDis.plot, ncol = 2)
   
   # Export panel
-  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_slopes_",
+  ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_slopes_",
                                            x.var, pc.filepath, ".png"), width = 15, height = 14)
   
 }
@@ -2008,13 +2007,13 @@ bayesian.metric.comparison <- function(run.FRic, quadratic, run.FEve, run.FDis, 
                                         max_treedepth = treedepth))
       
       # Export model output
-      save(SR.FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+      save(SR.FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
                                       FRic.distribution, "_SR", pc.filepath, ".RData"))
       
     } else {
       
       # Load in model output
-      SR.FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+      SR.FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                      FRic.distribution, "_SR", pc.filepath, ".RData")))
       
     } # End of if else loop
@@ -2067,7 +2066,7 @@ bayesian.metric.comparison <- function(run.FRic, quadratic, run.FEve, run.FDis, 
                                                            paste("#006400"), paste("#8b0000")))))
     
     # Export plot
-    ggsave(SR.FRic.plot, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/SR_vs_FRic",
+    ggsave(SR.FRic.plot, filename = paste0("figures/outputs_new/SR_vs_FRic",
                                            pc.filepath, ".png"), width = 8, height = 7)
     
   } # End of not quadratic if loop
@@ -2098,13 +2097,13 @@ bayesian.metric.comparison <- function(run.FRic, quadratic, run.FEve, run.FDis, 
                                         max_treedepth = treedepth))
       
       # Export model output
-      save(SR.FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+      save(SR.FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
                                       FRic.distribution, "_quadratic_SR", pc.filepath, ".RData"))
       
     } else {
       
       # Load in model output
-      SR.FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+      SR.FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                      FRic.distribution, "_quadratic_SR", pc.filepath, ".RData")))
       
     } # End of if else loop
@@ -2183,13 +2182,13 @@ bayesian.metric.comparison <- function(run.FRic, quadratic, run.FEve, run.FDis, 
                                         max_treedepth = treedepth))
       
       # Export model output
-      save(SR.FEve.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+      save(SR.FEve.mod, file = paste0("data/model_outputs_new/m_FEve_",
                                       FEve.distribution, "_SR", pc.filepath, ".RData"))
       
     } else {
       
       # Load in model output
-      SR.FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+      SR.FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                      FEve.distribution, "_SR", pc.filepath, ".RData")))
       
     } # End of if else loop
@@ -2252,13 +2251,13 @@ bayesian.metric.comparison <- function(run.FRic, quadratic, run.FEve, run.FDis, 
                                         max_treedepth = treedepth))
       
       # Export model output
-      save(SR.FDis.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+      save(SR.FDis.mod, file = paste0("data/model_outputs_new/m_FDis_",
                                       FDis.distribution, "_SR", pc.filepath, ".RData"))
       
     } else {
       
       # Load in model output
-      SR.FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+      SR.FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
                                      FDis.distribution, "_SR", pc.filepath, ".RData")))
       
     } # End of if else loop
@@ -2313,7 +2312,7 @@ bayesian.metric.comparison <- function(run.FRic, quadratic, run.FEve, run.FDis, 
     SR.panel <- grid.arrange(SR.FRic.plot, SR.FEve.plot, SR.FDis.plot, ncol = 3)
     
     # Export plot
-    ggsave(SR.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/SR_vs_FD_metrics",
+    ggsave(SR.panel, filename = paste0("figures/outputs_new/SR_vs_FD_metrics",
                                        pc.filepath, ".png"), width = 17.25, height = 5.5)
     
   } # End of quadratic if loop
@@ -2449,7 +2448,7 @@ GAM.metric.comparison <- function(run){
     SR.GAM.panel <- grid.arrange(SR.FRic.GAM.plot, SR.FEve.GAM.plot, SR.FDis.GAM.plot, ncol = 3)
     
     # Export the panel
-    ggsave(SR.GAM.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/SR_vs_FD_GAMS",
+    ggsave(SR.GAM.panel, filename = paste0("figures/outputs_new/SR_vs_FD_GAMS",
                                            pc.filepath, ".png"), width = 17.25, height = 5.5)    
     
   } # End of if run == TRUE
@@ -2480,8 +2479,8 @@ bayesian.results.convergence.warnings <- function(){
     }
     
     # Determine all the model filenames in the 'model_outputs_new' folder
-    model.filepaths <- paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
-                              list.files("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
+    model.filepaths <- paste0("data/model_outputs_new/",
+                              list.files("data/model_outputs_new/",
                                          pattern = paste0("*", pc.filepath, ".RData")))
     
     # Generate blank output dataframe
@@ -2548,7 +2547,7 @@ bayesian.results.convergence.warnings <- function(){
         rhat.problematic.count <- as.numeric(nrow(filter(rhat.summary, problematic == TRUE)))
         
         # Extract just model name
-        model.name <- str_remove(i, pattern = "scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/")
+        model.name <- str_remove(i, pattern = "data/model_outputs_new/")
         model.name <- str_remove(model.name, pattern = ".RData")
         
         # Add warnings and model name to dataframe
@@ -2572,7 +2571,7 @@ bayesian.results.convergence.warnings <- function(){
       } else { # End of continuous (e.g. 1 row)
         
         # Extract just model name
-        model.name <- str_remove(i, pattern = "scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/")
+        model.name <- str_remove(i, pattern = "data/model_outputs_new/")
         model.name <- str_remove(model.name, pattern = ".RData")
         
         # Modify table for inclusion in outputs
@@ -2596,7 +2595,7 @@ bayesian.results.convergence.warnings <- function(){
     } # End of variables loop
     
     # Export the convergence output
-    write.csv(convergence.warnings, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
+    write.csv(convergence.warnings, file = paste0("data/model_outputs_new/",
                                                   "convergence_summaries", pc.filepath, ".csv"), row.names = FALSE)
     
   } # End of if statement for check.convergence == TRUE
@@ -2624,8 +2623,8 @@ bayesian.results.convergence.warnings <- function(){
 #     }
 #     
 #     # Determine all the model filenames in the 'model_outputs_new' folder
-#     model.filepaths <- paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
-#                         list.files("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
+#     model.filepaths <- paste0("data/model_outputs_new/",
+#                         list.files("data/model_outputs_new/",
 #                                    pattern = paste0("*", pc.filepath, ".RData")))
 #     
 #     # Generate blank output dataframe
@@ -2704,7 +2703,7 @@ bayesian.results.convergence.warnings <- function(){
 #       rhat.problematic.count <- as.numeric(nrow(filter(rhat.summary, problematic == TRUE)))
 #       
 #       # Extract just model name
-#       model.name <- str_remove(i, pattern = "scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/")
+#       model.name <- str_remove(i, pattern = "data/model_outputs_new/")
 #       
 #       # Add warnings and model name to dataframe
 #       convergence.summary <- data.frame("model" = paste0(model.name),
@@ -2726,7 +2725,7 @@ bayesian.results.convergence.warnings <- function(){
 #     } # End of variables loop
 #     
 #     # Export the convergence output
-#     write.csv(convergence.warnings, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
+#     write.csv(convergence.warnings, file = paste0("data/model_outputs_new/",
 #                                                   "convergence_summaries", pc.filepath, ".csv"), row.names = FALSE)
 #     
 #   } # End of if statement for check.convergence == TRUE
@@ -2740,9 +2739,9 @@ bayesian.pc.count.comparison <- function(run.FRic, run.FEve, pc.count.1, pc.coun
                                          chains, cores, warmup, iterations, delta, treedepth){
   
   # Import FD outputs for each PC count
-  FD.output.1 <- read.csv(paste0("scripts/josephjeverest/FuncDiv_v3/data/output_08_fd_output_combined",
+  FD.output.1 <- read.csv(paste0("data/output_08_fd_output_combined",
                                  pc.filepath, "_all_years.csv"))
-  FD.output.2 <- read.csv(paste0("scripts/josephjeverest/FuncDiv_v3/data/output_08_fd_output_combined",
+  FD.output.2 <- read.csv(paste0("data/output_08_fd_output_combined",
                                  pc.filepath, "_all_years.csv"))
   
   # Modify dataframes
@@ -2779,14 +2778,14 @@ bayesian.pc.count.comparison <- function(run.FRic, run.FEve, pc.count.1, pc.coun
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
                                  "PC_comparison_pc", pc.count.1, "_vs_pc", pc.count.2, ".RData"))
                                  
 
   } else {
     
     # Load in model output
-    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                 "PC_comparison_pc", pc.count.1, "_vs_pc", pc.count.2, ".RData")))
     
   } # End of FRic if loop
@@ -2845,14 +2844,14 @@ bayesian.pc.count.comparison <- function(run.FRic, run.FEve, pc.count.1, pc.coun
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FEve.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+    save(FEve.mod, file = paste0("data/model_outputs_new/m_FEve_",
                                  "PC_comparison_pc", pc.count.1, "_vs_pc", pc.count.2, ".RData"))
     
     
   } else {
     
     # Load in model output
-    FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+    FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                 "PC_comparison_pc", pc.count.1, "_vs_pc", pc.count.2, ".RData")))
     
   } # End of FEve if loop
@@ -2905,7 +2904,7 @@ bayesian.pc.count.comparison <- function(run.FRic, run.FEve, pc.count.1, pc.coun
   combined.panel <- grid.arrange(pc.comparison.FRic, pc.comparison.FEve, ncol = 2)
   
   # Export panel
-  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
+  ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
                                            "FD_bayesian_comparison_pc", pc.count.1, "_vs_", pc.count.2, ".png"),
          width = 16, height = 7)
 
@@ -2920,9 +2919,9 @@ linear.pc.count.comparison <- function(run.model, pc.count.1, pc.count.2,
   if (run.model == TRUE){
     
     # Import FD outputs for each PC count
-    FD.output.1 <- read.csv(paste0("scripts/josephjeverest/FuncDiv_v3/data/output_08_fd_output_combined_",
+    FD.output.1 <- read.csv(paste0("data/output_08_fd_output_combined_",
                                    "PCA_pc", pc.count.1, "_all_years.csv"))
-    FD.output.2 <- read.csv(paste0("scripts/josephjeverest/FuncDiv_v3/data/output_08_fd_output_combined_",
+    FD.output.2 <- read.csv(paste0("data/output_08_fd_output_combined_",
                                    "PCA_pc", pc.count.2, "_all_years.csv"))
     
     # Modify dataframes
@@ -3031,7 +3030,7 @@ linear.pc.count.comparison <- function(run.model, pc.count.1, pc.count.2,
     combined.panel <- grid.arrange(pc.comparison.FRic, pc.comparison.FEve, ncol = 2)
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
                                              "FD_linear_comparison_pc", pc.count.1, "_vs_", pc.count.2, ".png"),
            width = 16, height = 7)
     
@@ -3049,7 +3048,7 @@ plot.latitude <- function(censored){
   if (censored == "No"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                 FRic.distribution, "_LAT", pc.filepath, ".RData")))
     
     # Extract the prediction data frame
@@ -3069,7 +3068,7 @@ plot.latitude <- function(censored){
   if (censored == "Yes"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                 "censored_LAT", pc.filepath, ".RData")))
     
     # Extract the prediction data frame and exponentiate the outputs
@@ -3129,7 +3128,7 @@ plot.latitude <- function(censored){
   
   
   # Load in model output
-  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                               "LAT", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -3185,7 +3184,7 @@ plot.latitude <- function(censored){
   
   
   # Load in model output
-  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
                             "LAT", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -3240,7 +3239,7 @@ plot.latitude <- function(censored){
   
   
   # Load in model output
-  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
                               "LAT", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -3302,7 +3301,7 @@ plot.latitude <- function(censored){
   if (censored == "No"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
                                              "LAT", pc.filepath, ".png"), width = 18, height = 5)
     
   }
@@ -3311,7 +3310,7 @@ plot.latitude <- function(censored){
   if (censored == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
                                              "LAT_censored", pc.filepath, ".png"), width = 18, height = 5)
     
   }
@@ -3328,7 +3327,7 @@ plot.warmest.quarter <- function(censored){
   if (censored == "No"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                 FRic.distribution, "_TempAvSum", pc.filepath, ".RData")))
     
     # Extract the prediction data frame
@@ -3348,7 +3347,7 @@ plot.warmest.quarter <- function(censored){
   if (censored == "Yes"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                 "censored_TempAvSum", pc.filepath, ".RData")))
     
     # Extract the prediction data frame and exponentiate the outputs
@@ -3409,7 +3408,7 @@ plot.warmest.quarter <- function(censored){
   
   
   # Load in model output
-  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                               "TempAvSum", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -3464,7 +3463,7 @@ plot.warmest.quarter <- function(censored){
   
   
   # Load in model output
-  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
                             "TempAvSum", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -3519,7 +3518,7 @@ plot.warmest.quarter <- function(censored){
   
   
   # Load in model output
-  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
                               "TempAvSum", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -3580,7 +3579,7 @@ plot.warmest.quarter <- function(censored){
   if (censored == "No"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
                                              "TempAvSum", pc.filepath, ".png"), width = 18, height = 5)
     
   }
@@ -3589,7 +3588,7 @@ plot.warmest.quarter <- function(censored){
   if (censored == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
                                              "TempAvSum_censored", pc.filepath, ".png"), width = 18, height = 5)
     
   }
@@ -3605,11 +3604,11 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   if (censored.FRic == "No"){
     
     # Load in model outputs
-    FRic.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                       FRic.distribution, "_ShrubCover", pc.filepath, ".RData")))
-    FRic.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.forb.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                      FRic.distribution, "_ForbCover", pc.filepath, ".RData")))
-    FRic.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.gram.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                      FRic.distribution, "_GraminoidCover", pc.filepath, ".RData")))
     
     # Extract the prediction data frame
@@ -3623,11 +3622,11 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   } else { # End of if not censored
     
     # Load in model output
-    FRic.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                       "censored_ShrubCover", pc.filepath, ".RData")))
-    FRic.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.forb.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                      "censored_ForbCover", pc.filepath, ".RData")))
-    FRic.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.gram.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                      "censored_GraminoidCover", pc.filepath, ".RData")))
     
     # Extract the prediction data frame and exponentiate the outputs
@@ -3711,11 +3710,11 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   if (quadratic.FEve == "No"){
     
     # Load in model outputs for FEve and process the predictions
-    FEve.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+    FEve.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                       "ShrubCover", pc.filepath, ".RData")))
-    FEve.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+    FEve.forb.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                      "ForbCover", pc.filepath, ".RData")))
-    FEve.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+    FEve.gram.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                      "GraminoidCover", pc.filepath, ".RData")))
     
     # Extract the prediction data frame
@@ -3792,11 +3791,11 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   } else { # End of non-quadratic if statement
     
     # Load in model outputs for FEve and process the predictions
-    FEve.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+    FEve.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                       "quadratic_ShrubCover", pc.filepath, ".RData")))
-    FEve.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+    FEve.forb.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                      "quadratic_ForbCover", pc.filepath, ".RData")))
-    FEve.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+    FEve.gram.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                      "quadratic_GraminoidCover", pc.filepath, ".RData")))
     
     # Determine mean value for centering
@@ -3882,11 +3881,11 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   
   
   # Load in model outputs for SR and process the predictions
-  SR.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+  SR.shrub.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
                                   "ShrubCover", pc.filepath, ".RData")))
-  SR.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+  SR.forb.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
                                  "ForbCover", pc.filepath, ".RData")))
-  SR.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+  SR.gram.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
                                  "GraminoidCover", pc.filepath, ".RData")))
   
   # Extract the prediction data frame
@@ -3968,7 +3967,7 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   if (censored.FRic == "No" & quadratic.FEve == "No"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
                                              "all_cover", pc.filepath, ".png"), width = 23, height = 7)
     
   }
@@ -3977,7 +3976,7 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   if (censored.FRic == "No" & quadratic.FEve == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
                                              "all_cover_quadratic", pc.filepath, ".png"), width = 23, height = 7)
     
   }
@@ -3986,7 +3985,7 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   if (censored.FRic == "Yes" & quadratic.FEve == "No"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
                                              "all_cover_censored", pc.filepath, ".png"), width = 23, height = 7)
     
   }
@@ -3995,7 +3994,7 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   if (censored.FRic == "Yes" & quadratic.FEve == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
                                              "all_cover_censored_quadratic", pc.filepath, ".png"), width = 23, height = 7)
     
   }
@@ -4014,21 +4013,21 @@ plot.combined.cover.quadratic <- function(censored){
   if (censored == "Yes"){
     
     # Load in model outputs for FEve and process the predictions
-    FRic.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                       "censored_quadratic_ShrubCover", pc.filepath, ".RData")))
-    FRic.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.forb.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                      "censored_quadratic_ForbCover", pc.filepath, ".RData")))
-    FRic.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.gram.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                      "censored_quadratic_GraminoidCover", pc.filepath, ".RData")))
     
   } else {
     
     # Load in model outputs for FEve and process the predictions
-    FRic.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                       "quadratic_ShrubCover", pc.filepath, ".RData")))
-    FRic.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.forb.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                      "quadratic_ForbCover", pc.filepath, ".RData")))
-    FRic.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.gram.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                      "quadratic_GraminoidCover", pc.filepath, ".RData")))
     
   }
@@ -4133,11 +4132,11 @@ plot.combined.cover.quadratic <- function(censored){
   # FEve ----
   
   # Load in model outputs for FEve and process the predictions
-  FEve.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+  FEve.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                     "quadratic_ShrubCover", pc.filepath, ".RData")))
-  FEve.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+  FEve.forb.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                    "quadratic_ForbCover", pc.filepath, ".RData")))
-  FEve.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+  FEve.gram.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                    "quadratic_GraminoidCover", pc.filepath, ".RData")))
   
   # Determine mean value for centering
@@ -4243,11 +4242,11 @@ plot.combined.cover.quadratic <- function(censored){
   # SR ----
   
   # Load in model outputs for SR and process the predictions
-  SR.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+  SR.shrub.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
                                   "quadratic_ShrubCover", pc.filepath, ".RData")))
-  SR.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+  SR.forb.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
                                  "quadratic_ForbCover", pc.filepath, ".RData")))
-  SR.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+  SR.gram.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
                                  "quadratic_GraminoidCover", pc.filepath, ".RData")))
   
   # Determine mean value for centering
@@ -4350,11 +4349,11 @@ plot.combined.cover.quadratic <- function(censored){
   # FDis ----
   
   # Load in model outputs for FDis and process the predictions
-  FDis.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+  FDis.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
                                     "quadratic_ShrubCover", pc.filepath, ".RData")))
-  FDis.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+  FDis.forb.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
                                    "quadratic_ForbCover", pc.filepath, ".RData")))
-  FDis.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+  FDis.gram.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
                                    "quadratic_GraminoidCover", pc.filepath, ".RData")))
   
   # Determine mean value for centering
@@ -4463,13 +4462,13 @@ plot.combined.cover.quadratic <- function(censored){
   if (censored == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
                                              "all_cover_ALL_quadratic_censored", pc.filepath, ".png"), width = 18, height = 4.6)
     
   } else {
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
                                              "all_cover_ALL_quadratic", pc.filepath, ".png"), width = 18, height = 4.6)
     
   }
@@ -4483,7 +4482,7 @@ plot.combined.cover.quadratic <- function(censored){
 plot.change.histograms <- function(){
   
   # Load in model output
-  FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes",
+  FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes",
                               pc.filepath, ".RData")))
   
   # Save model output as a dataframe
@@ -4543,7 +4542,7 @@ plot.change.histograms <- function(){
                                                          paste("#006400"), paste("#8b0000")))))
   
   # Load in model output
-  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes",
+  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes",
                               pc.filepath, ".RData")))
   
   # Save model output as a dataframe
@@ -4573,7 +4572,7 @@ plot.change.histograms <- function(){
                                                          paste("#006400"), paste("#8b0000")))))
   
   # Load in model output
-  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes",
+  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes",
                             pc.filepath, ".RData")))
   
   # Save model output as a dataframe
@@ -4603,7 +4602,7 @@ plot.change.histograms <- function(){
                                                          paste("#006400"), paste("#8b0000")))))
   
   # Load in model output
-  ForbCover.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_ForbCover_slopes",
+  ForbCover.mod <- get(load(paste0("data/model_outputs_new/m_ForbCover_slopes",
                                    pc.filepath, ".RData")))
   
   # Save model output as a dataframe
@@ -4633,7 +4632,7 @@ plot.change.histograms <- function(){
                                                          paste("#006400"), paste("#8b0000")))))
   
   # Load in model output
-  GraminoidCover.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_GraminoidCover_slopes",
+  GraminoidCover.mod <- get(load(paste0("data/model_outputs_new/m_GraminoidCover_slopes",
                                         pc.filepath, ".RData")))
   
   # Save model output as a dataframe
@@ -4663,7 +4662,7 @@ plot.change.histograms <- function(){
                                                          paste("#006400"), paste("#8b0000")))))
   
   # Load in model output
-  ShrubCover.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_ShrubCover_slopes",
+  ShrubCover.mod <- get(load(paste0("data/model_outputs_new/m_ShrubCover_slopes",
                                     pc.filepath, ".RData")))
   
   # Save model output as a dataframe
@@ -4696,14 +4695,14 @@ plot.change.histograms <- function(){
   combined.metric.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 4)
   
   # Export the plot
-  ggsave(combined.metric.panel, file = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+  ggsave(combined.metric.panel, file = paste0("figures/outputs_new/manuscript_",
                                               "change_over_time_metrics", pc.filepath, ".png"), width = 20, height = 5)
   
   # Combine the plots into one output
   combined.cover.panel <- grid.arrange(ForbCover.plot, GraminoidCover.plot, ShrubCover.plot, ncol = 3)
   
   # Export the plot
-  ggsave(combined.cover.panel, file = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+  ggsave(combined.cover.panel, file = paste0("figures/outputs_new/manuscript_",
                                              "change_over_time_cover", pc.filepath, ".png"), width = 17.25, height = 5.5)
   
 }
@@ -4714,11 +4713,11 @@ plot.change.histograms <- function(){
 plot.combined.cover.change <- function(){
   
   # Load in model output
-  FRic.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_",
+  FRic.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes_",
                                     "ShrubCover_slopes", pc.filepath, ".RData")))
-  FRic.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_",
+  FRic.forb.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes_",
                                    "ForbCover_slopes", pc.filepath, ".RData")))
-  FRic.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_",
+  FRic.gram.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes_",
                                    "GraminoidCover_slopes", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -4797,11 +4796,11 @@ plot.combined.cover.change <- function(){
   
   
   # Load in model output
-  FEve.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_",
+  FEve.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes_",
                                     "ShrubCover_slopes", pc.filepath, ".RData")))
-  FEve.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_",
+  FEve.forb.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes_",
                                    "ForbCover_slopes", pc.filepath, ".RData")))
-  FEve.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_",
+  FEve.gram.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes_",
                                    "GraminoidCover_slopes", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -4880,11 +4879,11 @@ plot.combined.cover.change <- function(){
   
   
   # Load in model output
-  FDis.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_",
+  FDis.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes_",
                                     "ShrubCover_slopes", pc.filepath, ".RData")))
-  FDis.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_",
+  FDis.forb.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes_",
                                    "ForbCover_slopes", pc.filepath, ".RData")))
-  FDis.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_",
+  FDis.gram.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes_",
                                    "GraminoidCover_slopes", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -4963,11 +4962,11 @@ plot.combined.cover.change <- function(){
   
   
   # Load in model output
-  SR.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_",
+  SR.shrub.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes_",
                                   "ShrubCover_slopes", pc.filepath, ".RData")))
-  SR.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_",
+  SR.forb.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes_",
                                  "ForbCover_slopes", pc.filepath, ".RData")))
-  SR.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_",
+  SR.gram.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes_",
                                  "GraminoidCover_slopes", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -5048,7 +5047,7 @@ plot.combined.cover.change <- function(){
   combined.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 4, widths = c(1,1,1,1))
   
   # Output the saved panel
-  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+  ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
                                            "all_cover_slopes", pc.filepath, ".png"), width = 20, height = 5.5)
   
 } # End of function
@@ -5059,7 +5058,7 @@ plot.combined.cover.change <- function(){
 plot.temp.change <- function(){
   
   # Load in model output
-  FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_",
+  FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes_",
                               "WarmQSlope", pc.filepath, ".RData")))
   
   # Range to predict variable
@@ -5108,7 +5107,7 @@ plot.temp.change <- function(){
                                                          paste("#006400"), paste("#8b0000")))))
   
   # Load in model output
-  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_",
+  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes_",
                               "WarmQSlope", pc.filepath, ".RData")))
   
   # Range to predict variable
@@ -5158,7 +5157,7 @@ plot.temp.change <- function(){
   
   
   # Load in model output
-  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_",
+  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes_",
                             "WarmQSlope", pc.filepath, ".RData")))
   
   # Range to predict variable
@@ -5208,7 +5207,7 @@ plot.temp.change <- function(){
   
   
   # Load in model output
-  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_",
+  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes_",
                               "WarmQSlope", pc.filepath, ".RData")))
   
   # Range to predict variable
@@ -5261,7 +5260,7 @@ plot.temp.change <- function(){
   combined.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 4)
   
   # Export panel
-  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+  ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
                                            "TempChange", pc.filepath, ".png"), width = 20, height = 5.5)
   
 } # End of function
@@ -5278,7 +5277,7 @@ plot.precip <- function(censored){
   if (censored == "No"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                 FRic.distribution, "_PrecipAnn", pc.filepath, ".RData")))
     
     # Extract the prediction data frame
@@ -5358,7 +5357,7 @@ plot.precip <- function(censored){
   
   
   # Load in model output
-  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                               "PrecipAnn", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -5414,7 +5413,7 @@ plot.precip <- function(censored){
   
   
   # Load in model output
-  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
                             "PrecipAnn", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -5469,7 +5468,7 @@ plot.precip <- function(censored){
   
   
   # Load in model output
-  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
                               "PrecipAnn", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -5531,7 +5530,7 @@ plot.precip <- function(censored){
   if (censored == "No"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
                                              "PrecipAnn", pc.filepath, ".png"), width = 12, height = 12)
     
   }
@@ -5540,7 +5539,7 @@ plot.precip <- function(censored){
   if (censored == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
                                              "PrecipAnn_censored", pc.filepath, ".png"), width = 12, height = 12)
     
   }
@@ -5555,7 +5554,7 @@ plot.moisture <- function(){
   # FRic ----
   
   # Load in model output
-  FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_censored_MOISTURE",
+  FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_censored_MOISTURE",
                               pc.filepath, ".RData")))
   
   summary(FRic.mod)
@@ -5580,7 +5579,7 @@ plot.moisture <- function(){
   # FEve ----
   
   # Load in model output
-  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_MOISTURE",
+  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_MOISTURE",
                               pc.filepath, ".RData")))
   
   summary(FEve.mod)
@@ -5604,7 +5603,7 @@ plot.moisture <- function(){
   # SR ----
   
   # Load in model output
-  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_MOISTURE",
+  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_MOISTURE",
                             pc.filepath, ".RData")))
   
   summary(SR.mod)
@@ -5628,7 +5627,7 @@ plot.moisture <- function(){
   # FDis ----
   
   # Load in model output
-  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_MOISTURE",
+  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_MOISTURE",
                               pc.filepath, ".RData")))
   
   summary(FDis.mod)
@@ -5653,7 +5652,7 @@ plot.moisture <- function(){
   combined.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 2)
   
   # Export panel
-  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
+  ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
                                            "MOISTURE_censored", pc.filepath, ".png"), width = 10, height = 10)
   
   
@@ -5667,7 +5666,7 @@ plot.region <- function(){
   # FRic ----
   
   # Load in model output
-  FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_censored_Region",
+  FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_censored_Region",
                               pc.filepath, ".RData")))
   
   summary(FRic.mod)
@@ -5692,7 +5691,7 @@ plot.region <- function(){
   # FEve ----
   
   # Load in model output
-  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_Region",
+  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_Region",
                               pc.filepath, ".RData")))
   
   summary(FEve.mod)
@@ -5716,7 +5715,7 @@ plot.region <- function(){
   # SR ----
   
   # Load in model output
-  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_Region",
+  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_Region",
                             pc.filepath, ".RData")))
   
   summary(SR.mod)
@@ -5740,7 +5739,7 @@ plot.region <- function(){
   # FDis ----
   
   # Load in model output
-  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_Region",
+  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_Region",
                               pc.filepath, ".RData")))
   
   summary(FDis.mod)
@@ -5765,7 +5764,7 @@ plot.region <- function(){
   combined.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 2)
   
   # Export panel
-  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
+  ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
                                            "Region_censored", pc.filepath, ".png"), width = 15, height = 10)
   
   
@@ -5784,7 +5783,7 @@ plot.latitude.time <- function(){
   # FRic ----
   
   # Load in model output
-  FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_LAT",
+  FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes_LAT",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -5832,7 +5831,7 @@ plot.latitude.time <- function(){
   # FEve ----
   
   # Load in model output
-  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_LAT",
+  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes_LAT",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -5880,7 +5879,7 @@ plot.latitude.time <- function(){
   # SR ----
   
   # Load in model output
-  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_LAT",
+  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes_LAT",
                             pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -5928,7 +5927,7 @@ plot.latitude.time <- function(){
   # FDis ----
   
   # Load in model output
-  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_LAT",
+  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes_LAT",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -5977,7 +5976,7 @@ plot.latitude.time <- function(){
   combined.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 2)
   
   # Export panel
-  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_slopes_LAT",
+  ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_slopes_LAT",
                                            pc.filepath, ".png"), width = 15, height = 14)
   
 }
@@ -5995,7 +5994,7 @@ plot.temperature.time <- function(){
   # FRic ----
   
   # Load in model output
-  FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_TempAvSum",
+  FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes_TempAvSum",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6043,7 +6042,7 @@ plot.temperature.time <- function(){
   # FEve ----
   
   # Load in model output
-  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_TempAvSum",
+  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes_TempAvSum",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6091,7 +6090,7 @@ plot.temperature.time <- function(){
   # SR ----
   
   # Load in model output
-  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_TempAvSum",
+  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes_TempAvSum",
                             pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6139,7 +6138,7 @@ plot.temperature.time <- function(){
   # FDis ----
   
   # Load in model output
-  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_TempAvSum",
+  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes_TempAvSum",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6188,7 +6187,7 @@ plot.temperature.time <- function(){
   combined.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 2)
   
   # Export panel
-  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_slopes_TempAvSum",
+  ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_slopes_TempAvSum",
                                            pc.filepath, ".png"), width = 15, height = 14)
   
 }
@@ -6207,7 +6206,7 @@ plot.precip.time <- function(){
   # FRic ----
   
   # Load in model output
-  FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_PrecipAnn",
+  FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes_PrecipAnn",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6255,7 +6254,7 @@ plot.precip.time <- function(){
   # FEve ----
   
   # Load in model output
-  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_PrecipAnn",
+  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes_PrecipAnn",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6303,7 +6302,7 @@ plot.precip.time <- function(){
   # SR ----
   
   # Load in model output
-  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_PrecipAnn",
+  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes_PrecipAnn",
                             pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6351,7 +6350,7 @@ plot.precip.time <- function(){
   # FDis ----
   
   # Load in model output
-  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_PrecipAnn",
+  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes_PrecipAnn",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6400,7 +6399,7 @@ plot.precip.time <- function(){
   combined.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 2)
   
   # Export panel
-  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_slopes_PrecipAnn",
+  ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_slopes_PrecipAnn",
                                            pc.filepath, ".png"), width = 15, height = 14)
   
 }
@@ -6418,7 +6417,7 @@ plot.precip.change <- function(){
   # FRic ----
   
   # Load in model output
-  FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_PrecSlope",
+  FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes_PrecSlope",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6466,7 +6465,7 @@ plot.precip.change <- function(){
   # FEve ----
   
   # Load in model output
-  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_PrecSlope",
+  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes_PrecSlope",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6514,7 +6513,7 @@ plot.precip.change <- function(){
   # SR ----
   
   # Load in model output
-  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_PrecSlope",
+  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes_PrecSlope",
                             pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6562,7 +6561,7 @@ plot.precip.change <- function(){
   # FDis ----
   
   # Load in model output
-  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_PrecSlope",
+  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes_PrecSlope",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6611,7 +6610,7 @@ plot.precip.change <- function(){
   combined.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 2)
   
   # Export panel
-  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_slopes_PrecSlope",
+  ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_slopes_PrecSlope",
                                            pc.filepath, ".png"), width = 15, height = 14)
   
 }
@@ -6630,21 +6629,21 @@ plot.split.cover.quadratic <- function(censored){
   if (censored == "Yes"){
     
     # Load in model outputs for FEve and process the predictions
-    FRic.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                       "censored_quadratic_ShrubCover", pc.filepath, ".RData")))
-    FRic.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.forb.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                      "censored_quadratic_ForbCover", pc.filepath, ".RData")))
-    FRic.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.gram.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                      "censored_quadratic_GraminoidCover", pc.filepath, ".RData")))
     
   } else {
     
     # Load in model outputs for FEve and process the predictions
-    FRic.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                       "quadratic_ShrubCover", pc.filepath, ".RData")))
-    FRic.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.forb.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                      "quadratic_ForbCover", pc.filepath, ".RData")))
-    FRic.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+    FRic.gram.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
                                      "quadratic_GraminoidCover", pc.filepath, ".RData")))
     
   }
@@ -6788,11 +6787,11 @@ plot.split.cover.quadratic <- function(censored){
   # FEve ----
   
   # Load in model outputs for FEve and process the predictions
-  FEve.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+  FEve.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                     "quadratic_ShrubCover", pc.filepath, ".RData")))
-  FEve.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+  FEve.forb.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                    "quadratic_ForbCover", pc.filepath, ".RData")))
-  FEve.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+  FEve.gram.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
                                    "quadratic_GraminoidCover", pc.filepath, ".RData")))
   
   # Determine mean value for centering
@@ -6933,11 +6932,11 @@ plot.split.cover.quadratic <- function(censored){
   # SR ----
   
   # Load in model outputs for SR and process the predictions
-  SR.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+  SR.shrub.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
                                   "quadratic_ShrubCover", pc.filepath, ".RData")))
-  SR.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+  SR.forb.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
                                  "quadratic_ForbCover", pc.filepath, ".RData")))
-  SR.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+  SR.gram.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
                                  "quadratic_GraminoidCover", pc.filepath, ".RData")))
   
   # Determine mean value for centering
@@ -7079,11 +7078,11 @@ plot.split.cover.quadratic <- function(censored){
   # FDis ----
   
   # Load in model outputs for FDis and process the predictions
-  FDis.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+  FDis.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
                                     "quadratic_ShrubCover", pc.filepath, ".RData")))
-  FDis.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+  FDis.forb.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
                                    "quadratic_ForbCover", pc.filepath, ".RData")))
-  FDis.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+  FDis.gram.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
                                    "quadratic_GraminoidCover", pc.filepath, ".RData")))
   
   # Determine mean value for centering
@@ -7239,19 +7238,19 @@ plot.split.cover.quadratic <- function(censored){
   if (censored == "Yes"){
     
     # Export panels
-    ggsave(panel.lines, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+    ggsave(panel.lines, filename = paste0("figures/outputs_new/manuscript_",
                                              "all_cover_ALL_quadratic_censored_SPLIT_lines", pc.filepath, ".png"), width = 18, height = 15)
     
-    ggsave(panel.hex, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+    ggsave(panel.hex, filename = paste0("figures/outputs_new/manuscript_",
                                              "all_cover_ALL_quadratic_censored_SPLIT_hex", pc.filepath, ".png"), width = 18, height = 15)
     
   } else {
     
     # Export panels
-    ggsave(panel.lines, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+    ggsave(panel.lines, filename = paste0("figures/outputs_new/manuscript_",
                                              "all_cover_ALL_quadratic_SPLIT_lines", pc.filepath, ".png"), width = 18, height = 15)
     
-    ggsave(panel.hex, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+    ggsave(panel.hex, filename = paste0("figures/outputs_new/manuscript_",
                                              "all_cover_ALL_quadratic_SPLIT_hex", pc.filepath, ".png"), width = 18, height = 15)
     
   }

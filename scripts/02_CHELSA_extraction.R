@@ -1,5 +1,4 @@
 # 02 - CHELSA raster data extraction
-# Joseph Everest (with help from M. Garcia Criado and J. Assmann)
 # February 2021, adapted October 2021, February 2022
 
 

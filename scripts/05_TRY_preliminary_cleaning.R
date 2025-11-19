@@ -1,5 +1,4 @@
 # 05 - Cleaning the TRY v5.0 database for use in trait gap-filling
-# Joseph Everest
 # November 2021, adapted February 2022
 
 

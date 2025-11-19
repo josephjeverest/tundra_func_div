@@ -1,5 +1,4 @@
-# 08 - Spatial Models
-# Joseph Everest
+# 09 - All Models
 # December 2021, adapted February 2022, November 2022, July 2023, February 2024, January 2025
 
 # LOAD PACKAGES ----
@@ -21,10 +20,10 @@ library(broom)
 # LOAD THEMES AND CUSTOM FUNCTIONS ----
 
 # Load ggplot themes from separate source script
-source("scripts/josephjeverest/FuncDiv_v3/scripts/00_ggplot_themes.R")
+source("scripts/00_ggplot_themes.R")
 
 # Load custom spatial functions
-source("scripts/josephjeverest/FuncDiv_v3/scripts/09_models_FUNCTION.R")
+source("scripts/09_models_FUNCTION.R")
 
 
 # **[CHANGE]** - DETERMINE INPUTS FOR TRAIT SELECTION, VARIABLES, COLOUR PALETTES & DISTRIBUTIONS ----
@@ -94,7 +93,7 @@ ForbCover_slopes.distribution <- "gaussian"
 # IMPORT & MANIPULATE DATA - SPATIAL ----
 
 # Import the ITEX and FD data for the latest year at each plot ONLY
-combo.latest <- read.csv(paste0("scripts/josephjeverest/FuncDiv_v3/data/output_08_fd_output_combined", pc.filepath, "_latest_years.csv")) %>% 
+combo.latest <- read.csv(paste0("data/output_08_fd_output_combined", pc.filepath, "_latest_years.csv")) %>% 
   # filter(FRic > 0) %>% # Remove rows where FRic == 0
   mutate(ShrubCover = EShrubCover + DShrubCover) %>% # Create variable for combined shrub cover
   dplyr::select(-EShrubCover, -DShrubCover) %>% 
@@ -115,7 +114,7 @@ if (run.with.PCA == TRUE){
 # IMPORT & MANIPULATE DATA - TEMPORAL ----
 
 # Import the ITEX and FD data for all years at each plot
-combo.all.full <- read.csv(paste0("scripts/josephjeverest/FuncDiv_v3/data/output_08_fd_output_combined", pc.filepath, "_all_years.csv")) %>% 
+combo.all.full <- read.csv(paste0("data/output_08_fd_output_combined", pc.filepath, "_all_years.csv")) %>% 
   # filter(FRic > 0, !is.na(FEve)) %>% # Remove rows where FRic == 0
   mutate(ShrubCover = EShrubCover + DShrubCover) %>% # Create variable for combined shrub cover
   dplyr::select(-EShrubCover, -DShrubCover) %>% 
@@ -134,7 +133,7 @@ if (run.with.PCA == TRUE){
   combo.all.cut <- filter(combo.all.full, SR >= pc.count + 1) # Run extra if statement to ensure plots have more species than traits
 
   # Import itex species richness list per plot
-  itex.richness <- read.csv("scripts/josephjeverest/FuncDiv_v3/data/output_08_itex_sr_list.csv")
+  itex.richness <- read.csv("data/output_08_itex_sr_list.csv")
   
   # Generate metric for whether less than the PC count
   itex.richness.remove <-  itex.richness %>% 
@@ -158,7 +157,7 @@ if (run.with.PCA == TRUE){
 }
 
 # Export temporal dataframe
-write.csv(combo.all, file = "scripts/josephjeverest/FuncDiv_v3/data/AAA_temporal_input.csv", row.names = FALSE)
+write.csv(combo.all, file = "data/AAA_temporal_input.csv", row.names = FALSE)
 
 # Create dataframe to append slopes to
 slopes.combined <- data.frame()
@@ -206,7 +205,7 @@ slopes.input <- slopes.combined %>%
 # ADD CLIMATE CHANGE DATA ----
 
 # Import climate change data from Mariana's paper
-climate.change <- read.csv("scripts/josephjeverest/FuncDiv_v3/data/22clim_slopes.csv") %>% 
+climate.change <- read.csv("data/22clim_slopes.csv") %>% 
   dplyr::select(-X)
 
 # Modify climate change data to leave only values of change per coordinate pair
@@ -617,7 +616,7 @@ GAM.metric.comparison(run = TRUE)
 bayesian.results.convergence.warnings()
 
 # Load in convergence output
-results.convergence.warnings <- read.csv(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
+results.convergence.warnings <- read.csv(paste0("data/model_outputs_new/",
                                         "convergence_summaries", pc.filepath, ".csv"))
 
 # Tidy model outputs to only retain ones we want
@@ -724,18 +723,18 @@ results.output <- results.convergence.warnings %>%
 #   dplyr::select(-c(model, a, b, c, d))
 
 # Ouptut the results to .csv
-write.csv(results.output, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
+write.csv(results.output, file = paste0("data/model_outputs_new/",
                                         "results_output", pc.filepath, ".csv"), row.names = FALSE)
 
 
 # COMBINE THE CONVERGENCE OUTPUTS INTO ONE ----
 
 # Remove results output file so don't add to it already
-unlink("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/results_output_full*")
+unlink("data/model_outputs_new/results_output_full*")
 
 # Generate vector of all the convergence outputs
-filepaths.convergence <- paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
-                                list.files("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
+filepaths.convergence <- paste0("data/model_outputs_new/",
+                                list.files("data/model_outputs_new/",
                                            pattern = "results_output*"))
 
 # Create overall output dataframe
@@ -758,7 +757,7 @@ for (i in filepaths.convergence){
 
 # Save the output as a single .csv
 write.csv(results.output.full,
-          file = "scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/results_output_full.csv",
+          file = "data/model_outputs_new/results_output_full.csv",
           row.names = FALSE)
 
 

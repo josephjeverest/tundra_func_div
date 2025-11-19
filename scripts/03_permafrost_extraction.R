@@ -1,5 +1,4 @@
 # 03 - Permafrost raster data extraction
-# Joseph Everest (with help from M. Garcia Criado and J. Assmann)
 # March 2021, adapted October 2021, February 2022
 
 

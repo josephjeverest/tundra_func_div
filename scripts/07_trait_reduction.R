@@ -1,5 +1,4 @@
 # 07 - Trait data reduction and plot removal
-# Joseph Everest
 # January 2024
 
 
