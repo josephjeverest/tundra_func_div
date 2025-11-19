@@ -2,7 +2,6 @@
 # Joseph Everest
 # December 2021, adapted February 2022, November 2022, July 2023, February 2024, January 2025
 
-
 # LOAD PACKAGES ----
 
 # Load (and install) required packages
@@ -22,10 +21,10 @@ library(broom)
 # LOAD THEMES AND CUSTOM FUNCTIONS ----
 
 # Load ggplot themes from separate source script
-source("scripts/00_ggplot_themes.R")
+source("scripts/josephjeverest/FuncDiv_v3/scripts/00_ggplot_themes.R")
 
 # Load custom spatial functions
-source("scripts/09_models_FUNCTION.R")
+source("scripts/josephjeverest/FuncDiv_v3/scripts/09_models_FUNCTION.R")
 
 
 # **[CHANGE]** - DETERMINE INPUTS FOR TRAIT SELECTION, VARIABLES, COLOUR PALETTES & DISTRIBUTIONS ----
@@ -95,7 +94,7 @@ ForbCover_slopes.distribution <- "gaussian"
 # IMPORT & MANIPULATE DATA - SPATIAL ----
 
 # Import the ITEX and FD data for the latest year at each plot ONLY
-combo.latest <- read.csv(paste0("data/output_08_fd_output_combined", pc.filepath, "_latest_years.csv")) %>% 
+combo.latest <- read.csv(paste0("scripts/josephjeverest/FuncDiv_v3/data/output_08_fd_output_combined", pc.filepath, "_latest_years.csv")) %>% 
   # filter(FRic > 0) %>% # Remove rows where FRic == 0
   mutate(ShrubCover = EShrubCover + DShrubCover) %>% # Create variable for combined shrub cover
   dplyr::select(-EShrubCover, -DShrubCover) %>% 
@@ -103,8 +102,7 @@ combo.latest <- read.csv(paste0("data/output_08_fd_output_combined", pc.filepath
   mutate(PlotDominatingFG = case_when(ShrubCover > 50 ~ "Shrub-Dominated", # Need to modify the PlotDominatingFG column as have now combined shrub cover
                                       GraminoidCover > 50 ~ "Graminoid-Dominated",
                                       ForbCover > 50 ~ "Forb-Dominated",
-                                      TRUE ~ "None")) %>% 
-  mutate(MOISTURE = ifelse(SiteSubsite %in% c("LATNJA:DRY_MEADOW", "LATNJA:TUSSOCK_TUNDRA"), "MOIST", MOISTURE))
+                                      TRUE ~ "None"))
 
 # Run extra if statement to ensure plots have more species than traits
 if (run.with.PCA == TRUE){
@@ -117,7 +115,7 @@ if (run.with.PCA == TRUE){
 # IMPORT & MANIPULATE DATA - TEMPORAL ----
 
 # Import the ITEX and FD data for all years at each plot
-combo.all.full <- read.csv(paste0("data/output_08_fd_output_combined", pc.filepath, "_all_years.csv")) %>% 
+combo.all.full <- read.csv(paste0("scripts/josephjeverest/FuncDiv_v3/data/output_08_fd_output_combined", pc.filepath, "_all_years.csv")) %>% 
   # filter(FRic > 0, !is.na(FEve)) %>% # Remove rows where FRic == 0
   mutate(ShrubCover = EShrubCover + DShrubCover) %>% # Create variable for combined shrub cover
   dplyr::select(-EShrubCover, -DShrubCover) %>% 
@@ -126,7 +124,8 @@ combo.all.full <- read.csv(paste0("data/output_08_fd_output_combined", pc.filepa
                                       GraminoidCover > 50 ~ "Graminoid-Dominated",
                                       ForbCover > 50 ~ "Forb-Dominated",
                                       TRUE ~ "None")) %>% 
-  mutate(MOISTURE = ifelse(SiteSubsite %in% c("LATNJA:DRY_MEADOW", "LATNJA:TUSSOCK_TUNDRA"), "MOIST", MOISTURE))
+  mutate(Duration = YEAR_latest - YEAR_earliest) %>% 
+  filter(Duration >= 5)
 
 # Run if statement to remove all plots that have at least one year with under the required SR
 if (run.with.PCA == TRUE){
@@ -135,7 +134,7 @@ if (run.with.PCA == TRUE){
   combo.all.cut <- filter(combo.all.full, SR >= pc.count + 1) # Run extra if statement to ensure plots have more species than traits
 
   # Import itex species richness list per plot
-  itex.richness <- read.csv("data/output_08_itex_sr_list.csv")
+  itex.richness <- read.csv("scripts/josephjeverest/FuncDiv_v3/data/output_08_itex_sr_list.csv")
   
   # Generate metric for whether less than the PC count
   itex.richness.remove <-  itex.richness %>% 
@@ -158,6 +157,8 @@ if (run.with.PCA == TRUE){
   
 }
 
+# Export temporal dataframe
+write.csv(combo.all, file = "scripts/josephjeverest/FuncDiv_v3/data/AAA_temporal_input.csv", row.names = FALSE)
 
 # Create dataframe to append slopes to
 slopes.combined <- data.frame()
@@ -192,8 +193,8 @@ for (i in temporal.variables){
 # Create ITEX dataset with just one row per SiteSubsitePlot
 combo.plots <- combo.all %>% 
   filter(Repeats > 1) %>% # To keep only the plots with time series
-  dplyr::select(SiteSubsitePlot, SITE, SUBSITE, PLOT, MOISTURE, LAT, LONG, ELEV, PlotDominatingFG,
-                SurveyedArea, AlpArc, lat_grid, lon_grid, gridcell, Region, TempAvSum) %>% # Unique plot-based info. (not time sensitive)
+  dplyr::select(SiteSubsitePlot, SITE, SUBSITE, PLOT, MOISTURE, LAT, LONG, ELEV,
+                SurveyedArea, AlpArc, lat_grid, lon_grid, gridcell, Region, TempAvSum, PrecipAnn) %>% # Unique plot-based info. (not time sensitive)
   unique() # Retains one record of each unique plot
 
 # Convert dataframe to wide format for running bayesian models on and join to plot info.
@@ -205,7 +206,7 @@ slopes.input <- slopes.combined %>%
 # ADD CLIMATE CHANGE DATA ----
 
 # Import climate change data from Mariana's paper
-climate.change <- read.csv("data/22clim_slopes.csv") %>% 
+climate.change <- read.csv("scripts/josephjeverest/FuncDiv_v3/data/22clim_slopes.csv") %>% 
   dplyr::select(-X)
 
 # Modify climate change data to leave only values of change per coordinate pair
@@ -239,12 +240,6 @@ bayesian.spatial.continuous(run.FRic = FALSE,
 
 # Generate plots for the manuscript
 plot.latitude(censored = "Yes")
-plot.precip(censored = "Yes")
-plot.moisture()
-plot.region()
-plot.latitude.time()
-plot.temperature.time()
-plot.precip.change()
 
 # Run FRic, FEve and SR models vs Region
 bayesian.spatial.categoric(run.FRic = FALSE, 
@@ -427,9 +422,8 @@ bayesian.spatial.quadratic(run.FRic = FALSE,
                            treedepth = 13)
 
 # Run function to generate combined output plots for all three cover types
-plot.combined.cover(censored.FRic = "Yes",quadratic.FEve = "No")
 plot.combined.cover.quadratic(censored = "No")
-
+plot.split.cover.quadratic(censored = "No")
 
 # Run FRic, FEve and SR models vs PlotDominatingFG (functional group dominating plot)
 bayesian.spatial.categoric(run.FRic = FALSE, 
@@ -465,9 +459,6 @@ bayesian.temporal.change(run.FRic = FALSE,
                          delta = 0.95,
                          treedepth = 13)
 
-# Generate manuscript outputs
-plot.change.histograms()
-
 # Run FRic, FEve and SR slopes vs LAT (latitude)
 bayesian.temporal.continuous(run.FRic = FALSE, 
                              run.FEve = FALSE, 
@@ -475,7 +466,7 @@ bayesian.temporal.continuous(run.FRic = FALSE,
                              run.FDis = FALSE,
                              x.var = "LAT",
                              data = slopes.input,
-                             colour.by = "PlotDominatingFG", # Must be categoric, e.g. "Region" or "PlotDominatingFG"
+                             colour.by = "Region", # Must be categoric, e.g. "Region" or "PlotDominatingFG"
                              chains = 2,
                              cores = 4,
                              warmup = 500,
@@ -490,7 +481,22 @@ bayesian.temporal.continuous(run.FRic = FALSE,
                              run.FDis = FALSE,
                              x.var = "TempAvSum",
                              data = slopes.input,
-                             colour.by = "PlotDominatingFG", # Must be categoric, e.g. "Region" or "PlotDominatingFG"
+                             colour.by = "Region", # Must be categoric, e.g. "Region" or "PlotDominatingFG"
+                             chains = 2,
+                             cores = 4,
+                             warmup = 500,
+                             iterations = 2000,
+                             delta = 0.95,
+                             treedepth = 13)
+
+# Run FRic, FEve and SR slopes vs PrecipAnn (annual precipitation)
+bayesian.temporal.continuous(run.FRic = FALSE, 
+                             run.FEve = FALSE, 
+                             run.SR = FALSE, 
+                             run.FDis = FALSE,
+                             x.var = "PrecipAnn",
+                             data = slopes.input,
+                             colour.by = "Region", # Must be categoric, e.g. "Region" or "PlotDominatingFG"
                              chains = 2,
                              cores = 4,
                              warmup = 500,
@@ -505,7 +511,7 @@ bayesian.temporal.continuous(run.FRic = FALSE,
                              run.FDis = FALSE,
                              x.var = "WarmQSlope",
                              data = slopes.input,
-                             colour.by = "PlotDominatingFG", # Must be categoric, e.g. "Region" or "PlotDominatingFG"
+                             colour.by = "Region", # Must be categoric, e.g. "Region" or "PlotDominatingFG"
                              chains = 2,
                              cores = 4,
                              warmup = 500,
@@ -513,17 +519,14 @@ bayesian.temporal.continuous(run.FRic = FALSE,
                              delta = 0.95,
                              treedepth = 13)
 
-# Plot manuscript plots for temperature change vs functional diversity change
-plot.temp.change()
-
 # Run FRic, FEve and SR slopes vs PrecSlope (change in annual precipitation)
 bayesian.temporal.continuous(run.FRic = FALSE, 
-                             run.FEve = TRUE, 
-                             run.SR = TRUE, 
-                             run.FDis = TRUE,
+                             run.FEve = FALSE, 
+                             run.SR = FALSE, 
+                             run.FDis = FALSE,
                              x.var = "PrecSlope",
                              data = slopes.input,
-                             colour.by = "PlotDominatingFG", # Must be categoric, e.g. "Region" or "PlotDominatingFG"
+                             colour.by = "Region", # Must be categoric, e.g. "Region" or "PlotDominatingFG"
                              chains = 2,
                              cores = 4,
                              warmup = 500,
@@ -538,7 +541,7 @@ bayesian.temporal.continuous(run.FRic = FALSE,
                              run.FDis = FALSE,
                              x.var = "ShrubCover_slopes",
                              data = slopes.input,
-                             colour.by = "PlotDominatingFG", # Must be categoric, e.g. "Region" or "PlotDominatingFG"
+                             colour.by = "Region", # Must be categoric, e.g. "Region" or "PlotDominatingFG"
                              chains = 2,
                              cores = 4,
                              warmup = 500,
@@ -553,7 +556,7 @@ bayesian.temporal.continuous(run.FRic = FALSE,
                              run.FDis = FALSE,
                              x.var = "GraminoidCover_slopes",
                              data = slopes.input,
-                             colour.by = "PlotDominatingFG", # Must be categoric, e.g. "Region" or "PlotDominatingFG"
+                             colour.by = "Region", # Must be categoric, e.g. "Region" or "PlotDominatingFG"
                              chains = 2,
                              cores = 4,
                              warmup = 500,
@@ -568,7 +571,7 @@ bayesian.temporal.continuous(run.FRic = FALSE,
                              run.FDis = FALSE,
                              x.var = "ForbCover_slopes",
                              data = slopes.input,
-                             colour.by = "PlotDominatingFG", # Must be categoric, e.g. "Region" or "PlotDominatingFG"
+                             colour.by = "Region", # Must be categoric, e.g. "Region" or "PlotDominatingFG"
                              chains = 2,
                              cores = 4,
                              warmup = 500,
@@ -576,8 +579,16 @@ bayesian.temporal.continuous(run.FRic = FALSE,
                              delta = 0.95,
                              treedepth = 13)
 
-# Plot the combined cover result
+# Generate manuscript outputs
+plot.change.histograms()
+plot.temp.change()
 plot.combined.cover.change()
+
+# Generate Supplementary Materials figures
+plot.latitude.time()
+plot.temperature.time()
+plot.precip.time()
+plot.precip.change()
 
 
 # (Q5) - METRIC MODEL ----
@@ -606,7 +617,7 @@ GAM.metric.comparison(run = TRUE)
 bayesian.results.convergence.warnings()
 
 # Load in convergence output
-results.convergence.warnings <- read.csv(paste0("data/model_outputs_new/",
+results.convergence.warnings <- read.csv(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
                                         "convergence_summaries", pc.filepath, ".csv"))
 
 # Tidy model outputs to only retain ones we want
@@ -713,18 +724,18 @@ results.output <- results.convergence.warnings %>%
 #   dplyr::select(-c(model, a, b, c, d))
 
 # Ouptut the results to .csv
-write.csv(results.output, file = paste0("data/model_outputs_new/",
+write.csv(results.output, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
                                         "results_output", pc.filepath, ".csv"), row.names = FALSE)
 
 
 # COMBINE THE CONVERGENCE OUTPUTS INTO ONE ----
 
 # Remove results output file so don't add to it already
-unlink("data/model_outputs_new/results_output_full*")
+unlink("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/results_output_full*")
 
 # Generate vector of all the convergence outputs
-filepaths.convergence <- paste0("data/model_outputs_new/",
-                                list.files("data/model_outputs_new/",
+filepaths.convergence <- paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
+                                list.files("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
                                            pattern = "results_output*"))
 
 # Create overall output dataframe
@@ -747,7 +758,7 @@ for (i in filepaths.convergence){
 
 # Save the output as a single .csv
 write.csv(results.output.full,
-          file = "data/model_outputs_new/results_output_full.csv",
+          file = "scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/results_output_full.csv",
           row.names = FALSE)
 
 

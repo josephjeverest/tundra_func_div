@@ -51,7 +51,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
+    save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                  FRic.distribution, "_", x.var, pc.filepath, ".RData"))
     
   } # End of run and not censored
@@ -59,7 +59,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
   if (run.FRic == FALSE & censored == "No"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                 FRic.distribution, "_", x.var, pc.filepath, ".RData")))
     
   } # End of import and not censored
@@ -79,7 +79,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
                                                   max_treedepth = treedepth))
     
     # Export model output
-    save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
+    save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                  "censored_", x.var, pc.filepath, ".RData"))
     
   } # End of run and censored
@@ -87,7 +87,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
   if (run.FRic == FALSE & censored == "Yes"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                 "censored_", x.var, pc.filepath, ".RData")))
     
   } # End of import and censored
@@ -209,7 +209,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FEve.mod, file = paste0("data/model_outputs_new/m_FEve_",
+    save(FEve.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                  x.var, pc.filepath, ".RData"))
     
   } # End of run and not censored
@@ -217,7 +217,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
   if (run.FEve == FALSE & quadratic == "No"){
     
     # Load in model output
-    FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
+    FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                 x.var, pc.filepath, ".RData")))
     
   } # End of import and not censored
@@ -232,7 +232,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FEve.mod, file = paste0("data/model_outputs_new/m_FEve_",
+    save(FEve.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                  "quadratic_", x.var, pc.filepath, ".RData"))
     
   } # End of run and censored
@@ -240,7 +240,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
   if (run.FEve == FALSE & quadratic == "Yes"){
     
     # Export model output
-    FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
+    FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                 "quadratic_", x.var, pc.filepath, ".RData")))
     
   } # End of import and censored
@@ -365,13 +365,13 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
                                  max_treedepth = treedepth))
     
     # Export model output
-    save(SR.mod, file = paste0("data/model_outputs_new/m_SR_",
+    save(SR.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
                                x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
+    SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
                               x.var, pc.filepath, ".RData")))
     
   }
@@ -447,13 +447,13 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FDis.mod, file = paste0("data/model_outputs_new/m_FDis_",
+    save(FDis.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
                                x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
+    FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
                                 x.var, pc.filepath, ".RData")))
     
   }
@@ -516,7 +516,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
   if (censored == "No" & quadratic == "No"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
                                              x.var, pc.filepath, ".png"), width = 15, height = 14)
     
   }
@@ -525,7 +525,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
   if (censored == "No" & quadratic == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
                                              x.var, "_quadratic", pc.filepath, ".png"), width = 15, height = 14)
     
   }
@@ -534,7 +534,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
   if (censored == "Yes" & quadratic == "No"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
                                              x.var, "_censored", pc.filepath, ".png"), width = 15, height = 14)
     
   }
@@ -543,7 +543,7 @@ bayesian.spatial.continuous <- function(run.FRic, censored, run.FEve, quadratic,
   if (censored == "Yes" & quadratic == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
                                              x.var, "_censored_quadratic", pc.filepath, ".png"), width = 15, height = 14)
     
   }
@@ -605,13 +605,13 @@ bayesian.spatial.quadratic <- function(run.FRic, censored, run.FEve, run.SR, run
                                                     max_treedepth = treedepth))
       
       # Export model output
-      save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
+      save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                    "censored_quadratic_", x.var, pc.filepath, ".RData"))
       
     } else {
       
       # Load in model output
-      FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+      FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                   "censored_quadratic_", x.var, pc.filepath, ".RData")))
       
     } # End of import and censored
@@ -664,21 +664,19 @@ bayesian.spatial.quadratic <- function(run.FRic, censored, run.FEve, run.SR, run
                                      max_treedepth = treedepth))
       
       # Export model output
-      save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
+      save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                    "quadratic_", x.var, pc.filepath, ".RData"))
       
     } else {
       
       # Export model output
-      FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+      FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                   "quadratic_", x.var, pc.filepath, ".RData")))
       
     } # End of import and censored
     
-    summary(FRic.mod)
-    
     # Convert model output into a dataframe (with 4.d.p.)
-    FRic.df <- brms_SummaryTable(FRic.mod, formatOptions = list(digits = 5, nsmall = 5), round = 5)
+    FRic.df <- brms_SummaryTable(FRic.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
     
     # Extract the confidence intervals as a list for use in the plotting
     FRic.df.ci <- FRic.df %>% 
@@ -745,19 +743,19 @@ bayesian.spatial.quadratic <- function(run.FRic, censored, run.FEve, run.SR, run
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FEve.mod, file = paste0("data/model_outputs_new/m_FEve_",
+    save(FEve.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                  "quadratic_", x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Export model output
-    FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
+    FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                 "quadratic_", x.var, pc.filepath, ".RData")))
     
   } # End of import and censored
   
   # Convert model output into a dataframe (with 4.d.p.)
-  FEve.df <- brms_SummaryTable(FEve.mod, formatOptions = list(digits = 5, nsmall = 5), round = 5)
+  FEve.df <- brms_SummaryTable(FEve.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
   
   # Extract the confidence intervals as a list for use in the plotting
   FEve.df.ci <- FEve.df %>% 
@@ -822,19 +820,19 @@ bayesian.spatial.quadratic <- function(run.FRic, censored, run.FEve, run.SR, run
                                  max_treedepth = treedepth))
     
     # Export model output
-    save(SR.mod, file = paste0("data/model_outputs_new/m_SR_",
+    save(SR.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
                                "quadratic_", x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Export model output
-    SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
+    SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
                               "quadratic_", x.var, pc.filepath, ".RData")))
     
   } # End of import and censored
   
   # Convert model output into a dataframe (with 4.d.p.)
-  SR.df <- brms_SummaryTable(SR.mod, formatOptions = list(digits = 5, nsmall = 5), round = 5)
+  SR.df <- brms_SummaryTable(SR.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
   
   # Extract the confidence intervals as a list for use in the plotting
   SR.df.ci <- SR.df %>% 
@@ -898,19 +896,19 @@ bayesian.spatial.quadratic <- function(run.FRic, censored, run.FEve, run.SR, run
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FDis.mod, file = paste0("data/model_outputs_new/m_FDis_",
+    save(FDis.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
                                  "quadratic_", x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Export model output
-    FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
+    FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
                                 "quadratic_", x.var, pc.filepath, ".RData")))
     
   } # End of import and censored
   
   # Convert model output into a dataframe (with 4.d.p.)
-  FDis.df <- brms_SummaryTable(FDis.mod, formatOptions = list(digits = 5, nsmall = 5), round = 5)
+  FDis.df <- brms_SummaryTable(FDis.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
   
   # Extract the confidence intervals as a list for use in the plotting
   FDis.df.ci <- FDis.df %>% 
@@ -959,13 +957,13 @@ bayesian.spatial.quadratic <- function(run.FRic, censored, run.FEve, run.SR, run
   if (censored == "No") {
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
                                              x.var, "_ALL_quadratic", pc.filepath,".png"), width = 15, height = 14)
     
   } else {
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
                                              x.var, "_censored_ALL_quadratic", pc.filepath,".png"), width = 15, height = 14)
     
   }
@@ -1013,7 +1011,7 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
+    save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                  FRic.distribution, "_", x.var, pc.filepath, ".RData"))
     
   } # End of run and not censored
@@ -1021,7 +1019,7 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
   if (run.FRic == FALSE & censored == "No"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                 FRic.distribution, "_", x.var, pc.filepath, ".RData")))
     
   } # End of import and not censored
@@ -1041,7 +1039,7 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
                                                   max_treedepth = treedepth))
     
     # Export model output
-    save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
+    save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                  "censored_", x.var, pc.filepath, ".RData"))
     
   } # End of run and censored
@@ -1049,7 +1047,7 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
   if (run.FRic == FALSE & censored == "Yes"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                 "censored_", x.var, pc.filepath, ".RData")))
     
   } # End of import and censored
@@ -1100,13 +1098,13 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FEve.mod, file = paste0("data/model_outputs_new/m_FEve_",
+    save(FEve.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                  x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
+    FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                 x.var, pc.filepath, ".RData")))
     
   }
@@ -1141,13 +1139,13 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
                                  max_treedepth = treedepth))
     
     # Export model output
-    save(SR.mod, file = paste0("data/model_outputs_new/m_SR_",
+    save(SR.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
                                x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
+    SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
                               x.var, pc.filepath, ".RData")))
     
   }
@@ -1182,13 +1180,13 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FDis.mod, file = paste0("data/model_outputs_new/m_FDis_",
+    save(FDis.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
                                  x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
+    FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
                                 x.var, pc.filepath, ".RData")))
     
   }
@@ -1218,7 +1216,7 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
   if (censored == "No"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
                                              x.var, pc.filepath, ".png"), width = 15, height = 14)
     
   } # End of censored == "No"
@@ -1226,7 +1224,7 @@ bayesian.spatial.categoric <- function(run.FRic, censored, run.FEve, run.SR, run
   if (censored == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
                                              x.var, "_censored", pc.filepath, ".png"), width = 15, height = 14)
     
   } # End of censored == "Yes"
@@ -1271,13 +1269,13 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_slopes",
+    save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes",
                                  pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes",
+    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes",
                                 pc.filepath, ".RData")))
     
   }
@@ -1329,13 +1327,13 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FEve.mod, file = paste0("data/model_outputs_new/m_FEve_slopes",
+    save(FEve.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes",
                                  pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes",
+    FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes",
                                 pc.filepath, ".RData")))
     
   }
@@ -1387,13 +1385,13 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
                                  max_treedepth = treedepth))
     
     # Export model output
-    save(SR.mod, file = paste0("data/model_outputs_new/m_SR_slopes",
+    save(SR.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes",
                                pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes",
+    SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes",
                               pc.filepath, ".RData")))
     
   }
@@ -1445,13 +1443,13 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FDis.mod, file = paste0("data/model_outputs_new/m_FDis_slopes",
+    save(FDis.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes",
                                  pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes",
+    FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes",
                                 pc.filepath, ".RData")))
     
   }
@@ -1494,7 +1492,7 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
   combined.panel.FD <- grid.arrange(FRic.plot, FEve.plot, SR.plot, FDis.plot, ncol = 2)
   
   # Export panel
-  ggsave(combined.panel.FD, filename = paste0("figures/outputs_new/combined_FD_change",
+  ggsave(combined.panel.FD, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_FD_change",
                                               pc.filepath, ".png"), width = 15, height = 14)
   
   # Shrubs ----
@@ -1510,13 +1508,13 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
                                          max_treedepth = treedepth))
     
     # Export model output
-    save(ShrubCover.mod, file = paste0("data/model_outputs_new/m_ShrubCover_slopes",
+    save(ShrubCover.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_ShrubCover_slopes",
                                        pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    ShrubCover.mod <- get(load(paste0("data/model_outputs_new/m_ShrubCover_slopes",
+    ShrubCover.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_ShrubCover_slopes",
                                       pc.filepath, ".RData")))
     
   }
@@ -1568,13 +1566,13 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
                                              max_treedepth = treedepth))
     
     # Export model output
-    save(GraminoidCover.mod, file = paste0("data/model_outputs_new/m_GraminoidCover_slopes",
+    save(GraminoidCover.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_GraminoidCover_slopes",
                                            pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    GraminoidCover.mod <- get(load(paste0("data/model_outputs_new/m_GraminoidCover_slopes",
+    GraminoidCover.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_GraminoidCover_slopes",
                                           pc.filepath, ".RData")))
     
   }
@@ -1626,13 +1624,13 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
                                         max_treedepth = treedepth))
     
     # Export model output
-    save(ForbCover.mod, file = paste0("data/model_outputs_new/m_ForbCover_slopes",
+    save(ForbCover.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_ForbCover_slopes",
                                       pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    ForbCover.mod <- get(load(paste0("data/model_outputs_new/m_ForbCover_slopes",
+    ForbCover.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_ForbCover_slopes",
                                      pc.filepath, ".RData")))
     
   }
@@ -1675,7 +1673,7 @@ bayesian.temporal.change <- function(run.FRic, run.FEve, run.SR, run.FDis, run.S
   combined.panel.Cover <- grid.arrange(ShrubCover.plot, GraminoidCover.plot, ForbCover.plot, ncol = 3)
   
   # Export panel
-  ggsave(combined.panel.Cover, filename = paste0("figures/outputs_new/combined_Cover_change",
+  ggsave(combined.panel.Cover, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_Cover_change",
                                                  pc.filepath, ".png"), width = 23, height = 7)
   
 }
@@ -1689,7 +1687,7 @@ bayesian.temporal.continuous <- function(run.FRic, run.FEve, run.SR, run.FDis, x
   # Produce dataframe for running models on
   input.data <- data %>% 
     dplyr::select(x.var, FRic_slopes, FEve_slopes, SR_slopes, FDis_slopes,
-                  SurveyedArea, gridcell, SUBSITE, PlotDominatingFG) %>% 
+                  SurveyedArea, gridcell, SUBSITE, Region) %>% 
     rename(x_variable = x.var) # Rename first column to x_variable
   
   # Modify data for colouring points
@@ -1709,19 +1707,19 @@ bayesian.temporal.continuous <- function(run.FRic, run.FEve, run.SR, run.FDis, x
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_slopes_",
+    save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_",
                                  x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes_",
+    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_",
                                 x.var, pc.filepath, ".RData")))
     
   }
   
   # Convert model output into a dataframe (with 4.d.p.)
-  FRic.df <- brms_SummaryTable(FRic.mod, formatOptions = list(digits = 5, nsmall = 5), round = 5)
+  FRic.df <- brms_SummaryTable(FRic.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
   
   # Extract the confidence intervals as a list for use in the plotting
   FRic.df.ci <- FRic.df %>% 
@@ -1777,19 +1775,19 @@ bayesian.temporal.continuous <- function(run.FRic, run.FEve, run.SR, run.FDis, x
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FEve.mod, file = paste0("data/model_outputs_new/m_FEve_slopes_",
+    save(FEve.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_",
                                  x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes_",
+    FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_",
                                 x.var, pc.filepath, ".RData")))
     
   }
   
   # Convert model output into a dataframe (with 4.d.p.)
-  FEve.df <- brms_SummaryTable(FEve.mod, formatOptions = list(digits = 5, nsmall = 5), round = 5)
+  FEve.df <- brms_SummaryTable(FEve.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
   
   # Extract the confidence intervals as a list for use in the plotting
   FEve.df.ci <- FEve.df %>% 
@@ -1845,19 +1843,19 @@ bayesian.temporal.continuous <- function(run.FRic, run.FEve, run.SR, run.FDis, x
                                  max_treedepth = treedepth))
     
     # Export model output
-    save(SR.mod, file = paste0("data/model_outputs_new/m_SR_slopes_",
+    save(SR.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_",
                                x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes_",
+    SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_",
                               x.var, pc.filepath, ".RData")))
     
   }
   
   # Convert model output into a dataframe (with 4.d.p.)
-  SR.df <- brms_SummaryTable(SR.mod, formatOptions = list(digits = 5, nsmall = 5), round = 5)
+  SR.df <- brms_SummaryTable(SR.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
   
   # Extract the confidence intervals as a list for use in the plotting
   SR.df.ci <- SR.df %>% 
@@ -1913,19 +1911,19 @@ bayesian.temporal.continuous <- function(run.FRic, run.FEve, run.SR, run.FDis, x
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FDis.mod, file = paste0("data/model_outputs_new/m_FDis_slopes_",
+    save(FDis.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_",
                                  x.var, pc.filepath, ".RData"))
     
   } else {
     
     # Load in model output
-    FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes_",
+    FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_",
                                 x.var, pc.filepath, ".RData")))
     
   }
   
   # Convert model output into a dataframe (with 4.d.p.)
-  FDis.df <- brms_SummaryTable(FDis.mod, formatOptions = list(digits = 5, nsmall = 5), round = 5)
+  FDis.df <- brms_SummaryTable(FDis.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
   
   # Extract the confidence intervals as a list for use in the plotting
   FDis.df.ci <- FDis.df %>% 
@@ -1973,7 +1971,7 @@ bayesian.temporal.continuous <- function(run.FRic, run.FEve, run.SR, run.FDis, x
   combined.panel <- grid.arrange(FRic.plot, FEve.plot, SR.plot, FDis.plot, ncol = 2)
   
   # Export panel
-  ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_slopes_",
+  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_slopes_",
                                            x.var, pc.filepath, ".png"), width = 15, height = 14)
   
 }
@@ -2010,13 +2008,13 @@ bayesian.metric.comparison <- function(run.FRic, quadratic, run.FEve, run.FDis, 
                                         max_treedepth = treedepth))
       
       # Export model output
-      save(SR.FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
+      save(SR.FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                       FRic.distribution, "_SR", pc.filepath, ".RData"))
       
     } else {
       
       # Load in model output
-      SR.FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+      SR.FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                      FRic.distribution, "_SR", pc.filepath, ".RData")))
       
     } # End of if else loop
@@ -2069,7 +2067,7 @@ bayesian.metric.comparison <- function(run.FRic, quadratic, run.FEve, run.FDis, 
                                                            paste("#006400"), paste("#8b0000")))))
     
     # Export plot
-    ggsave(SR.FRic.plot, filename = paste0("figures/outputs_new/SR_vs_FRic",
+    ggsave(SR.FRic.plot, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/SR_vs_FRic",
                                            pc.filepath, ".png"), width = 8, height = 7)
     
   } # End of not quadratic if loop
@@ -2100,13 +2098,13 @@ bayesian.metric.comparison <- function(run.FRic, quadratic, run.FEve, run.FDis, 
                                         max_treedepth = treedepth))
       
       # Export model output
-      save(SR.FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
+      save(SR.FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                       FRic.distribution, "_quadratic_SR", pc.filepath, ".RData"))
       
     } else {
       
       # Load in model output
-      SR.FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+      SR.FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                      FRic.distribution, "_quadratic_SR", pc.filepath, ".RData")))
       
     } # End of if else loop
@@ -2185,13 +2183,13 @@ bayesian.metric.comparison <- function(run.FRic, quadratic, run.FEve, run.FDis, 
                                         max_treedepth = treedepth))
       
       # Export model output
-      save(SR.FEve.mod, file = paste0("data/model_outputs_new/m_FEve_",
+      save(SR.FEve.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                       FEve.distribution, "_SR", pc.filepath, ".RData"))
       
     } else {
       
       # Load in model output
-      SR.FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
+      SR.FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                      FEve.distribution, "_SR", pc.filepath, ".RData")))
       
     } # End of if else loop
@@ -2254,13 +2252,13 @@ bayesian.metric.comparison <- function(run.FRic, quadratic, run.FEve, run.FDis, 
                                         max_treedepth = treedepth))
       
       # Export model output
-      save(SR.FDis.mod, file = paste0("data/model_outputs_new/m_FDis_",
+      save(SR.FDis.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
                                       FDis.distribution, "_SR", pc.filepath, ".RData"))
       
     } else {
       
       # Load in model output
-      SR.FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
+      SR.FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
                                      FDis.distribution, "_SR", pc.filepath, ".RData")))
       
     } # End of if else loop
@@ -2315,7 +2313,7 @@ bayesian.metric.comparison <- function(run.FRic, quadratic, run.FEve, run.FDis, 
     SR.panel <- grid.arrange(SR.FRic.plot, SR.FEve.plot, SR.FDis.plot, ncol = 3)
     
     # Export plot
-    ggsave(SR.panel, filename = paste0("figures/outputs_new/SR_vs_FD_metrics",
+    ggsave(SR.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/SR_vs_FD_metrics",
                                        pc.filepath, ".png"), width = 17.25, height = 5.5)
     
   } # End of quadratic if loop
@@ -2451,7 +2449,7 @@ GAM.metric.comparison <- function(run){
     SR.GAM.panel <- grid.arrange(SR.FRic.GAM.plot, SR.FEve.GAM.plot, SR.FDis.GAM.plot, ncol = 3)
     
     # Export the panel
-    ggsave(SR.GAM.panel, filename = paste0("figures/outputs_new/SR_vs_FD_GAMS",
+    ggsave(SR.GAM.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/SR_vs_FD_GAMS",
                                            pc.filepath, ".png"), width = 17.25, height = 5.5)    
     
   } # End of if run == TRUE
@@ -2482,8 +2480,8 @@ bayesian.results.convergence.warnings <- function(){
     }
     
     # Determine all the model filenames in the 'model_outputs_new' folder
-    model.filepaths <- paste0("data/model_outputs_new/",
-                              list.files("data/model_outputs_new/",
+    model.filepaths <- paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
+                              list.files("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
                                          pattern = paste0("*", pc.filepath, ".RData")))
     
     # Generate blank output dataframe
@@ -2550,7 +2548,7 @@ bayesian.results.convergence.warnings <- function(){
         rhat.problematic.count <- as.numeric(nrow(filter(rhat.summary, problematic == TRUE)))
         
         # Extract just model name
-        model.name <- str_remove(i, pattern = "data/model_outputs_new/")
+        model.name <- str_remove(i, pattern = "scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/")
         model.name <- str_remove(model.name, pattern = ".RData")
         
         # Add warnings and model name to dataframe
@@ -2574,7 +2572,7 @@ bayesian.results.convergence.warnings <- function(){
       } else { # End of continuous (e.g. 1 row)
         
         # Extract just model name
-        model.name <- str_remove(i, pattern = "data/model_outputs_new/")
+        model.name <- str_remove(i, pattern = "scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/")
         model.name <- str_remove(model.name, pattern = ".RData")
         
         # Modify table for inclusion in outputs
@@ -2598,7 +2596,7 @@ bayesian.results.convergence.warnings <- function(){
     } # End of variables loop
     
     # Export the convergence output
-    write.csv(convergence.warnings, file = paste0("data/model_outputs_new/",
+    write.csv(convergence.warnings, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
                                                   "convergence_summaries", pc.filepath, ".csv"), row.names = FALSE)
     
   } # End of if statement for check.convergence == TRUE
@@ -2626,8 +2624,8 @@ bayesian.results.convergence.warnings <- function(){
 #     }
 #     
 #     # Determine all the model filenames in the 'model_outputs_new' folder
-#     model.filepaths <- paste0("data/model_outputs_new/",
-#                         list.files("data/model_outputs_new/",
+#     model.filepaths <- paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
+#                         list.files("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
 #                                    pattern = paste0("*", pc.filepath, ".RData")))
 #     
 #     # Generate blank output dataframe
@@ -2706,7 +2704,7 @@ bayesian.results.convergence.warnings <- function(){
 #       rhat.problematic.count <- as.numeric(nrow(filter(rhat.summary, problematic == TRUE)))
 #       
 #       # Extract just model name
-#       model.name <- str_remove(i, pattern = "data/model_outputs_new/")
+#       model.name <- str_remove(i, pattern = "scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/")
 #       
 #       # Add warnings and model name to dataframe
 #       convergence.summary <- data.frame("model" = paste0(model.name),
@@ -2728,7 +2726,7 @@ bayesian.results.convergence.warnings <- function(){
 #     } # End of variables loop
 #     
 #     # Export the convergence output
-#     write.csv(convergence.warnings, file = paste0("data/model_outputs_new/",
+#     write.csv(convergence.warnings, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/",
 #                                                   "convergence_summaries", pc.filepath, ".csv"), row.names = FALSE)
 #     
 #   } # End of if statement for check.convergence == TRUE
@@ -2742,9 +2740,9 @@ bayesian.pc.count.comparison <- function(run.FRic, run.FEve, pc.count.1, pc.coun
                                          chains, cores, warmup, iterations, delta, treedepth){
   
   # Import FD outputs for each PC count
-  FD.output.1 <- read.csv(paste0("data/output_08_fd_output_combined",
+  FD.output.1 <- read.csv(paste0("scripts/josephjeverest/FuncDiv_v3/data/output_08_fd_output_combined",
                                  pc.filepath, "_all_years.csv"))
-  FD.output.2 <- read.csv(paste0("data/output_08_fd_output_combined",
+  FD.output.2 <- read.csv(paste0("scripts/josephjeverest/FuncDiv_v3/data/output_08_fd_output_combined",
                                  pc.filepath, "_all_years.csv"))
   
   # Modify dataframes
@@ -2781,14 +2779,14 @@ bayesian.pc.count.comparison <- function(run.FRic, run.FEve, pc.count.1, pc.coun
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
+    save(FRic.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                  "PC_comparison_pc", pc.count.1, "_vs_pc", pc.count.2, ".RData"))
                                  
 
   } else {
     
     # Load in model output
-    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                 "PC_comparison_pc", pc.count.1, "_vs_pc", pc.count.2, ".RData")))
     
   } # End of FRic if loop
@@ -2847,14 +2845,14 @@ bayesian.pc.count.comparison <- function(run.FRic, run.FEve, pc.count.1, pc.coun
                                    max_treedepth = treedepth))
     
     # Export model output
-    save(FEve.mod, file = paste0("data/model_outputs_new/m_FEve_",
+    save(FEve.mod, file = paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                  "PC_comparison_pc", pc.count.1, "_vs_pc", pc.count.2, ".RData"))
     
     
   } else {
     
     # Load in model output
-    FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
+    FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                 "PC_comparison_pc", pc.count.1, "_vs_pc", pc.count.2, ".RData")))
     
   } # End of FEve if loop
@@ -2907,7 +2905,7 @@ bayesian.pc.count.comparison <- function(run.FRic, run.FEve, pc.count.1, pc.coun
   combined.panel <- grid.arrange(pc.comparison.FRic, pc.comparison.FEve, ncol = 2)
   
   # Export panel
-  ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
+  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
                                            "FD_bayesian_comparison_pc", pc.count.1, "_vs_", pc.count.2, ".png"),
          width = 16, height = 7)
 
@@ -2922,9 +2920,9 @@ linear.pc.count.comparison <- function(run.model, pc.count.1, pc.count.2,
   if (run.model == TRUE){
     
     # Import FD outputs for each PC count
-    FD.output.1 <- read.csv(paste0("data/output_08_fd_output_combined_",
+    FD.output.1 <- read.csv(paste0("scripts/josephjeverest/FuncDiv_v3/data/output_08_fd_output_combined_",
                                    "PCA_pc", pc.count.1, "_all_years.csv"))
-    FD.output.2 <- read.csv(paste0("data/output_08_fd_output_combined_",
+    FD.output.2 <- read.csv(paste0("scripts/josephjeverest/FuncDiv_v3/data/output_08_fd_output_combined_",
                                    "PCA_pc", pc.count.2, "_all_years.csv"))
     
     # Modify dataframes
@@ -3033,7 +3031,7 @@ linear.pc.count.comparison <- function(run.model, pc.count.1, pc.count.2,
     combined.panel <- grid.arrange(pc.comparison.FRic, pc.comparison.FEve, ncol = 2)
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
                                              "FD_linear_comparison_pc", pc.count.1, "_vs_", pc.count.2, ".png"),
            width = 16, height = 7)
     
@@ -3051,7 +3049,7 @@ plot.latitude <- function(censored){
   if (censored == "No"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                 FRic.distribution, "_LAT", pc.filepath, ".RData")))
     
     # Extract the prediction data frame
@@ -3071,7 +3069,7 @@ plot.latitude <- function(censored){
   if (censored == "Yes"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                 "censored_LAT", pc.filepath, ".RData")))
     
     # Extract the prediction data frame and exponentiate the outputs
@@ -3106,11 +3104,11 @@ plot.latitude <- function(censored){
       #             fill = "#D02090", alpha = 0.27, colour = "#D02090", linewdith = 0.1) + # Adds c.intervals for predictions as ribbon
       # geom_line(aes(x = x, y = predicted), colour = "#D02090", linewidth = 1.1,
       #           linetype = ifelse((FRic.ci$"l-95% CI" < 0 & FRic.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                    # (FRic.ci$"l-95% CI" > 0 & FRic.ci$"u-95% CI" > 0), 1, 2)) + # Adds line for predicted values of FRic vs LAT
+      # (FRic.ci$"l-95% CI" > 0 & FRic.ci$"u-95% CI" > 0), 1, 2)) + # Adds line for predicted values of FRic vs LAT
       
       # Hexplot
-      geom_hex(data = combo.latest, aes(x = LAT, y = FRic), bins = 18) +
-            scale_fill_gradient(low = "#FFE1FF", high = "#D02090") +
+    geom_hex(data = combo.latest, aes(x = LAT, y = FRic), bins = 18) +
+      scale_fill_gradient(low = "#FFE1FF", high = "#D02090") +
       geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high),
                   fill = "#D02090", alpha = 0.2, colour = "#D02090", linewdith = 0.05) + # Adds c.intervals for predictions as ribbon
       geom_line(aes(x = x, y = predicted), colour = "#000000", linewidth = 1.1,
@@ -3131,7 +3129,7 @@ plot.latitude <- function(censored){
   
   
   # Load in model output
-  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
+  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                               "LAT", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -3163,9 +3161,9 @@ plot.latitude <- function(censored){
       # geom_line(aes(x = x, y = predicted), colour = "#228B22", linewidth = 1.1,
       #           linetype = ifelse((FEve.ci$"l-95% CI" < 0 & FEve.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
       #                               (FEve.ci$"l-95% CI" > 0 & FEve.ci$"u-95% CI" > 0), 1, 2)) + # Adds line for predicted values of FEve vs LAT
-
-      # Hexplot
-      geom_hex(data = combo.latest, aes(x = LAT, y = FEve), bins = 18) +
+      
+    # Hexplot
+    geom_hex(data = combo.latest, aes(x = LAT, y = FEve), bins = 18) +
       scale_fill_gradient(low = "#CFF099", high = "#228B22") +
       geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high),
                   fill = "#228B22", alpha = 0.25, colour = "#228B22", linewdith = 0.05) + # Adds c.intervals for predictions as ribbon
@@ -3187,7 +3185,7 @@ plot.latitude <- function(censored){
   
   
   # Load in model output
-  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
+  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
                             "LAT", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -3220,7 +3218,7 @@ plot.latitude <- function(censored){
       #                               (SR.ci$"l-95% CI" > 0 & SR.ci$"u-95% CI" > 0), 1, 2)) + # Adds line for predicted values of SR vs LAT
       
       # Hexplot
-      geom_hex(data = combo.latest, aes(x = LAT, y = SR), bins = 18) +
+    geom_hex(data = combo.latest, aes(x = LAT, y = SR), bins = 18) +
       scale_fill_gradient(low = "#ABE0EB", high = "#1C86EE") +
       geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high),
                   fill = "#1C86EE", alpha = 0.25, colour = "#1C86EE", linewdith = 0.05) + # Adds c.intervals for predictions as ribbon
@@ -3242,7 +3240,7 @@ plot.latitude <- function(censored){
   
   
   # Load in model output
-  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
+  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
                               "LAT", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -3304,7 +3302,7 @@ plot.latitude <- function(censored){
   if (censored == "No"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
                                              "LAT", pc.filepath, ".png"), width = 18, height = 5)
     
   }
@@ -3313,7 +3311,7 @@ plot.latitude <- function(censored){
   if (censored == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
                                              "LAT_censored", pc.filepath, ".png"), width = 18, height = 5)
     
   }
@@ -3326,11 +3324,11 @@ plot.latitude <- function(censored){
 plot.warmest.quarter <- function(censored){
   
   # Determine which version of FRic to import (censored or not)
-
+  
   if (censored == "No"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                 FRic.distribution, "_TempAvSum", pc.filepath, ".RData")))
     
     # Extract the prediction data frame
@@ -3350,7 +3348,7 @@ plot.warmest.quarter <- function(censored){
   if (censored == "Yes"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                 "censored_TempAvSum", pc.filepath, ".RData")))
     
     # Extract the prediction data frame and exponentiate the outputs
@@ -3388,7 +3386,7 @@ plot.warmest.quarter <- function(censored){
       #                               (FRic.ci$"l-95% CI" > 0 & FRic.ci$"u-95% CI" > 0), 1, 2)) + # Adds line for predicted values of FRic vs LAT
       
       # Hexplot
-      geom_hex(data = combo.latest, aes(x = TempAvSum, y = FRic), bins = 18) +
+    geom_hex(data = combo.latest, aes(x = TempAvSum, y = FRic), bins = 18) +
       scale_fill_gradient(low = "#FFE1FF", high = "#D02090") +
       geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high),
                   fill = "#D02090", alpha = 0.2, colour = "#D02090", linewdith = 0.05) + # Adds c.intervals for predictions as ribbon
@@ -3410,169 +3408,169 @@ plot.warmest.quarter <- function(censored){
                                                          paste("#006400"), paste("#8b0000")))))
   
   
-    # Load in model output
-    FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
-                                "TempAvSum", pc.filepath, ".RData")))
-    
-    # Convert model output into a dataframe (with 4.d.p.)
-    FEve.df <- brms_SummaryTable(FEve.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-    
-    # Extract the confidence intervals as a list for use in the plotting
-    FEve.df.ci <- FEve.df %>% 
-      filter(Covariate %in% c("x_variable")) %>% 
-      dplyr::select("l-95% CI", "u-95% CI") %>% 
-      pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-    
-    # Save the confidence intervals as a list and remove the intermediate dataframe
-    FEve.ci <- as.list(FEve.df.ci$Value) # Adding values to the list
-    names(FEve.ci) <- FEve.df.ci$Interval # Adding names to the values
-    rm(FEve.df, FEve.df.ci) # Remove unnecessary dataframes of summary and CIs  
-    
-    # Extract the prediction data frame
-    FEve.pred <- ggpredict(FEve.mod, terms = "x_variable [0.9:14.5, sample = 30]", back.transform = FALSE)
-    
-    # Generate plot
-    (FEve.plot <- ggplot(FEve.pred) +
-        
-        # Scatterplot
-        # geom_point(data = combo.latest, aes(x = TempAvSum, y = FEve), # Adds original FEve vs LAT data points and colours by region
-        #            fill = "#228B22", colour = c("#000000"), alpha = 0.2, shape = 21, size = 3) +
-        # geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high),
-        #             fill = "#228B22", alpha = 0.27, colour = "#228B22", linewdith = 0.1) + # Adds c.intervals for predictions as ribbon
-        # geom_line(aes(x = x, y = predicted), colour = "#228B22", linewidth = 1.1,
-        #           linetype = ifelse((FEve.ci$"l-95% CI" < 0 & FEve.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-        #                               (FEve.ci$"l-95% CI" > 0 & FEve.ci$"u-95% CI" > 0), 1, 2)) + # Adds line for predicted values of FEve vs LAT
-        
-        # Hexplot
-        geom_hex(data = combo.latest, aes(x = TempAvSum, y = FEve), bins = 18) +
-        scale_fill_gradient(low = "#CFF099", high = "#228B22") +
-        geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high),
-                    fill = "#228B22", alpha = 0.25, colour = "#228B22", linewdith = 0.05) + # Adds c.intervals for predictions as ribbon
-        geom_line(aes(x = x, y = predicted), colour = "#000000", linewidth = 1.1,
-                  linetype = ifelse((FEve.ci$"l-95% CI" < 0 & FEve.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                      (FEve.ci$"l-95% CI" > 0 & FEve.ci$"u-95% CI" > 0), 1, 2)) + # Adds line for predicted values of FRic vs LAT
-        
-        labs(y = "Functional Evenness\n",
-             x = paste0("\nTemperature (", "\u00B0", "C)"),
-             title = paste0("CIs: ", FEve.ci$"l-95% CI", " to ", FEve.ci$"u-95% CI"),
-             subtitle = paste(ifelse((FEve.ci$"l-95% CI" < 0 & FEve.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                       (FEve.ci$"l-95% CI" > 0 & FEve.ci$"u-95% CI" > 0),
-                                     "Significant: CIs do NOT span 0", "Not Significant: CIs span 0"))) +
-        theme_1() +
-        theme(legend.position = "none",
-              plot.subtitle = element_text(colour = ifelse((FEve.ci$"l-95% CI" < 0 & FEve.ci$"u-95% CI" < 0) | # Automatically colours subtitle based on significance from CIs
-                                                             (FEve.ci$"l-95% CI" > 0 & FEve.ci$"u-95% CI" > 0),
-                                                           paste("#006400"), paste("#8b0000")))))
-
-    
-    # Load in model output
-    SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
+  # Load in model output
+  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                               "TempAvSum", pc.filepath, ".RData")))
-    
-    # Convert model output into a dataframe (with 4.d.p.)
-    SR.df <- brms_SummaryTable(SR.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-    
-    # Extract the confidence intervals as a list for use in the plotting
-    SR.df.ci <- SR.df %>% 
-      filter(Covariate %in% c("x_variable")) %>% 
-      dplyr::select("l-95% CI", "u-95% CI") %>% 
-      pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-    
-    # Save the confidence intervals as a list and remove the intermediate dataframe
-    SR.ci <- as.list(SR.df.ci$Value) # Adding values to the list
-    names(SR.ci) <- SR.df.ci$Interval # Adding names to the values
-    rm(SR.df, SR.df.ci) # Remove unnecessary dataframes of summary and CIs  
-    
-    # Extract the prediction data frame
-    SR.pred <- ggpredict(SR.mod, terms = "x_variable [0.9:14.5, sample = 30]", back.transform = FALSE)
-    
-    # Generate plot
-    (SR.plot <- ggplot(SR.pred) +
-        
-        # SCatterplot
-        # geom_point(data = combo.latest, aes(x = TempAvSum, y = SR), # Adds original SR vs LAT data points and colours by region
-        #            fill = "#1C86EE", colour = c("#000000"), alpha = 0.2, shape = 21, size = 3) +
-        # geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high),
-        #             fill = "#1C86EE", alpha = 0.27, colour = "#1C86EE", linewdith = 0.1) + # Adds c.intervals for predictions as ribbon
-        # geom_line(aes(x = x, y = predicted), colour = "#1C86EE", linewidth = 1.1,
-        #           linetype = ifelse((SR.ci$"l-95% CI" < 0 & SR.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-        #                               (SR.ci$"l-95% CI" > 0 & SR.ci$"u-95% CI" > 0), 1, 2)) + # Adds line for predicted values of SR vs LAT
-        
-        # Hexplot
-        geom_hex(data = combo.latest, aes(x = TempAvSum, y = SR), bins = 18) +
-        scale_fill_gradient(low = "#ABE0EB", high = "#1C86EE") +
-        geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high),
-                    fill = "#1C86EE", alpha = 0.25, colour = "#1C86EE", linewdith = 0.05) + # Adds c.intervals for predictions as ribbon
-        geom_line(aes(x = x, y = predicted), colour = "#000000", linewidth = 1.1,
-                  linetype = ifelse((SR.ci$"l-95% CI" < 0 & SR.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                      (SR.ci$"l-95% CI" > 0 & SR.ci$"u-95% CI" > 0), 1, 2)) + # Adds line for predicted values of SR vs LAT
-        
-        labs(y = "Species Richness\n",
-             x = paste0("\nTemperature (", "\u00B0", "C)"),
-             title = paste0("CIs: ", SR.ci$"l-95% CI", " to ", SR.ci$"u-95% CI"),
-             subtitle = paste(ifelse((SR.ci$"l-95% CI" < 0 & SR.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                       (SR.ci$"l-95% CI" > 0 & SR.ci$"u-95% CI" > 0),
-                                     "Significant: CIs do NOT span 0", "Not Significant: CIs span 0"))) +
-        theme_1() +
-        theme(legend.position = "none",
-              plot.subtitle = element_text(colour = ifelse((SR.ci$"l-95% CI" < 0 & SR.ci$"u-95% CI" < 0) | # Automatically colours subtitle based on significance from CIs
-                                                             (SR.ci$"l-95% CI" > 0 & SR.ci$"u-95% CI" > 0),
-                                                           paste("#006400"), paste("#8b0000")))))
-    
-    
-    # Load in model output
-    FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
-                                "TempAvSum", pc.filepath, ".RData")))
-    
-    # Convert model output into a dataframe (with 4.d.p.)
-    FDis.df <- brms_SummaryTable(FDis.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-    
-    # Extract the confidence intervals as a list for use in the plotting
-    FDis.df.ci <- FDis.df %>% 
-      filter(Covariate %in% c("x_variable")) %>% 
-      dplyr::select("l-95% CI", "u-95% CI") %>% 
-      pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-    
-    # Save the confidence intervals as a list and remove the intermediate dataframe
-    FDis.ci <- as.list(FDis.df.ci$Value) # Adding values to the list
-    names(FDis.ci) <- FDis.df.ci$Interval # Adding names to the values
-    rm(FDis.df, FDis.df.ci) # Remove unnecessary dataframes of summary and CIs  
-    
-    # Extract the prediction data frame
-    FDis.pred <- ggpredict(FDis.mod, terms = "x_variable [0.9:14.5, sample = 30]", back.transform = FALSE)
-    
-    # Generate plot
-    (FDis.plot <- ggplot(FDis.pred) +
-        
-        # SCatterplot
-        # geom_point(data = combo.latest, aes(x = TempAvSum, y = FDis), # Adds original FDis vs LAT data points and colours by region
-        #            fill = "#1C86EE", colour = c("#000000"), alpha = 0.2, shape = 21, size = 3) +
-        # geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high),
-        #             fill = "#1C86EE", alpha = 0.27, colour = "#1C86EE", linewdith = 0.1) + # Adds c.intervals for predictions as ribbon
-        # geom_line(aes(x = x, y = predicted), colour = "#1C86EE", linewidth = 1.1,
-        #           linetype = ifelse((FDis.ci$"l-95% CI" < 0 & FDis.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-        #                               (FDis.ci$"l-95% CI" > 0 & FDis.ci$"u-95% CI" > 0), 1, 2)) + # Adds line for predicted values of FDis vs LAT
-        
+  
+  # Convert model output into a dataframe (with 4.d.p.)
+  FEve.df <- brms_SummaryTable(FEve.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
+  
+  # Extract the confidence intervals as a list for use in the plotting
+  FEve.df.ci <- FEve.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  
+  # Save the confidence intervals as a list and remove the intermediate dataframe
+  FEve.ci <- as.list(FEve.df.ci$Value) # Adding values to the list
+  names(FEve.ci) <- FEve.df.ci$Interval # Adding names to the values
+  rm(FEve.df, FEve.df.ci) # Remove unnecessary dataframes of summary and CIs  
+  
+  # Extract the prediction data frame
+  FEve.pred <- ggpredict(FEve.mod, terms = "x_variable [0.9:14.5, sample = 30]", back.transform = FALSE)
+  
+  # Generate plot
+  (FEve.plot <- ggplot(FEve.pred) +
+      
+      # Scatterplot
+      # geom_point(data = combo.latest, aes(x = TempAvSum, y = FEve), # Adds original FEve vs LAT data points and colours by region
+      #            fill = "#228B22", colour = c("#000000"), alpha = 0.2, shape = 21, size = 3) +
+      # geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high),
+      #             fill = "#228B22", alpha = 0.27, colour = "#228B22", linewdith = 0.1) + # Adds c.intervals for predictions as ribbon
+      # geom_line(aes(x = x, y = predicted), colour = "#228B22", linewidth = 1.1,
+      #           linetype = ifelse((FEve.ci$"l-95% CI" < 0 & FEve.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+      #                               (FEve.ci$"l-95% CI" > 0 & FEve.ci$"u-95% CI" > 0), 1, 2)) + # Adds line for predicted values of FEve vs LAT
+      
       # Hexplot
-      geom_hex(data = combo.latest, aes(x = TempAvSum, y = FDis), bins = 18) +
-        scale_fill_gradient(low = "#FFCF91", high = "#EE7600") +
-        geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high),
-                    fill = "#EE7600", alpha = 0.25, colour = "#EE7600", linewdith = 0.05) + # Adds c.intervals for predictions as ribbon
-        geom_line(aes(x = x, y = predicted), colour = "#000000", linewidth = 1.1,
-                  linetype = ifelse((FDis.ci$"l-95% CI" < 0 & FDis.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                      (FDis.ci$"l-95% CI" > 0 & FDis.ci$"u-95% CI" > 0), 1, 2)) + # Adds line for predicted values of FRic vs LAT
-        
-        labs(y = "Functional Dispersion\n",
-             x = paste0("\nTemperature (", "\u00B0", "C)"),
-             title = paste0("CIs: ", FDis.ci$"l-95% CI", " to ", FDis.ci$"u-95% CI"),
-             subtitle = paste(ifelse((FDis.ci$"l-95% CI" < 0 & FDis.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                       (FDis.ci$"l-95% CI" > 0 & FDis.ci$"u-95% CI" > 0),
-                                     "Significant: CIs do NOT span 0", "Not Significant: CIs span 0"))) +
-        theme_1() +
-        theme(legend.position = "none",
-              plot.subtitle = element_text(colour = ifelse((FDis.ci$"l-95% CI" < 0 & FDis.ci$"u-95% CI" < 0) | # Automatically colours subtitle based on significance from CIs
-                                                             (FDis.ci$"l-95% CI" > 0 & FDis.ci$"u-95% CI" > 0),
-                                                           paste("#006400"), paste("#8b0000")))))
+    geom_hex(data = combo.latest, aes(x = TempAvSum, y = FEve), bins = 18) +
+      scale_fill_gradient(low = "#CFF099", high = "#228B22") +
+      geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high),
+                  fill = "#228B22", alpha = 0.25, colour = "#228B22", linewdith = 0.05) + # Adds c.intervals for predictions as ribbon
+      geom_line(aes(x = x, y = predicted), colour = "#000000", linewidth = 1.1,
+                linetype = ifelse((FEve.ci$"l-95% CI" < 0 & FEve.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                    (FEve.ci$"l-95% CI" > 0 & FEve.ci$"u-95% CI" > 0), 1, 2)) + # Adds line for predicted values of FRic vs LAT
+      
+      labs(y = "Functional Evenness\n",
+           x = paste0("\nTemperature (", "\u00B0", "C)"),
+           title = paste0("CIs: ", FEve.ci$"l-95% CI", " to ", FEve.ci$"u-95% CI"),
+           subtitle = paste(ifelse((FEve.ci$"l-95% CI" < 0 & FEve.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                     (FEve.ci$"l-95% CI" > 0 & FEve.ci$"u-95% CI" > 0),
+                                   "Significant: CIs do NOT span 0", "Not Significant: CIs span 0"))) +
+      theme_1() +
+      theme(legend.position = "none",
+            plot.subtitle = element_text(colour = ifelse((FEve.ci$"l-95% CI" < 0 & FEve.ci$"u-95% CI" < 0) | # Automatically colours subtitle based on significance from CIs
+                                                           (FEve.ci$"l-95% CI" > 0 & FEve.ci$"u-95% CI" > 0),
+                                                         paste("#006400"), paste("#8b0000")))))
+  
+  
+  # Load in model output
+  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+                            "TempAvSum", pc.filepath, ".RData")))
+  
+  # Convert model output into a dataframe (with 4.d.p.)
+  SR.df <- brms_SummaryTable(SR.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
+  
+  # Extract the confidence intervals as a list for use in the plotting
+  SR.df.ci <- SR.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  
+  # Save the confidence intervals as a list and remove the intermediate dataframe
+  SR.ci <- as.list(SR.df.ci$Value) # Adding values to the list
+  names(SR.ci) <- SR.df.ci$Interval # Adding names to the values
+  rm(SR.df, SR.df.ci) # Remove unnecessary dataframes of summary and CIs  
+  
+  # Extract the prediction data frame
+  SR.pred <- ggpredict(SR.mod, terms = "x_variable [0.9:14.5, sample = 30]", back.transform = FALSE)
+  
+  # Generate plot
+  (SR.plot <- ggplot(SR.pred) +
+      
+      # SCatterplot
+      # geom_point(data = combo.latest, aes(x = TempAvSum, y = SR), # Adds original SR vs LAT data points and colours by region
+      #            fill = "#1C86EE", colour = c("#000000"), alpha = 0.2, shape = 21, size = 3) +
+      # geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high),
+      #             fill = "#1C86EE", alpha = 0.27, colour = "#1C86EE", linewdith = 0.1) + # Adds c.intervals for predictions as ribbon
+      # geom_line(aes(x = x, y = predicted), colour = "#1C86EE", linewidth = 1.1,
+      #           linetype = ifelse((SR.ci$"l-95% CI" < 0 & SR.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+      #                               (SR.ci$"l-95% CI" > 0 & SR.ci$"u-95% CI" > 0), 1, 2)) + # Adds line for predicted values of SR vs LAT
+      
+      # Hexplot
+    geom_hex(data = combo.latest, aes(x = TempAvSum, y = SR), bins = 18) +
+      scale_fill_gradient(low = "#ABE0EB", high = "#1C86EE") +
+      geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high),
+                  fill = "#1C86EE", alpha = 0.25, colour = "#1C86EE", linewdith = 0.05) + # Adds c.intervals for predictions as ribbon
+      geom_line(aes(x = x, y = predicted), colour = "#000000", linewidth = 1.1,
+                linetype = ifelse((SR.ci$"l-95% CI" < 0 & SR.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                    (SR.ci$"l-95% CI" > 0 & SR.ci$"u-95% CI" > 0), 1, 2)) + # Adds line for predicted values of SR vs LAT
+      
+      labs(y = "Species Richness\n",
+           x = paste0("\nTemperature (", "\u00B0", "C)"),
+           title = paste0("CIs: ", SR.ci$"l-95% CI", " to ", SR.ci$"u-95% CI"),
+           subtitle = paste(ifelse((SR.ci$"l-95% CI" < 0 & SR.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                     (SR.ci$"l-95% CI" > 0 & SR.ci$"u-95% CI" > 0),
+                                   "Significant: CIs do NOT span 0", "Not Significant: CIs span 0"))) +
+      theme_1() +
+      theme(legend.position = "none",
+            plot.subtitle = element_text(colour = ifelse((SR.ci$"l-95% CI" < 0 & SR.ci$"u-95% CI" < 0) | # Automatically colours subtitle based on significance from CIs
+                                                           (SR.ci$"l-95% CI" > 0 & SR.ci$"u-95% CI" > 0),
+                                                         paste("#006400"), paste("#8b0000")))))
+  
+  
+  # Load in model output
+  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+                              "TempAvSum", pc.filepath, ".RData")))
+  
+  # Convert model output into a dataframe (with 4.d.p.)
+  FDis.df <- brms_SummaryTable(FDis.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
+  
+  # Extract the confidence intervals as a list for use in the plotting
+  FDis.df.ci <- FDis.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  
+  # Save the confidence intervals as a list and remove the intermediate dataframe
+  FDis.ci <- as.list(FDis.df.ci$Value) # Adding values to the list
+  names(FDis.ci) <- FDis.df.ci$Interval # Adding names to the values
+  rm(FDis.df, FDis.df.ci) # Remove unnecessary dataframes of summary and CIs  
+  
+  # Extract the prediction data frame
+  FDis.pred <- ggpredict(FDis.mod, terms = "x_variable [0.9:14.5, sample = 30]", back.transform = FALSE)
+  
+  # Generate plot
+  (FDis.plot <- ggplot(FDis.pred) +
+      
+      # SCatterplot
+      # geom_point(data = combo.latest, aes(x = TempAvSum, y = FDis), # Adds original FDis vs LAT data points and colours by region
+      #            fill = "#1C86EE", colour = c("#000000"), alpha = 0.2, shape = 21, size = 3) +
+      # geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high),
+      #             fill = "#1C86EE", alpha = 0.27, colour = "#1C86EE", linewdith = 0.1) + # Adds c.intervals for predictions as ribbon
+      # geom_line(aes(x = x, y = predicted), colour = "#1C86EE", linewidth = 1.1,
+      #           linetype = ifelse((FDis.ci$"l-95% CI" < 0 & FDis.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+      #                               (FDis.ci$"l-95% CI" > 0 & FDis.ci$"u-95% CI" > 0), 1, 2)) + # Adds line for predicted values of FDis vs LAT
+      
+      # Hexplot
+    geom_hex(data = combo.latest, aes(x = TempAvSum, y = FDis), bins = 18) +
+      scale_fill_gradient(low = "#FFCF91", high = "#EE7600") +
+      geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high),
+                  fill = "#EE7600", alpha = 0.25, colour = "#EE7600", linewdith = 0.05) + # Adds c.intervals for predictions as ribbon
+      geom_line(aes(x = x, y = predicted), colour = "#000000", linewidth = 1.1,
+                linetype = ifelse((FDis.ci$"l-95% CI" < 0 & FDis.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                    (FDis.ci$"l-95% CI" > 0 & FDis.ci$"u-95% CI" > 0), 1, 2)) + # Adds line for predicted values of FRic vs LAT
+      
+      labs(y = "Functional Dispersion\n",
+           x = paste0("\nTemperature (", "\u00B0", "C)"),
+           title = paste0("CIs: ", FDis.ci$"l-95% CI", " to ", FDis.ci$"u-95% CI"),
+           subtitle = paste(ifelse((FDis.ci$"l-95% CI" < 0 & FDis.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                     (FDis.ci$"l-95% CI" > 0 & FDis.ci$"u-95% CI" > 0),
+                                   "Significant: CIs do NOT span 0", "Not Significant: CIs span 0"))) +
+      theme_1() +
+      theme(legend.position = "none",
+            plot.subtitle = element_text(colour = ifelse((FDis.ci$"l-95% CI" < 0 & FDis.ci$"u-95% CI" < 0) | # Automatically colours subtitle based on significance from CIs
+                                                           (FDis.ci$"l-95% CI" > 0 & FDis.ci$"u-95% CI" > 0),
+                                                         paste("#006400"), paste("#8b0000")))))
   
   
   # Create a panel of all three plots
@@ -3582,7 +3580,7 @@ plot.warmest.quarter <- function(censored){
   if (censored == "No"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
                                              "TempAvSum", pc.filepath, ".png"), width = 18, height = 5)
     
   }
@@ -3591,11 +3589,11 @@ plot.warmest.quarter <- function(censored){
   if (censored == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
                                              "TempAvSum_censored", pc.filepath, ".png"), width = 18, height = 5)
     
   }
-
+  
 }
 
 
@@ -3607,11 +3605,11 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   if (censored.FRic == "No"){
     
     # Load in model outputs
-    FRic.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                       FRic.distribution, "_ShrubCover", pc.filepath, ".RData")))
-    FRic.forb.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                      FRic.distribution, "_ForbCover", pc.filepath, ".RData")))
-    FRic.gram.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                      FRic.distribution, "_GraminoidCover", pc.filepath, ".RData")))
     
     # Extract the prediction data frame
@@ -3625,11 +3623,11 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   } else { # End of if not censored
     
     # Load in model output
-    FRic.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                       "censored_ShrubCover", pc.filepath, ".RData")))
-    FRic.forb.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                      "censored_ForbCover", pc.filepath, ".RData")))
-    FRic.gram.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                      "censored_GraminoidCover", pc.filepath, ".RData")))
     
     # Extract the prediction data frame and exponentiate the outputs
@@ -3713,11 +3711,11 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   if (quadratic.FEve == "No"){
     
     # Load in model outputs for FEve and process the predictions
-    FEve.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
+    FEve.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                       "ShrubCover", pc.filepath, ".RData")))
-    FEve.forb.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
+    FEve.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                      "ForbCover", pc.filepath, ".RData")))
-    FEve.gram.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
+    FEve.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                      "GraminoidCover", pc.filepath, ".RData")))
     
     # Extract the prediction data frame
@@ -3794,11 +3792,11 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   } else { # End of non-quadratic if statement
     
     # Load in model outputs for FEve and process the predictions
-    FEve.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
+    FEve.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                       "quadratic_ShrubCover", pc.filepath, ".RData")))
-    FEve.forb.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
+    FEve.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                      "quadratic_ForbCover", pc.filepath, ".RData")))
-    FEve.gram.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
+    FEve.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                      "quadratic_GraminoidCover", pc.filepath, ".RData")))
     
     # Determine mean value for centering
@@ -3884,11 +3882,11 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   
   
   # Load in model outputs for SR and process the predictions
-  SR.shrub.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
+  SR.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
                                   "ShrubCover", pc.filepath, ".RData")))
-  SR.forb.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
+  SR.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
                                  "ForbCover", pc.filepath, ".RData")))
-  SR.gram.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
+  SR.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
                                  "GraminoidCover", pc.filepath, ".RData")))
   
   # Extract the prediction data frame
@@ -3970,7 +3968,7 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   if (censored.FRic == "No" & quadratic.FEve == "No"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
                                              "all_cover", pc.filepath, ".png"), width = 23, height = 7)
     
   }
@@ -3979,7 +3977,7 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   if (censored.FRic == "No" & quadratic.FEve == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
                                              "all_cover_quadratic", pc.filepath, ".png"), width = 23, height = 7)
     
   }
@@ -3988,7 +3986,7 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   if (censored.FRic == "Yes" & quadratic.FEve == "No"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
                                              "all_cover_censored", pc.filepath, ".png"), width = 23, height = 7)
     
   }
@@ -3997,7 +3995,7 @@ plot.combined.cover <- function(censored.FRic, quadratic.FEve){
   if (censored.FRic == "Yes" & quadratic.FEve == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
                                              "all_cover_censored_quadratic", pc.filepath, ".png"), width = 23, height = 7)
     
   }
@@ -4016,21 +4014,21 @@ plot.combined.cover.quadratic <- function(censored){
   if (censored == "Yes"){
     
     # Load in model outputs for FEve and process the predictions
-    FRic.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                       "censored_quadratic_ShrubCover", pc.filepath, ".RData")))
-    FRic.forb.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                      "censored_quadratic_ForbCover", pc.filepath, ".RData")))
-    FRic.gram.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                      "censored_quadratic_GraminoidCover", pc.filepath, ".RData")))
     
   } else {
     
     # Load in model outputs for FEve and process the predictions
-    FRic.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                       "quadratic_ShrubCover", pc.filepath, ".RData")))
-    FRic.forb.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                      "quadratic_ForbCover", pc.filepath, ".RData")))
-    FRic.gram.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                      "quadratic_GraminoidCover", pc.filepath, ".RData")))
     
   }
@@ -4135,11 +4133,11 @@ plot.combined.cover.quadratic <- function(censored){
   # FEve ----
   
   # Load in model outputs for FEve and process the predictions
-  FEve.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
+  FEve.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                     "quadratic_ShrubCover", pc.filepath, ".RData")))
-  FEve.forb.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
+  FEve.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                    "quadratic_ForbCover", pc.filepath, ".RData")))
-  FEve.gram.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
+  FEve.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                                    "quadratic_GraminoidCover", pc.filepath, ".RData")))
   
   # Determine mean value for centering
@@ -4239,17 +4237,17 @@ plot.combined.cover.quadratic <- function(censored){
             legend.key = element_rect(colour = "#000000")))
   
   ggsave(FEve.plot, filename = paste0("figures/outputs_new/manuscript_",
-                                           "FEve_quadratic_manual", pc.filepath, ".png"), width = 4.5, height = 4.6)
+                                      "FEve_quadratic_manual", pc.filepath, ".png"), width = 4.5, height = 4.6)
   
   
   # SR ----
   
   # Load in model outputs for SR and process the predictions
-  SR.shrub.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
+  SR.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
                                   "quadratic_ShrubCover", pc.filepath, ".RData")))
-  SR.forb.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
+  SR.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
                                  "quadratic_ForbCover", pc.filepath, ".RData")))
-  SR.gram.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
+  SR.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
                                  "quadratic_GraminoidCover", pc.filepath, ".RData")))
   
   # Determine mean value for centering
@@ -4352,11 +4350,11 @@ plot.combined.cover.quadratic <- function(censored){
   # FDis ----
   
   # Load in model outputs for FDis and process the predictions
-  FDis.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
+  FDis.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
                                     "quadratic_ShrubCover", pc.filepath, ".RData")))
-  FDis.forb.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
+  FDis.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
                                    "quadratic_ForbCover", pc.filepath, ".RData")))
-  FDis.gram.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
+  FDis.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
                                    "quadratic_GraminoidCover", pc.filepath, ".RData")))
   
   # Determine mean value for centering
@@ -4465,13 +4463,13 @@ plot.combined.cover.quadratic <- function(censored){
   if (censored == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
                                              "all_cover_ALL_quadratic_censored", pc.filepath, ".png"), width = 18, height = 4.6)
     
   } else {
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
                                              "all_cover_ALL_quadratic", pc.filepath, ".png"), width = 18, height = 4.6)
     
   }
@@ -4485,7 +4483,7 @@ plot.combined.cover.quadratic <- function(censored){
 plot.change.histograms <- function(){
   
   # Load in model output
-  FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes",
+  FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes",
                               pc.filepath, ".RData")))
   
   # Save model output as a dataframe
@@ -4545,7 +4543,7 @@ plot.change.histograms <- function(){
                                                          paste("#006400"), paste("#8b0000")))))
   
   # Load in model output
-  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes",
+  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes",
                               pc.filepath, ".RData")))
   
   # Save model output as a dataframe
@@ -4575,7 +4573,7 @@ plot.change.histograms <- function(){
                                                          paste("#006400"), paste("#8b0000")))))
   
   # Load in model output
-  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes",
+  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes",
                             pc.filepath, ".RData")))
   
   # Save model output as a dataframe
@@ -4605,7 +4603,7 @@ plot.change.histograms <- function(){
                                                          paste("#006400"), paste("#8b0000")))))
   
   # Load in model output
-  ForbCover.mod <- get(load(paste0("data/model_outputs_new/m_ForbCover_slopes",
+  ForbCover.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_ForbCover_slopes",
                                    pc.filepath, ".RData")))
   
   # Save model output as a dataframe
@@ -4635,7 +4633,7 @@ plot.change.histograms <- function(){
                                                          paste("#006400"), paste("#8b0000")))))
   
   # Load in model output
-  GraminoidCover.mod <- get(load(paste0("data/model_outputs_new/m_GraminoidCover_slopes",
+  GraminoidCover.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_GraminoidCover_slopes",
                                         pc.filepath, ".RData")))
   
   # Save model output as a dataframe
@@ -4665,7 +4663,7 @@ plot.change.histograms <- function(){
                                                          paste("#006400"), paste("#8b0000")))))
   
   # Load in model output
-  ShrubCover.mod <- get(load(paste0("data/model_outputs_new/m_ShrubCover_slopes",
+  ShrubCover.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_ShrubCover_slopes",
                                     pc.filepath, ".RData")))
   
   # Save model output as a dataframe
@@ -4698,14 +4696,14 @@ plot.change.histograms <- function(){
   combined.metric.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 4)
   
   # Export the plot
-  ggsave(combined.metric.panel, file = paste0("figures/outputs_new/manuscript_",
+  ggsave(combined.metric.panel, file = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
                                               "change_over_time_metrics", pc.filepath, ".png"), width = 20, height = 5)
   
   # Combine the plots into one output
   combined.cover.panel <- grid.arrange(ForbCover.plot, GraminoidCover.plot, ShrubCover.plot, ncol = 3)
   
   # Export the plot
-  ggsave(combined.cover.panel, file = paste0("figures/outputs_new/manuscript_",
+  ggsave(combined.cover.panel, file = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
                                              "change_over_time_cover", pc.filepath, ".png"), width = 17.25, height = 5.5)
   
 }
@@ -4715,340 +4713,344 @@ plot.change.histograms <- function(){
 
 plot.combined.cover.change <- function(){
   
-    # Load in model output
-    FRic.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes_",
-                                      "ShrubCover_slopes", pc.filepath, ".RData")))
-    FRic.forb.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes_",
-                                     "ForbCover_slopes", pc.filepath, ".RData")))
-    FRic.gram.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes_",
-                                     "GraminoidCover_slopes", pc.filepath, ".RData")))
-    
-    # Convert model output into a dataframe (with 4.d.p.)
-    FRic.shrub.df <- brms_SummaryTable(FRic.shrub.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-    FRic.forb.df <- brms_SummaryTable(FRic.forb.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-    FRic.gram.df <- brms_SummaryTable(FRic.gram.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-    
-    # Extract the confidence intervals as a list for use in the plotting
-    FRic.shrub.df.ci <- FRic.shrub.df %>% 
-      filter(Covariate %in% c("x_variable")) %>% 
-      dplyr::select("l-95% CI", "u-95% CI") %>% 
-      pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-    FRic.forb.df.ci <- FRic.forb.df %>% 
-      filter(Covariate %in% c("x_variable")) %>% 
-      dplyr::select("l-95% CI", "u-95% CI") %>% 
-      pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-    FRic.gram.df.ci <- FRic.gram.df %>% 
-      filter(Covariate %in% c("x_variable")) %>% 
-      dplyr::select("l-95% CI", "u-95% CI") %>% 
-      pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-    
-    # Save the confidence intervals as a list and remove the intermediate dataframe
-    FRic.shrub.ci <- as.list(FRic.shrub.df.ci$Value) # Adding values to the list
-    names(FRic.shrub.ci) <- FRic.shrub.df.ci$Interval # Adding names to the values
-
-    FRic.forb.ci <- as.list(FRic.forb.df.ci$Value) # Adding values to the list
-    names(FRic.forb.ci) <- FRic.forb.df.ci$Interval # Adding names to the values
-    
-    FRic.gram.ci <- as.list(FRic.gram.df.ci$Value) # Adding values to the list
-    names(FRic.gram.ci) <- FRic.gram.df.ci$Interval # Adding names to the values
-    
-    # Extract the prediction data frame
-    FRic.shrub.pred <- ggpredict(FRic.shrub.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
-      mutate(Functional_Group = "Shrubs")
-    FRic.forb.pred <- ggpredict(FRic.forb.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
-      mutate(Functional_Group = "Forbs")
-    FRic.gram.pred <- ggpredict(FRic.gram.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
-      mutate(Functional_Group = "Graminoids")
-    
-    # Combine the predictions into one dataframe
-    FRic.predictions <- rbind(FRic.shrub.pred, FRic.forb.pred, FRic.gram.pred) %>% 
-      rename(Cover_Change = x) %>% 
-      dplyr::select(-group)
-    
-      # NOTE: plotting only between -5 and 5, but all values in model
-    
-    # Create a ggplot() item combining the three outputs
-    (FRic.plot <- ggplot(data = FRic.predictions) +
-        geom_ribbon(aes(x = Cover_Change, ymin = conf.low, ymax = conf.high, fill = Functional_Group),
-                    alpha = 0.35, linetype = 2) +
-        scale_fill_manual(values = c("#F5D7EA", "#E685C3", "#B50675")) +
-        
-        geom_line(data = filter(FRic.predictions, Functional_Group == "Forbs"),
-                  aes(x = Cover_Change, y = predicted), colour = "#B50675",
-                  linetype = ifelse((FRic.forb.ci$"l-95% CI" < 0 & FRic.forb.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                      (FRic.forb.ci$"l-95% CI" > 0 & FRic.forb.ci$"u-95% CI" > 0), 1, 2)) +
-        
-        geom_line(data = filter(FRic.predictions, Functional_Group == "Shrubs"),
-                  aes(x = Cover_Change, y = predicted), colour = "#B50675",
-                  linetype = ifelse((FRic.shrub.ci$"l-95% CI" < 0 & FRic.shrub.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                      (FRic.shrub.ci$"l-95% CI" > 0 & FRic.shrub.ci$"u-95% CI" > 0), 1, 2)) +
-        
-        geom_line(data = filter(FRic.predictions, Functional_Group == "Graminoids"),
-                  aes(x = Cover_Change, y = predicted), colour = "#B50675",
-                  linetype = ifelse((FRic.gram.ci$"l-95% CI" < 0 & FRic.gram.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                      (FRic.gram.ci$"l-95% CI" > 0 & FRic.gram.ci$"u-95% CI" > 0), 1, 2)) +
-        
-        labs(y = bquote('Functional Richness Change'~(yr^-1)),
-             x = bquote('Cover Change'~(yr^-1)),
-             fill = "Functional\nGroup") +
-        theme_1() +
-        theme(legend.position = "bottom",
-              legend.title = element_blank(),
-              legend.key = element_rect(colour = "#000000")))
-    
-  
-    # Load in model output
-    FEve.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes_",
-                                      "ShrubCover_slopes", pc.filepath, ".RData")))
-    FEve.forb.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes_",
-                                     "ForbCover_slopes", pc.filepath, ".RData")))
-    FEve.gram.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes_",
-                                     "GraminoidCover_slopes", pc.filepath, ".RData")))
-    
-    # Convert model output into a dataframe (with 4.d.p.)
-    FEve.shrub.df <- brms_SummaryTable(FEve.shrub.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-    FEve.forb.df <- brms_SummaryTable(FEve.forb.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-    FEve.gram.df <- brms_SummaryTable(FEve.gram.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-    
-    # Extract the confidence intervals as a list for use in the plotting
-    FEve.shrub.df.ci <- FEve.shrub.df %>% 
-      filter(Covariate %in% c("x_variable")) %>% 
-      dplyr::select("l-95% CI", "u-95% CI") %>% 
-      pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-    FEve.forb.df.ci <- FEve.forb.df %>% 
-      filter(Covariate %in% c("x_variable")) %>% 
-      dplyr::select("l-95% CI", "u-95% CI") %>% 
-      pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-    FEve.gram.df.ci <- FEve.gram.df %>% 
-      filter(Covariate %in% c("x_variable")) %>% 
-      dplyr::select("l-95% CI", "u-95% CI") %>% 
-      pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-    
-    # Save the confidence intervals as a list and remove the intermediate dataframe
-    FEve.shrub.ci <- as.list(FEve.shrub.df.ci$Value) # Adding values to the list
-    names(FEve.shrub.ci) <- FEve.shrub.df.ci$Interval # Adding names to the values
-    
-    FEve.forb.ci <- as.list(FEve.forb.df.ci$Value) # Adding values to the list
-    names(FEve.forb.ci) <- FEve.forb.df.ci$Interval # Adding names to the values
-    
-    FEve.gram.ci <- as.list(FEve.gram.df.ci$Value) # Adding values to the list
-    names(FEve.gram.ci) <- FEve.gram.df.ci$Interval # Adding names to the values
-    
-    # Extract the prediction data frame
-    FEve.shrub.pred <- ggpredict(FEve.shrub.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
-      mutate(Functional_Group = "Shrubs")
-    FEve.forb.pred <- ggpredict(FEve.forb.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
-      mutate(Functional_Group = "Forbs")
-    FEve.gram.pred <- ggpredict(FEve.gram.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
-      mutate(Functional_Group = "Graminoids")
-    
-    # Combine the predictions into one dataframe
-    FEve.predictions <- rbind(FEve.shrub.pred, FEve.forb.pred, FEve.gram.pred) %>% 
-      rename(Cover_Change = x) %>% 
-      dplyr::select(-group)
-    
-      # NOTE: plotting only between -5 and 5, but all values in model
-    
-    # Create a ggplot() item combining the three outputs
-    (FEve.plot <- ggplot(data = FEve.predictions) +
-        geom_ribbon(aes(x = Cover_Change, ymin = conf.low, ymax = conf.high, fill = Functional_Group),
-                    alpha = 0.35, linetype = 2) +
-        scale_fill_manual(values = c("#D1F0D1", "#67B867", "#0A6E0A")) +
-        
-        geom_line(data = filter(FEve.predictions, Functional_Group == "Forbs"),
-                  aes(x = Cover_Change, y = predicted), colour = "#0A6E0A",
-                  linetype = ifelse((FEve.forb.ci$"l-95% CI" < 0 & FEve.forb.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                      (FEve.forb.ci$"l-95% CI" > 0 & FEve.forb.ci$"u-95% CI" > 0), 1, 2)) +
-        
-        geom_line(data = filter(FEve.predictions, Functional_Group == "Shrubs"),
-                  aes(x = Cover_Change, y = predicted), colour = "#0A6E0A",
-                  linetype = ifelse((FEve.shrub.ci$"l-95% CI" < 0 & FEve.shrub.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                      (FEve.shrub.ci$"l-95% CI" > 0 & FEve.shrub.ci$"u-95% CI" > 0), 1, 2)) +
-        
-        geom_line(data = filter(FEve.predictions, Functional_Group == "Graminoids"),
-                  aes(x = Cover_Change, y = predicted), colour = "#0A6E0A",
-                  linetype = ifelse((FEve.gram.ci$"l-95% CI" < 0 & FEve.gram.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                      (FEve.gram.ci$"l-95% CI" > 0 & FEve.gram.ci$"u-95% CI" > 0), 1, 2)) +
-        
-        labs(y = bquote('Functional Evenness Change'~(yr^-1)),
-             x = bquote('Cover Change'~(yr^-1)),
-             fill = "Functional\nGroup") +
-        theme_1() +
-        theme(legend.position = "bottom",
-              legend.title = element_blank(),
-              legend.key = element_rect(colour = "#000000")))
-    
-    
-    # Load in model output
-    FDis.shrub.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes_",
-                                      "ShrubCover_slopes", pc.filepath, ".RData")))
-    FDis.forb.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes_",
-                                     "ForbCover_slopes", pc.filepath, ".RData")))
-    FDis.gram.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes_",
-                                     "GraminoidCover_slopes", pc.filepath, ".RData")))
-    
-    # Convert model output into a dataframe (with 4.d.p.)
-    FDis.shrub.df <- brms_SummaryTable(FDis.shrub.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-    FDis.forb.df <- brms_SummaryTable(FDis.forb.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-    FDis.gram.df <- brms_SummaryTable(FDis.gram.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-    
-    # Extract the confidence intervals as a list for use in the plotting
-    FDis.shrub.df.ci <- FDis.shrub.df %>% 
-      filter(Covariate %in% c("x_variable")) %>% 
-      dplyr::select("l-95% CI", "u-95% CI") %>% 
-      pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-    FDis.forb.df.ci <- FDis.forb.df %>% 
-      filter(Covariate %in% c("x_variable")) %>% 
-      dplyr::select("l-95% CI", "u-95% CI") %>% 
-      pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-    FDis.gram.df.ci <- FDis.gram.df %>% 
-      filter(Covariate %in% c("x_variable")) %>% 
-      dplyr::select("l-95% CI", "u-95% CI") %>% 
-      pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-    
-    # Save the confidence intervals as a list and remove the intermediate dataframe
-    FDis.shrub.ci <- as.list(FDis.shrub.df.ci$Value) # Adding values to the list
-    names(FDis.shrub.ci) <- FDis.shrub.df.ci$Interval # Adding names to the values
-    
-    FDis.forb.ci <- as.list(FDis.forb.df.ci$Value) # Adding values to the list
-    names(FDis.forb.ci) <- FDis.forb.df.ci$Interval # Adding names to the values
-    
-    FDis.gram.ci <- as.list(FDis.gram.df.ci$Value) # Adding values to the list
-    names(FDis.gram.ci) <- FDis.gram.df.ci$Interval # Adding names to the values
-    
-    # Extract the prediction data frame
-    FDis.shrub.pred <- ggpredict(FDis.shrub.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
-      mutate(Functional_Group = "Shrubs")
-    FDis.forb.pred <- ggpredict(FDis.forb.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
-      mutate(Functional_Group = "Forbs")
-    FDis.gram.pred <- ggpredict(FDis.gram.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
-      mutate(Functional_Group = "Graminoids")
-    
-    # Combine the predictions into one dataframe
-    FDis.predictions <- rbind(FDis.shrub.pred, FDis.forb.pred, FDis.gram.pred) %>% 
-      rename(Cover_Change = x) %>% 
-      dplyr::select(-group)
-    
-    # NOTE: plotting only between -5 and 5, but all values in model
-    
-    # Create a ggplot() item combining the three outputs
-    (FDis.plot <- ggplot(data = FDis.predictions) +
-        geom_ribbon(aes(x = Cover_Change, ymin = conf.low, ymax = conf.high, fill = Functional_Group),
-                    alpha = 0.35, linetype = 2) +
-        scale_fill_manual(values = c("#F0CDAA", "#FA922A", "#E67300")) +
-        
-        geom_line(data = filter(FDis.predictions, Functional_Group == "Forbs"),
-                  aes(x = Cover_Change, y = predicted), colour = "#E67300",
-                  linetype = ifelse((FDis.forb.ci$"l-95% CI" < 0 & FDis.forb.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                      (FDis.forb.ci$"l-95% CI" > 0 & FDis.forb.ci$"u-95% CI" > 0), 1, 2)) +
-        
-        geom_line(data = filter(FDis.predictions, Functional_Group == "Shrubs"),
-                  aes(x = Cover_Change, y = predicted), colour = "#E67300",
-                  linetype = ifelse((FDis.shrub.ci$"l-95% CI" < 0 & FDis.shrub.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                      (FDis.shrub.ci$"l-95% CI" > 0 & FDis.shrub.ci$"u-95% CI" > 0), 1, 2)) +
-        
-        geom_line(data = filter(FDis.predictions, Functional_Group == "Graminoids"),
-                  aes(x = Cover_Change, y = predicted), colour = "#E67300",
-                  linetype = ifelse((FDis.gram.ci$"l-95% CI" < 0 & FDis.gram.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                      (FDis.gram.ci$"l-95% CI" > 0 & FDis.gram.ci$"u-95% CI" > 0), 1, 2)) +
-        
-        labs(y = bquote('Functional Dispersion Change'~(yr^-1)),
-             x = bquote('Cover Change'~(yr^-1)),
-             fill = "Functional\nGroup") +
-        theme_1() +
-        theme(legend.position = "bottom",
-              legend.title = element_blank(),
-              legend.key = element_rect(colour = "#000000")))
-    
-    
-    # Load in model output
-    SR.shrub.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes_",
+  # Load in model output
+  FRic.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_",
                                     "ShrubCover_slopes", pc.filepath, ".RData")))
-    SR.forb.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes_",
+  FRic.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_",
                                    "ForbCover_slopes", pc.filepath, ".RData")))
-    SR.gram.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes_",
+  FRic.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_",
                                    "GraminoidCover_slopes", pc.filepath, ".RData")))
-    
-    # Convert model output into a dataframe (with 4.d.p.)
-    SR.shrub.df <- brms_SummaryTable(SR.shrub.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-    SR.forb.df <- brms_SummaryTable(SR.forb.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-    SR.gram.df <- brms_SummaryTable(SR.gram.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-    
-    # Extract the confidence intervals as a list for use in the plotting
-    SR.shrub.df.ci <- SR.shrub.df %>% 
-      filter(Covariate %in% c("x_variable")) %>% 
-      dplyr::select("l-95% CI", "u-95% CI") %>% 
-      pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-    SR.forb.df.ci <- SR.forb.df %>% 
-      filter(Covariate %in% c("x_variable")) %>% 
-      dplyr::select("l-95% CI", "u-95% CI") %>% 
-      pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-    SR.gram.df.ci <- SR.gram.df %>% 
-      filter(Covariate %in% c("x_variable")) %>% 
-      dplyr::select("l-95% CI", "u-95% CI") %>% 
-      pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-    
-    # Save the confidence intervals as a list and remove the intermediate dataframe
-    SR.shrub.ci <- as.list(SR.shrub.df.ci$Value) # Adding values to the list
-    names(SR.shrub.ci) <- SR.shrub.df.ci$Interval # Adding names to the values
-    
-    SR.forb.ci <- as.list(SR.forb.df.ci$Value) # Adding values to the list
-    names(SR.forb.ci) <- SR.forb.df.ci$Interval # Adding names to the values
-    
-    SR.gram.ci <- as.list(SR.gram.df.ci$Value) # Adding values to the list
-    names(SR.gram.ci) <- SR.gram.df.ci$Interval # Adding names to the values
-    
-    # Extract the prediction data frame
-    SR.shrub.pred <- ggpredict(SR.shrub.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
-      mutate(Functional_Group = "Shrubs")
-    SR.forb.pred <- ggpredict(SR.forb.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
-      mutate(Functional_Group = "Forbs")
-    SR.gram.pred <- ggpredict(SR.gram.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
-      mutate(Functional_Group = "Graminoids")
-    
-    # Combine the predictions into one dataframe
-    SR.predictions <- rbind(SR.shrub.pred, SR.forb.pred, SR.gram.pred) %>% 
-      rename(Cover_Change = x) %>% 
-      dplyr::select(-group)
-    
-      # NOTE: plotting only between -5 and 5, but all values in model
-    
-    # Create a ggplot() item combining the three outputs
-    (SR.plot <- ggplot(data = SR.predictions) +
-        geom_ribbon(aes(x = Cover_Change, ymin = conf.low, ymax = conf.high, fill = Functional_Group),
-                    alpha = 0.35, linetype = 2) +
-        scale_fill_manual(values = c("#B1CCE8", "#1C86EE", "#0D3E6E")) +
-        
-        geom_line(data = filter(SR.predictions, Functional_Group == "Forbs"),
-                  aes(x = Cover_Change, y = predicted), colour = "#0D3E6E",
-                  linetype = ifelse((SR.forb.ci$"l-95% CI" < 0 & SR.forb.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                      (SR.forb.ci$"l-95% CI" > 0 & SR.forb.ci$"u-95% CI" > 0), 1, 2)) +
-        
-        geom_line(data = filter(SR.predictions, Functional_Group == "Shrubs"),
-                  aes(x = Cover_Change, y = predicted), colour = "#0D3E6E",
-                  linetype = ifelse((SR.shrub.ci$"l-95% CI" < 0 & SR.shrub.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                      (SR.shrub.ci$"l-95% CI" > 0 & SR.shrub.ci$"u-95% CI" > 0), 1, 2)) +
-        
-        geom_line(data = filter(SR.predictions, Functional_Group == "Graminoids"),
-                  aes(x = Cover_Change, y = predicted), colour = "#0D3E6E",
-                  linetype = ifelse((SR.gram.ci$"l-95% CI" < 0 & SR.gram.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-                                      (SR.gram.ci$"l-95% CI" > 0 & SR.gram.ci$"u-95% CI" > 0), 1, 2)) +
-        
-        labs(y = bquote('Species Richness Change'~(yr^-1)),
-             x = bquote('Cover Change'~(yr^-1)),
-             fill = "Functional\nGroup") +
-        theme_1() +
-        theme(legend.position = "bottom",
-              legend.title = element_blank(),
-              legend.key = element_rect(colour = "#000000")))
-    
-    # Create a panel of all three plots
-    combined.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 4, widths = c(1,1,1,1))
-    
-    # Output the saved panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
-                                             "all_cover_slopes", pc.filepath, ".png"), width = 20, height = 5.5)
-    
+  
+  # Convert model output into a dataframe (with 4.d.p.)
+  FRic.shrub.df <- brms_SummaryTable(FRic.shrub.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
+  FRic.forb.df <- brms_SummaryTable(FRic.forb.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
+  FRic.gram.df <- brms_SummaryTable(FRic.gram.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
+  
+  # Extract the confidence intervals as a list for use in the plotting
+  FRic.shrub.df.ci <- FRic.shrub.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  FRic.forb.df.ci <- FRic.forb.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  FRic.gram.df.ci <- FRic.gram.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  
+  # Save the confidence intervals as a list and remove the intermediate dataframe
+  FRic.shrub.ci <- as.list(FRic.shrub.df.ci$Value) # Adding values to the list
+  names(FRic.shrub.ci) <- FRic.shrub.df.ci$Interval # Adding names to the values
+  
+  FRic.forb.ci <- as.list(FRic.forb.df.ci$Value) # Adding values to the list
+  names(FRic.forb.ci) <- FRic.forb.df.ci$Interval # Adding names to the values
+  
+  FRic.gram.ci <- as.list(FRic.gram.df.ci$Value) # Adding values to the list
+  names(FRic.gram.ci) <- FRic.gram.df.ci$Interval # Adding names to the values
+  
+  # Extract the prediction data frame
+  FRic.shrub.pred <- ggpredict(FRic.shrub.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
+    mutate(Functional_Group = "Shrubs")
+  FRic.forb.pred <- ggpredict(FRic.forb.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
+    mutate(Functional_Group = "Forbs")
+  FRic.gram.pred <- ggpredict(FRic.gram.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
+    mutate(Functional_Group = "Graminoids")
+  
+  # Combine the predictions into one dataframe
+  FRic.predictions <- rbind(FRic.shrub.pred, FRic.forb.pred, FRic.gram.pred) %>% 
+    rename(Cover_Change = x) %>% 
+    data.frame(.) %>% 
+    dplyr::select(-group)
+  
+  # NOTE: plotting only between -5 and 5, but all values in model
+  
+  # Create a ggplot() item combining the three outputs
+  (FRic.plot <- ggplot(data = FRic.predictions) +
+      geom_ribbon(aes(x = Cover_Change, ymin = conf.low, ymax = conf.high, fill = Functional_Group),
+                  alpha = 0.35, linetype = 2) +
+      scale_fill_manual(values = c("#F5D7EA", "#E685C3", "#B50675")) +
+      
+      geom_line(data = filter(FRic.predictions, Functional_Group == "Forbs"),
+                aes(x = Cover_Change, y = predicted), colour = "#B50675",
+                linetype = ifelse((FRic.forb.ci$"l-95% CI" < 0 & FRic.forb.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                    (FRic.forb.ci$"l-95% CI" > 0 & FRic.forb.ci$"u-95% CI" > 0), 1, 2)) +
+      
+      geom_line(data = filter(FRic.predictions, Functional_Group == "Shrubs"),
+                aes(x = Cover_Change, y = predicted), colour = "#B50675",
+                linetype = ifelse((FRic.shrub.ci$"l-95% CI" < 0 & FRic.shrub.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                    (FRic.shrub.ci$"l-95% CI" > 0 & FRic.shrub.ci$"u-95% CI" > 0), 1, 2)) +
+      
+      geom_line(data = filter(FRic.predictions, Functional_Group == "Graminoids"),
+                aes(x = Cover_Change, y = predicted), colour = "#B50675",
+                linetype = ifelse((FRic.gram.ci$"l-95% CI" < 0 & FRic.gram.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                    (FRic.gram.ci$"l-95% CI" > 0 & FRic.gram.ci$"u-95% CI" > 0), 1, 2)) +
+      
+      labs(y = bquote('Functional Richness Change'~(yr^-1)),
+           x = bquote('Cover Change'~(yr^-1)),
+           fill = "Functional\nGroup") +
+      theme_1() +
+      theme(legend.position = "bottom",
+            legend.title = element_blank(),
+            legend.key = element_rect(colour = "#000000")))
+  
+  
+  # Load in model output
+  FEve.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_",
+                                    "ShrubCover_slopes", pc.filepath, ".RData")))
+  FEve.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_",
+                                   "ForbCover_slopes", pc.filepath, ".RData")))
+  FEve.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_",
+                                   "GraminoidCover_slopes", pc.filepath, ".RData")))
+  
+  # Convert model output into a dataframe (with 4.d.p.)
+  FEve.shrub.df <- brms_SummaryTable(FEve.shrub.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
+  FEve.forb.df <- brms_SummaryTable(FEve.forb.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
+  FEve.gram.df <- brms_SummaryTable(FEve.gram.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
+  
+  # Extract the confidence intervals as a list for use in the plotting
+  FEve.shrub.df.ci <- FEve.shrub.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  FEve.forb.df.ci <- FEve.forb.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  FEve.gram.df.ci <- FEve.gram.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  
+  # Save the confidence intervals as a list and remove the intermediate dataframe
+  FEve.shrub.ci <- as.list(FEve.shrub.df.ci$Value) # Adding values to the list
+  names(FEve.shrub.ci) <- FEve.shrub.df.ci$Interval # Adding names to the values
+  
+  FEve.forb.ci <- as.list(FEve.forb.df.ci$Value) # Adding values to the list
+  names(FEve.forb.ci) <- FEve.forb.df.ci$Interval # Adding names to the values
+  
+  FEve.gram.ci <- as.list(FEve.gram.df.ci$Value) # Adding values to the list
+  names(FEve.gram.ci) <- FEve.gram.df.ci$Interval # Adding names to the values
+  
+  # Extract the prediction data frame
+  FEve.shrub.pred <- ggpredict(FEve.shrub.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
+    mutate(Functional_Group = "Shrubs")
+  FEve.forb.pred <- ggpredict(FEve.forb.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
+    mutate(Functional_Group = "Forbs")
+  FEve.gram.pred <- ggpredict(FEve.gram.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
+    mutate(Functional_Group = "Graminoids")
+  
+  # Combine the predictions into one dataframe
+  FEve.predictions <- rbind(FEve.shrub.pred, FEve.forb.pred, FEve.gram.pred) %>% 
+    rename(Cover_Change = x) %>% 
+    data.frame(.) %>% 
+    dplyr::select(-group)
+  
+  # NOTE: plotting only between -5 and 5, but all values in model
+  
+  # Create a ggplot() item combining the three outputs
+  (FEve.plot <- ggplot(data = FEve.predictions) +
+      geom_ribbon(aes(x = Cover_Change, ymin = conf.low, ymax = conf.high, fill = Functional_Group),
+                  alpha = 0.35, linetype = 2) +
+      scale_fill_manual(values = c("#D1F0D1", "#67B867", "#0A6E0A")) +
+      
+      geom_line(data = filter(FEve.predictions, Functional_Group == "Forbs"),
+                aes(x = Cover_Change, y = predicted), colour = "#0A6E0A",
+                linetype = ifelse((FEve.forb.ci$"l-95% CI" < 0 & FEve.forb.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                    (FEve.forb.ci$"l-95% CI" > 0 & FEve.forb.ci$"u-95% CI" > 0), 1, 2)) +
+      
+      geom_line(data = filter(FEve.predictions, Functional_Group == "Shrubs"),
+                aes(x = Cover_Change, y = predicted), colour = "#0A6E0A",
+                linetype = ifelse((FEve.shrub.ci$"l-95% CI" < 0 & FEve.shrub.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                    (FEve.shrub.ci$"l-95% CI" > 0 & FEve.shrub.ci$"u-95% CI" > 0), 1, 2)) +
+      
+      geom_line(data = filter(FEve.predictions, Functional_Group == "Graminoids"),
+                aes(x = Cover_Change, y = predicted), colour = "#0A6E0A",
+                linetype = ifelse((FEve.gram.ci$"l-95% CI" < 0 & FEve.gram.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                    (FEve.gram.ci$"l-95% CI" > 0 & FEve.gram.ci$"u-95% CI" > 0), 1, 2)) +
+      
+      labs(y = bquote('Functional Evenness Change'~(yr^-1)),
+           x = bquote('Cover Change'~(yr^-1)),
+           fill = "Functional\nGroup") +
+      theme_1() +
+      theme(legend.position = "bottom",
+            legend.title = element_blank(),
+            legend.key = element_rect(colour = "#000000")))
+  
+  
+  # Load in model output
+  FDis.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_",
+                                    "ShrubCover_slopes", pc.filepath, ".RData")))
+  FDis.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_",
+                                   "ForbCover_slopes", pc.filepath, ".RData")))
+  FDis.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_",
+                                   "GraminoidCover_slopes", pc.filepath, ".RData")))
+  
+  # Convert model output into a dataframe (with 4.d.p.)
+  FDis.shrub.df <- brms_SummaryTable(FDis.shrub.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
+  FDis.forb.df <- brms_SummaryTable(FDis.forb.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
+  FDis.gram.df <- brms_SummaryTable(FDis.gram.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
+  
+  # Extract the confidence intervals as a list for use in the plotting
+  FDis.shrub.df.ci <- FDis.shrub.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  FDis.forb.df.ci <- FDis.forb.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  FDis.gram.df.ci <- FDis.gram.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  
+  # Save the confidence intervals as a list and remove the intermediate dataframe
+  FDis.shrub.ci <- as.list(FDis.shrub.df.ci$Value) # Adding values to the list
+  names(FDis.shrub.ci) <- FDis.shrub.df.ci$Interval # Adding names to the values
+  
+  FDis.forb.ci <- as.list(FDis.forb.df.ci$Value) # Adding values to the list
+  names(FDis.forb.ci) <- FDis.forb.df.ci$Interval # Adding names to the values
+  
+  FDis.gram.ci <- as.list(FDis.gram.df.ci$Value) # Adding values to the list
+  names(FDis.gram.ci) <- FDis.gram.df.ci$Interval # Adding names to the values
+  
+  # Extract the prediction data frame
+  FDis.shrub.pred <- ggpredict(FDis.shrub.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
+    mutate(Functional_Group = "Shrubs")
+  FDis.forb.pred <- ggpredict(FDis.forb.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
+    mutate(Functional_Group = "Forbs")
+  FDis.gram.pred <- ggpredict(FDis.gram.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
+    mutate(Functional_Group = "Graminoids")
+  
+  # Combine the predictions into one dataframe
+  FDis.predictions <- rbind(FDis.shrub.pred, FDis.forb.pred, FDis.gram.pred) %>% 
+    rename(Cover_Change = x) %>% 
+    data.frame(.) %>% 
+    dplyr::select(-group)
+  
+  # NOTE: plotting only between -5 and 5, but all values in model
+  
+  # Create a ggplot() item combining the three outputs
+  (FDis.plot <- ggplot(data = FDis.predictions) +
+      geom_ribbon(aes(x = Cover_Change, ymin = conf.low, ymax = conf.high, fill = Functional_Group),
+                  alpha = 0.35, linetype = 2) +
+      scale_fill_manual(values = c("#F0CDAA", "#FA922A", "#E67300")) +
+      
+      geom_line(data = filter(FDis.predictions, Functional_Group == "Forbs"),
+                aes(x = Cover_Change, y = predicted), colour = "#E67300",
+                linetype = ifelse((FDis.forb.ci$"l-95% CI" < 0 & FDis.forb.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                    (FDis.forb.ci$"l-95% CI" > 0 & FDis.forb.ci$"u-95% CI" > 0), 1, 2)) +
+      
+      geom_line(data = filter(FDis.predictions, Functional_Group == "Shrubs"),
+                aes(x = Cover_Change, y = predicted), colour = "#E67300",
+                linetype = ifelse((FDis.shrub.ci$"l-95% CI" < 0 & FDis.shrub.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                    (FDis.shrub.ci$"l-95% CI" > 0 & FDis.shrub.ci$"u-95% CI" > 0), 1, 2)) +
+      
+      geom_line(data = filter(FDis.predictions, Functional_Group == "Graminoids"),
+                aes(x = Cover_Change, y = predicted), colour = "#E67300",
+                linetype = ifelse((FDis.gram.ci$"l-95% CI" < 0 & FDis.gram.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                    (FDis.gram.ci$"l-95% CI" > 0 & FDis.gram.ci$"u-95% CI" > 0), 1, 2)) +
+      
+      labs(y = bquote('Functional Dispersion Change'~(yr^-1)),
+           x = bquote('Cover Change'~(yr^-1)),
+           fill = "Functional\nGroup") +
+      theme_1() +
+      theme(legend.position = "bottom",
+            legend.title = element_blank(),
+            legend.key = element_rect(colour = "#000000")))
+  
+  
+  # Load in model output
+  SR.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_",
+                                  "ShrubCover_slopes", pc.filepath, ".RData")))
+  SR.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_",
+                                 "ForbCover_slopes", pc.filepath, ".RData")))
+  SR.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_",
+                                 "GraminoidCover_slopes", pc.filepath, ".RData")))
+  
+  # Convert model output into a dataframe (with 4.d.p.)
+  SR.shrub.df <- brms_SummaryTable(SR.shrub.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
+  SR.forb.df <- brms_SummaryTable(SR.forb.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
+  SR.gram.df <- brms_SummaryTable(SR.gram.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
+  
+  # Extract the confidence intervals as a list for use in the plotting
+  SR.shrub.df.ci <- SR.shrub.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  SR.forb.df.ci <- SR.forb.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  SR.gram.df.ci <- SR.gram.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  
+  # Save the confidence intervals as a list and remove the intermediate dataframe
+  SR.shrub.ci <- as.list(SR.shrub.df.ci$Value) # Adding values to the list
+  names(SR.shrub.ci) <- SR.shrub.df.ci$Interval # Adding names to the values
+  
+  SR.forb.ci <- as.list(SR.forb.df.ci$Value) # Adding values to the list
+  names(SR.forb.ci) <- SR.forb.df.ci$Interval # Adding names to the values
+  
+  SR.gram.ci <- as.list(SR.gram.df.ci$Value) # Adding values to the list
+  names(SR.gram.ci) <- SR.gram.df.ci$Interval # Adding names to the values
+  
+  # Extract the prediction data frame
+  SR.shrub.pred <- ggpredict(SR.shrub.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
+    mutate(Functional_Group = "Shrubs")
+  SR.forb.pred <- ggpredict(SR.forb.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
+    mutate(Functional_Group = "Forbs")
+  SR.gram.pred <- ggpredict(SR.gram.mod, terms = "x_variable [-5:5, sample = 50]", back.transform = TRUE) %>% 
+    mutate(Functional_Group = "Graminoids")
+  
+  # Combine the predictions into one dataframe
+  SR.predictions <- rbind(SR.shrub.pred, SR.forb.pred, SR.gram.pred) %>% 
+    rename(Cover_Change = x) %>% 
+    data.frame(.) %>% 
+    dplyr::select(-group)
+  
+  # NOTE: plotting only between -5 and 5, but all values in model
+  
+  # Create a ggplot() item combining the three outputs
+  (SR.plot <- ggplot(data = SR.predictions) +
+      geom_ribbon(aes(x = Cover_Change, ymin = conf.low, ymax = conf.high, fill = Functional_Group),
+                  alpha = 0.35, linetype = 2) +
+      scale_fill_manual(values = c("#B1CCE8", "#1C86EE", "#0D3E6E")) +
+      
+      geom_line(data = filter(SR.predictions, Functional_Group == "Forbs"),
+                aes(x = Cover_Change, y = predicted), colour = "#0D3E6E",
+                linetype = ifelse((SR.forb.ci$"l-95% CI" < 0 & SR.forb.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                    (SR.forb.ci$"l-95% CI" > 0 & SR.forb.ci$"u-95% CI" > 0), 1, 2)) +
+      
+      geom_line(data = filter(SR.predictions, Functional_Group == "Shrubs"),
+                aes(x = Cover_Change, y = predicted), colour = "#0D3E6E",
+                linetype = ifelse((SR.shrub.ci$"l-95% CI" < 0 & SR.shrub.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                    (SR.shrub.ci$"l-95% CI" > 0 & SR.shrub.ci$"u-95% CI" > 0), 1, 2)) +
+      
+      geom_line(data = filter(SR.predictions, Functional_Group == "Graminoids"),
+                aes(x = Cover_Change, y = predicted), colour = "#0D3E6E",
+                linetype = ifelse((SR.gram.ci$"l-95% CI" < 0 & SR.gram.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                    (SR.gram.ci$"l-95% CI" > 0 & SR.gram.ci$"u-95% CI" > 0), 1, 2)) +
+      
+      labs(y = bquote('Species Richness Change'~(yr^-1)),
+           x = bquote('Cover Change'~(yr^-1)),
+           fill = "Functional\nGroup") +
+      theme_1() +
+      theme(legend.position = "bottom",
+            legend.title = element_blank(),
+            legend.key = element_rect(colour = "#000000")))
+  
+  # Create a panel of all three plots
+  combined.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 4, widths = c(1,1,1,1))
+  
+  # Output the saved panel
+  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+                                           "all_cover_slopes", pc.filepath, ".png"), width = 20, height = 5.5)
+  
 } # End of function
 
 
@@ -5057,7 +5059,7 @@ plot.combined.cover.change <- function(){
 plot.temp.change <- function(){
   
   # Load in model output
-  FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes_",
+  FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_",
                               "WarmQSlope", pc.filepath, ".RData")))
   
   # Range to predict variable
@@ -5106,7 +5108,7 @@ plot.temp.change <- function(){
                                                          paste("#006400"), paste("#8b0000")))))
   
   # Load in model output
-  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes_",
+  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_",
                               "WarmQSlope", pc.filepath, ".RData")))
   
   # Range to predict variable
@@ -5156,7 +5158,7 @@ plot.temp.change <- function(){
   
   
   # Load in model output
-  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes_",
+  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_",
                             "WarmQSlope", pc.filepath, ".RData")))
   
   # Range to predict variable
@@ -5206,7 +5208,7 @@ plot.temp.change <- function(){
   
   
   # Load in model output
-  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes_",
+  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_",
                               "WarmQSlope", pc.filepath, ".RData")))
   
   # Range to predict variable
@@ -5259,7 +5261,7 @@ plot.temp.change <- function(){
   combined.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 4)
   
   # Export panel
-  ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
+  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
                                            "TempChange", pc.filepath, ".png"), width = 20, height = 5.5)
   
 } # End of function
@@ -5276,7 +5278,7 @@ plot.precip <- function(censored){
   if (censored == "No"){
     
     # Load in model output
-    FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
+    FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
                                 FRic.distribution, "_PrecipAnn", pc.filepath, ".RData")))
     
     # Extract the prediction data frame
@@ -5356,7 +5358,7 @@ plot.precip <- function(censored){
   
   
   # Load in model output
-  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
+  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
                               "PrecipAnn", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -5412,7 +5414,7 @@ plot.precip <- function(censored){
   
   
   # Load in model output
-  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_",
+  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
                             "PrecipAnn", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -5467,7 +5469,7 @@ plot.precip <- function(censored){
   
   
   # Load in model output
-  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_",
+  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
                               "PrecipAnn", pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -5529,7 +5531,7 @@ plot.precip <- function(censored){
   if (censored == "No"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
                                              "PrecipAnn", pc.filepath, ".png"), width = 12, height = 12)
     
   }
@@ -5538,7 +5540,7 @@ plot.precip <- function(censored){
   if (censored == "Yes"){
     
     # Export panel
-    ggsave(combined.panel, filename = paste0("figures/outputs_new/manuscript_",
+    ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
                                              "PrecipAnn_censored", pc.filepath, ".png"), width = 12, height = 12)
     
   }
@@ -5553,7 +5555,7 @@ plot.moisture <- function(){
   # FRic ----
   
   # Load in model output
-  FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_censored_MOISTURE",
+  FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_censored_MOISTURE",
                               pc.filepath, ".RData")))
   
   summary(FRic.mod)
@@ -5578,7 +5580,7 @@ plot.moisture <- function(){
   # FEve ----
   
   # Load in model output
-  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_MOISTURE",
+  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_MOISTURE",
                               pc.filepath, ".RData")))
   
   summary(FEve.mod)
@@ -5602,7 +5604,7 @@ plot.moisture <- function(){
   # SR ----
   
   # Load in model output
-  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_MOISTURE",
+  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_MOISTURE",
                             pc.filepath, ".RData")))
   
   summary(SR.mod)
@@ -5626,7 +5628,7 @@ plot.moisture <- function(){
   # FDis ----
   
   # Load in model output
-  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_MOISTURE",
+  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_MOISTURE",
                               pc.filepath, ".RData")))
   
   summary(FDis.mod)
@@ -5651,7 +5653,7 @@ plot.moisture <- function(){
   combined.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 2)
   
   # Export panel
-  ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
+  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
                                            "MOISTURE_censored", pc.filepath, ".png"), width = 10, height = 10)
   
   
@@ -5665,7 +5667,7 @@ plot.region <- function(){
   # FRic ----
   
   # Load in model output
-  FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_censored_Region",
+  FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_censored_Region",
                               pc.filepath, ".RData")))
   
   summary(FRic.mod)
@@ -5690,7 +5692,7 @@ plot.region <- function(){
   # FEve ----
   
   # Load in model output
-  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_Region",
+  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_Region",
                               pc.filepath, ".RData")))
   
   summary(FEve.mod)
@@ -5714,7 +5716,7 @@ plot.region <- function(){
   # SR ----
   
   # Load in model output
-  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_Region",
+  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_Region",
                             pc.filepath, ".RData")))
   
   summary(SR.mod)
@@ -5738,7 +5740,7 @@ plot.region <- function(){
   # FDis ----
   
   # Load in model output
-  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_Region",
+  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_Region",
                               pc.filepath, ".RData")))
   
   summary(FDis.mod)
@@ -5763,7 +5765,7 @@ plot.region <- function(){
   combined.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 2)
   
   # Export panel
-  ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_",
+  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_",
                                            "Region_censored", pc.filepath, ".png"), width = 15, height = 10)
   
   
@@ -5777,12 +5779,12 @@ plot.latitude.time <- function(){
   # Produce dataframe for running models on
   input.data <- slopes.input %>% 
     dplyr::select(LAT, FRic_slopes, FEve_slopes, SR_slopes, FDis_slopes,
-                  SurveyedArea, gridcell, SUBSITE, PlotDominatingFG)
+                  SurveyedArea, gridcell, SUBSITE)
   
   # FRic ----
   
   # Load in model output
-  FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes_LAT",
+  FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_LAT",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -5830,7 +5832,7 @@ plot.latitude.time <- function(){
   # FEve ----
   
   # Load in model output
-  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes_LAT",
+  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_LAT",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -5878,7 +5880,7 @@ plot.latitude.time <- function(){
   # SR ----
   
   # Load in model output
-  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes_LAT",
+  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_LAT",
                             pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -5926,7 +5928,7 @@ plot.latitude.time <- function(){
   # FDis ----
   
   # Load in model output
-  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes_LAT",
+  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_LAT",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -5975,7 +5977,7 @@ plot.latitude.time <- function(){
   combined.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 2)
   
   # Export panel
-  ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_slopes_LAT",
+  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_slopes_LAT",
                                            pc.filepath, ".png"), width = 15, height = 14)
   
 }
@@ -5988,12 +5990,12 @@ plot.temperature.time <- function(){
   # Produce dataframe for running models on
   input.data <- slopes.input %>% 
     dplyr::select(TempAvSum, FRic_slopes, FEve_slopes, SR_slopes, FDis_slopes,
-                  SurveyedArea, gridcell, SUBSITE, PlotDominatingFG)
+                  SurveyedArea, gridcell, SUBSITE)
   
   # FRic ----
   
   # Load in model output
-  FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes_TempAvSum",
+  FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_TempAvSum",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6041,7 +6043,7 @@ plot.temperature.time <- function(){
   # FEve ----
   
   # Load in model output
-  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes_TempAvSum",
+  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_TempAvSum",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6089,7 +6091,7 @@ plot.temperature.time <- function(){
   # SR ----
   
   # Load in model output
-  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes_TempAvSum",
+  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_TempAvSum",
                             pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6137,7 +6139,7 @@ plot.temperature.time <- function(){
   # FDis ----
   
   # Load in model output
-  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes_TempAvSum",
+  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_TempAvSum",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6186,25 +6188,237 @@ plot.temperature.time <- function(){
   combined.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 2)
   
   # Export panel
-  ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_slopes_TempAvSum",
+  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_slopes_TempAvSum",
                                            pc.filepath, ".png"), width = 15, height = 14)
   
 }
 
 
-# EXTRA 6: PRECIPITATION CHANGE TEMPORAL ----
+
+# EXTRA 5.5: PRECIPITATION STATIC VS CHANGE
+
+plot.precip.time <- function(){
+  
+  # Produce dataframe for running models on
+  input.data <- slopes.input %>% 
+    dplyr::select(PrecipAnn, FRic_slopes, FEve_slopes, SR_slopes, FDis_slopes,
+                  SurveyedArea, gridcell, SUBSITE)
+  
+  # FRic ----
+  
+  # Load in model output
+  FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_PrecipAnn",
+                              pc.filepath, ".RData")))
+  
+  # Convert model output into a dataframe (with 4.d.p.)
+  FRic.df <- brms_SummaryTable(FRic.mod, formatOptions = list(digits = 5, nsmall = 5), round = 5)
+  
+  # Extract the confidence intervals as a list for use in the plotting
+  FRic.df.ci <- FRic.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  
+  # Save the confidence intervals as a list and remove the intermediate dataframe
+  FRic.ci <- as.list(FRic.df.ci$Value) # Adding values to the list
+  names(FRic.ci) <- FRic.df.ci$Interval # Adding names to the values
+  rm(FRic.df, FRic.df.ci) # Remove unnecessary dataframes of summary and CIs  
+  
+  # Range to predict variable
+  range.to.predict <- paste0("x_variable [", min(input.data$PrecipAnn, na.rm = TRUE), ":", max(input.data$PrecipAnn, na.rm = TRUE), 
+                             " by =", (max(input.data$PrecipAnn, na.rm = TRUE) - min(input.data$PrecipAnn, na.rm = TRUE))/50, "]")
+  
+  # Extract the prediction data frame
+  FRic.pred <- ggpredict(FRic.mod, terms = range.to.predict)
+  
+  # Extract dataframe with only the x-variable for plotting
+  data.x.var.only <- dplyr::select(input.data, PrecipAnn)
+  
+  # Plot model outputs
+  (FRic.plot <- ggplot(FRic.pred) +
+      geom_line(aes(x = x, y = predicted), colour = "grey10") + # Adds line for predicted values of FRic vs TempAvSum
+      geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high), fill = "grey10", alpha = 0.2) + # Adds c.intervals for predictions as ribbon
+      geom_point(data = input.data, aes(x = data.x.var.only[,1], y = FRic_slopes), # Adds original FRic vs TempAvSum data points and colours by region
+                 fill = "#D02090", colour = c("#000000"), alpha = 0.5, shape = 21, size = 3) +
+      labs(y = "Change in FRic \n",
+           x = paste0("\n Precipitation (mm)"),
+           title = paste0("CIs: ", FRic.ci$"l-95% CI", " to ", FRic.ci$"u-95% CI"),
+           subtitle = paste(ifelse((FRic.ci$"l-95% CI" < 0 & FRic.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                     (FRic.ci$"l-95% CI" > 0 & FRic.ci$"u-95% CI" > 0),
+                                   "Significant: CIs do NOT span 0", "Not Significant: CIs span 0"))) +
+      theme_1() +
+      theme(legend.position = "bottom",
+            plot.subtitle = element_text(colour = ifelse((FRic.ci$"l-95% CI" < 0 & FRic.ci$"u-95% CI" < 0) | # Automatically colours subtitle based on significance from CIs
+                                                           (FRic.ci$"l-95% CI" > 0 & FRic.ci$"u-95% CI" > 0),
+                                                         paste("#006400"), paste("#8b0000")))))
+  
+  # FEve ----
+  
+  # Load in model output
+  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_PrecipAnn",
+                              pc.filepath, ".RData")))
+  
+  # Convert model output into a dataframe (with 4.d.p.)
+  FEve.df <- brms_SummaryTable(FEve.mod, formatOptions = list(digits = 5, nsmall = 5), round = 5)
+  
+  # Extract the confidence intervals as a list for use in the plotting
+  FEve.df.ci <- FEve.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  
+  # Save the confidence intervals as a list and remove the intermediate dataframe
+  FEve.ci <- as.list(FEve.df.ci$Value) # Adding values to the list
+  names(FEve.ci) <- FEve.df.ci$Interval # Adding names to the values
+  rm(FEve.df, FEve.df.ci) # Remove unnecessary dataframes of summary and CIs  
+  
+  # Range to predict variable
+  range.to.predict <- paste0("x_variable [", min(input.data$PrecipAnn, na.rm = TRUE), ":", max(input.data$PrecipAnn, na.rm = TRUE), 
+                             " by =", (max(input.data$PrecipAnn, na.rm = TRUE) - min(input.data$PrecipAnn, na.rm = TRUE))/50, "]")
+  
+  # Extract the prediction data frame
+  FEve.pred <- ggpredict(FEve.mod, terms = range.to.predict)
+  
+  # Extract dataframe with only the x-variable for plotting
+  data.x.var.only <- dplyr::select(input.data, PrecipAnn)
+  
+  # Plot model outputs
+  (FEve.plot <- ggplot(FEve.pred) +
+      geom_line(aes(x = x, y = predicted), colour = "grey10") + # Adds line for predicted values of FEve vs TempAvSum
+      geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high), fill = "grey10", alpha = 0.2) + # Adds c.intervals for predictions as ribbon
+      geom_point(data = input.data, aes(x = data.x.var.only[,1], y = FEve_slopes), # Adds original FEve vs TempAvSum data points and colours by region
+                 fill = "#228B22", colour = c("#000000"), alpha = 0.5, shape = 21, size = 3) +
+      labs(y = "Change in FEve \n",
+           x = paste0("\n Precipitation (mm)"),
+           title = paste0("CIs: ", FEve.ci$"l-95% CI", " to ", FEve.ci$"u-95% CI"),
+           subtitle = paste(ifelse((FEve.ci$"l-95% CI" < 0 & FEve.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                     (FEve.ci$"l-95% CI" > 0 & FEve.ci$"u-95% CI" > 0),
+                                   "Significant: CIs do NOT span 0", "Not Significant: CIs span 0"))) +
+      theme_1() +
+      theme(legend.position = "bottom",
+            plot.subtitle = element_text(colour = ifelse((FEve.ci$"l-95% CI" < 0 & FEve.ci$"u-95% CI" < 0) | # Automatically colours subtitle based on significance from CIs
+                                                           (FEve.ci$"l-95% CI" > 0 & FEve.ci$"u-95% CI" > 0),
+                                                         paste("#006400"), paste("#8b0000")))))
+  
+  # SR ----
+  
+  # Load in model output
+  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_PrecipAnn",
+                            pc.filepath, ".RData")))
+  
+  # Convert model output into a dataframe (with 4.d.p.)
+  SR.df <- brms_SummaryTable(SR.mod, formatOptions = list(digits = 5, nsmall = 5), round = 5)
+  
+  # Extract the confidence intervals as a list for use in the plotting
+  SR.df.ci <- SR.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  
+  # Save the confidence intervals as a list and remove the intermediate dataframe
+  SR.ci <- as.list(SR.df.ci$Value) # Adding values to the list
+  names(SR.ci) <- SR.df.ci$Interval # Adding names to the values
+  rm(SR.df, SR.df.ci) # Remove unnecessary dataframes of summary and CIs  
+  
+  # Range to predict variable
+  range.to.predict <- paste0("x_variable [", min(input.data$PrecipAnn, na.rm = TRUE), ":", max(input.data$PrecipAnn, na.rm = TRUE), 
+                             " by =", (max(input.data$PrecipAnn, na.rm = TRUE) - min(input.data$PrecipAnn, na.rm = TRUE))/50, "]")
+  
+  # Extract the prediction data frame
+  SR.pred <- ggpredict(SR.mod, terms = range.to.predict)
+  
+  # Extract dataframe with only the x-variable for plotting
+  data.x.var.only <- dplyr::select(input.data, PrecipAnn)
+  
+  # Plot model outputs
+  (SR.plot <- ggplot(SR.pred) +
+      geom_line(aes(x = x, y = predicted), colour = "grey10") + # Adds line for predicted values of SR vs TempAvSum
+      geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high), fill = "grey10", alpha = 0.2) + # Adds c.intervals for predictions as ribbon
+      geom_point(data = input.data, aes(x = data.x.var.only[,1], y = SR_slopes), # Adds original SR vs TempAvSum data points and colours by region
+                 fill = "#1C86EE", colour = c("#000000"), alpha = 0.5, shape = 21, size = 3) +
+      labs(y = "Change in SR \n",
+           x = paste0("\n Precipitation (mm)"),
+           title = paste0("CIs: ", SR.ci$"l-95% CI", " to ", SR.ci$"u-95% CI"),
+           subtitle = paste(ifelse((SR.ci$"l-95% CI" < 0 & SR.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                     (SR.ci$"l-95% CI" > 0 & SR.ci$"u-95% CI" > 0),
+                                   "Significant: CIs do NOT span 0", "Not Significant: CIs span 0"))) +
+      theme_1() +
+      theme(legend.position = "bottom",
+            plot.subtitle = element_text(colour = ifelse((SR.ci$"l-95% CI" < 0 & SR.ci$"u-95% CI" < 0) | # Automatically colours subtitle based on significance from CIs
+                                                           (SR.ci$"l-95% CI" > 0 & SR.ci$"u-95% CI" > 0),
+                                                         paste("#006400"), paste("#8b0000")))))
+  
+  # FDis ----
+  
+  # Load in model output
+  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_PrecipAnn",
+                              pc.filepath, ".RData")))
+  
+  # Convert model output into a dataframe (with 4.d.p.)
+  FDis.df <- brms_SummaryTable(FDis.mod, formatOptions = list(digits = 5, nsmall = 5), round = 5)
+  
+  # Extract the confidence intervals as a list for use in the plotting
+  FDis.df.ci <- FDis.df %>% 
+    filter(Covariate %in% c("x_variable")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  
+  # Save the confidence intervals as a list and remove the intermediate dataframe
+  FDis.ci <- as.list(FDis.df.ci$Value) # Adding values to the list
+  names(FDis.ci) <- FDis.df.ci$Interval # Adding names to the values
+  rm(FDis.df, FDis.df.ci) # Remove unnecessary dataframes of summary and CIs  
+  
+  # Range to predict variable
+  range.to.predict <- paste0("x_variable [", min(input.data$PrecipAnn, na.rm = TRUE), ":", max(input.data$PrecipAnn, na.rm = TRUE), 
+                             " by =", (max(input.data$PrecipAnn, na.rm = TRUE) - min(input.data$PrecipAnn, na.rm = TRUE))/50, "]")
+  
+  # Extract the prediction data frame
+  FDis.pred <- ggpredict(FDis.mod, terms = range.to.predict)
+  
+  # Extract dataframe with only the x-variable for plotting
+  data.x.var.only <- dplyr::select(input.data, PrecipAnn)
+  
+  # Plot model outputs
+  (FDis.plot <- ggplot(FDis.pred) +
+      geom_line(aes(x = x, y = predicted), colour = "grey10") + # Adds line for predicted values of FDis vs TempAvSum
+      geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high), fill = "grey10", alpha = 0.2) + # Adds c.intervals for predictions as ribbon
+      geom_point(data = input.data, aes(x = data.x.var.only[,1], y = FDis_slopes), # Adds original FDis vs TempAvSum data points and colours by region
+                 fill = "#EE7600", colour = c("#000000"), alpha = 0.5, shape = 21, size = 3) +
+      labs(y = "Change in FDis \n",
+           x = paste0("\n Precipitation (mm)"),
+           title = paste0("CIs: ", FDis.ci$"l-95% CI", " to ", FDis.ci$"u-95% CI"),
+           subtitle = paste(ifelse((FDis.ci$"l-95% CI" < 0 & FDis.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
+                                     (FDis.ci$"l-95% CI" > 0 & FDis.ci$"u-95% CI" > 0),
+                                   "Significant: CIs do NOT span 0", "Not Significant: CIs span 0"))) +
+      theme_1() +
+      theme(legend.position = "bottom",
+            plot.subtitle = element_text(colour = ifelse((FDis.ci$"l-95% CI" < 0 & FDis.ci$"u-95% CI" < 0) | # Automatically colours subtitle based on significance from CIs
+                                                           (FDis.ci$"l-95% CI" > 0 & FDis.ci$"u-95% CI" > 0),
+                                                         paste("#006400"), paste("#8b0000")))))
+  
+  # Create a panel of all three plots
+  combined.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 2)
+  
+  # Export panel
+  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_slopes_PrecipAnn",
+                                           pc.filepath, ".png"), width = 15, height = 14)
+  
+}
+
+
+# EXTRA 6: PRECIPITATION CHANGE VS CHANGE ----
 
 plot.precip.change <- function(){
   
   # Produce dataframe for running models on
   input.data <- slopes.input %>% 
     dplyr::select(PrecSlope, FRic_slopes, FEve_slopes, SR_slopes, FDis_slopes,
-                  SurveyedArea, gridcell, SUBSITE, PlotDominatingFG)
+                  SurveyedArea, gridcell, SUBSITE)
   
   # FRic ----
   
   # Load in model output
-  FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_slopes_PrecSlope",
+  FRic.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_slopes_PrecSlope",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6252,7 +6466,7 @@ plot.precip.change <- function(){
   # FEve ----
   
   # Load in model output
-  FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_slopes_PrecSlope",
+  FEve.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_slopes_PrecSlope",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6300,7 +6514,7 @@ plot.precip.change <- function(){
   # SR ----
   
   # Load in model output
-  SR.mod <- get(load(paste0("data/model_outputs_new/m_SR_slopes_PrecSlope",
+  SR.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_slopes_PrecSlope",
                             pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6348,7 +6562,7 @@ plot.precip.change <- function(){
   # FDis ----
   
   # Load in model output
-  FDis.mod <- get(load(paste0("data/model_outputs_new/m_FDis_slopes_PrecSlope",
+  FDis.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_slopes_PrecSlope",
                               pc.filepath, ".RData")))
   
   # Convert model output into a dataframe (with 4.d.p.)
@@ -6397,326 +6611,649 @@ plot.precip.change <- function(){
   combined.panel <- grid.arrange(FRic.plot, FEve.plot, FDis.plot, SR.plot, ncol = 2)
   
   # Export panel
-  ggsave(combined.panel, filename = paste0("figures/outputs_new/combined_slopes_PrecSlope",
+  ggsave(combined.panel, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/combined_slopes_PrecSlope",
                                            pc.filepath, ".png"), width = 15, height = 14)
   
 }
 
 
-# END ----
+
+# EXTRA 7: COVER QUADRATIC SPLIT ---- 
 
 
-# OLD VERSIONS OF FUNCTIONS ----
+plot.split.cover.quadratic <- function(censored){
+  
+  
+  # FRic ----
+  
+  # Load in model outputs depending on whether censored or not
+  if (censored == "Yes"){
+    
+    # Load in model outputs for FEve and process the predictions
+    FRic.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+                                      "censored_quadratic_ShrubCover", pc.filepath, ".RData")))
+    FRic.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+                                     "censored_quadratic_ForbCover", pc.filepath, ".RData")))
+    FRic.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+                                     "censored_quadratic_GraminoidCover", pc.filepath, ".RData")))
+    
+  } else {
+    
+    # Load in model outputs for FEve and process the predictions
+    FRic.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+                                      "quadratic_ShrubCover", pc.filepath, ".RData")))
+    FRic.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+                                     "quadratic_ForbCover", pc.filepath, ".RData")))
+    FRic.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FRic_",
+                                     "quadratic_GraminoidCover", pc.filepath, ".RData")))
+    
+  }
+  
+  # Determine mean value for centering
+  mean.x_variable.shrub <- mean(combo.latest$ShrubCover)
+  mean.x_variable.forb <- mean(combo.latest$ForbCover)
+  mean.x_variable.gram <- mean(combo.latest$GraminoidCover)
+  
+  # Create template predictions dataframe
+  FRic.shrub.pred.df = data.frame(centred_x_variable = seq(0 - mean.x_variable.shrub, 100 - mean.x_variable.shrub), SurveyedArea = 1)
+  FRic.forb.pred.df = data.frame(centred_x_variable = seq(0 - mean.x_variable.forb, 100 - mean.x_variable.forb), SurveyedArea = 1)
+  FRic.gram.pred.df = data.frame(centred_x_variable = seq(0 - mean.x_variable.gram, 100 - mean.x_variable.gram), SurveyedArea = 1)
+  
+  # Add predictions to template datframe
+  FRic.shrub.pred = add_epred_draws(FRic.shrub.pred.df, FRic.shrub.mod, re_formula = NA) %>% 
+    mutate(x_variable = centred_x_variable + mean.x_variable.shrub) %>% # Uncentre the x variable
+    mutate(Functional_Group = "Shrubs")
+  FRic.forb.pred = add_epred_draws(FRic.forb.pred.df, FRic.forb.mod, re_formula = NA) %>% 
+    mutate(x_variable = centred_x_variable + mean.x_variable.forb) %>% # Uncentre the x variable
+    mutate(Functional_Group = "Forbs")
+  FRic.gram.pred = add_epred_draws(FRic.gram.pred.df, FRic.gram.mod, re_formula = NA) %>% 
+    mutate(x_variable = centred_x_variable + mean.x_variable.gram) %>% # Uncentre the x variable
+    mutate(Functional_Group = "Graminoids")
+  
+  # Combine the predictions outputs into one dataframe and rename variables
+  FRic.predictions <- rbind(FRic.shrub.pred, FRic.forb.pred, FRic.gram.pred)
+  
+  # Convert model output into a dataframe (with 4.d.p.)
+  FRic.shrub.df <- brms_SummaryTable(FRic.shrub.mod, formatOptions = list(digits = 5, nsmall = 4), round = 5)
+  FRic.forb.df <- brms_SummaryTable(FRic.forb.mod, formatOptions = list(digits = 5, nsmall = 4), round = 5)
+  FRic.gram.df <- brms_SummaryTable(FRic.gram.mod, formatOptions = list(digits = 5, nsmall = 4), round = 5)
+  
+  # Extract the confidence intervals as a list for use in the plotting
+  FRic.shrub.df.ci <- FRic.shrub.df %>% 
+    filter(Covariate %in% c("Icentred_x_variableE2")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  FRic.forb.df.ci <- FRic.forb.df %>% 
+    filter(Covariate %in% c("Icentred_x_variableE2")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  FRic.gram.df.ci <- FRic.gram.df %>% 
+    filter(Covariate %in% c("Icentred_x_variableE2")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  
+  # Save the confidence intervals as a list and remove the intermediate dataframe
+  FRic.shrub.ci <- as.list(FRic.shrub.df.ci$Value) # Adding values to the list
+  names(FRic.shrub.ci) <- FRic.shrub.df.ci$Interval # Adding names to the values
+  
+  FRic.forb.ci <- as.list(FRic.forb.df.ci$Value) # Adding values to the list
+  names(FRic.forb.ci) <- FRic.forb.df.ci$Interval # Adding names to the values
+  
+  FRic.gram.ci <- as.list(FRic.gram.df.ci$Value) # Adding values to the list
+  names(FRic.gram.ci) <- FRic.gram.df.ci$Interval # Adding names to the values
+  
+  # Make line plots
+  (FRic.forb.line <- ggplot(data = FRic.predictions, aes(x = x_variable, y = .epred)) +
+      stat_lineribbon(data = filter(FRic.predictions, Functional_Group == "Forbs"),
+                      aes(y = .epred), .width = 0.95, alpha = 0.22, colour = "#B50675", fill = "#B50675", linewidth = 0.6,
+                      linetype = ifelse((FRic.forb.ci$"l-95% CI" < 0 & FRic.forb.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FRic.forb.ci$"l-95% CI" > 0 & FRic.forb.ci$"u-95% CI" > 0), 1, 2)) +
+      stat_lineribbon(data = filter(FRic.predictions, Functional_Group == "Forbs"),
+                      aes(y = .epred), .width = 0.95, colour = "#B50675", fill = NA, linewidth = 0.6,
+                      linetype = ifelse((FRic.forb.ci$"l-95% CI" < 0 & FRic.forb.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FRic.forb.ci$"l-95% CI" > 0 & FRic.forb.ci$"u-95% CI" > 0), 1, 2)) +
+      ylim(0,50) +
+      labs(y = "Functional Richness \n",
+           x = "\n Forb Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  
+  (FRic.gram.line <- ggplot(data = FRic.predictions, aes(x = x_variable, y = .epred)) +
+      stat_lineribbon(data = filter(FRic.predictions, Functional_Group == "Graminoids"),
+                      aes(y = .epred), .width = 0.95, alpha = 0.22, colour = "#B50675", fill = "#B50675", linewidth = 0.6,
+                      linetype = ifelse((FRic.gram.ci$"l-95% CI" < 0 & FRic.gram.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FRic.gram.ci$"l-95% CI" > 0 & FRic.gram.ci$"u-95% CI" > 0), 1, 2)) +
+      stat_lineribbon(data = filter(FRic.predictions, Functional_Group == "Graminoids"),
+                      aes(y = .epred), .width = 0.95, colour = "#B50675", fill = NA, linewidth = 0.6,
+                      linetype = ifelse((FRic.gram.ci$"l-95% CI" < 0 & FRic.gram.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FRic.gram.ci$"l-95% CI" > 0 & FRic.gram.ci$"u-95% CI" > 0), 1, 2)) +
+      ylim(0,50) +
+      labs(y = "Functional Richness \n",
+           x = "\n Graminoid Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  (FRic.shrub.line <- ggplot(data = FRic.predictions, aes(x = x_variable, y = .epred)) +
+      stat_lineribbon(data = filter(FRic.predictions, Functional_Group == "Shrubs"),
+                      aes(y = .epred), .width = 0.95, alpha = 0.22, colour = "#B50675", fill = "#B50675", linewidth = 0.6,
+                      linetype = ifelse((FRic.shrub.ci$"l-95% CI" < 0 & FRic.shrub.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FRic.shrub.ci$"l-95% CI" > 0 & FRic.shrub.ci$"u-95% CI" > 0), 1, 2)) +
+      stat_lineribbon(data = filter(FRic.predictions, Functional_Group == "Shrubs"),
+                      aes(y = .epred), .width = 0.95, colour = "#B50675", fill = NA, linewidth = 0.6,
+                      linetype = ifelse((FRic.shrub.ci$"l-95% CI" < 0 & FRic.shrub.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FRic.shrub.ci$"l-95% CI" > 0 & FRic.shrub.ci$"u-95% CI" > 0), 1, 2)) +
+      ylim(0,50) +
+      labs(y = "Functional Richness \n",
+           x = "\n Shrub Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
 
-# # FUNCTION: SR VS FRic ----
-# 
-# bayesian.metric.comparison.FRic <- function(run.model, quadratic, x.var, data, colour.by, colour.discrete,
-#                                             chains, cores, warmup, iterations, delta, treedepth){
-#   
-#   # Modify combo.latest for colouring points
-#   combo.latest <- combo.latest %>% 
-#     mutate(PlotDominatingFG = ifelse(PlotDominatingFG == "Shrub-Dominated",
-#                                      "Shrub", PlotDominatingFG),
-#            PlotDominatingFG = ifelse(PlotDominatingFG == "Graminoid-Dominated",
-#                                      "Graminoid", PlotDominatingFG),
-#            PlotDominatingFG = ifelse(PlotDominatingFG == "Forb-Dominated",
-#                                      "Forb", PlotDominatingFG)) %>% 
-#     rename(colour.variable = colour.by)
-#   
-#   # Run if loop for if linear
-#   if (quadratic == "No"){
-#     
-#     # Generate input dataframe
-#     input.data <- data %>% 
-#       dplyr::select(x.var, FRic, FEve, SurveyedArea, gridcell, SUBSITE) %>% 
-#       rename(x_variable = x.var) # Rename first column to x_variable
-#     
-#     # Run model in if loop
-#     if (run.model == TRUE){
-#       
-#       # Function for running the Bayesian model
-#       SR.FRic.mod <- brm(FRic ~ x_variable + log(SurveyedArea) + (1 | gridcell / SUBSITE),
-#                          data = input.data, family = FRic.distribution, chains = chains,
-#                          warmup = warmup, iter = iterations, cores = cores,
-#                          control = list(adapt_delta = delta,
-#                                         max_treedepth = treedepth))
-#       
-#       # Export model output
-#       save(SR.FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
-#                                       FRic.distribution, "_SR", pc.filepath, ".RData"))
-#       
-#     } else {
-#       
-#       # Load in model output
-#       SR.FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
-#                                      FRic.distribution, "_SR", pc.filepath, ".RData")))
-#       
-#     } # End of if else loop
-#     
-#     # Convert model output into a dataframe (with 4.d.p.)
-#     SR.FRic.df <- brms_SummaryTable(SR.FRic.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-#     
-#     # Extract the confidence intervals as a list for use in the plotting
-#     SR.FRic.df.ci <- SR.FRic.df %>% 
-#       filter(Covariate %in% c("x_variable")) %>% 
-#       dplyr::select("l-95% CI", "u-95% CI") %>% 
-#       pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-#     
-#     # Save the confidence intervals as a list and remove the intermediate dataframe
-#     SR.FRic.ci <- as.list(SR.FRic.df.ci$Value) # Adding values to the list
-#     names(SR.FRic.ci) <- SR.FRic.df.ci$Interval # Adding names to the values
-#     rm(SR.FRic.df, SR.FRic.df.ci) # Remove unnecessary dataframes of summary and CIs  
-#     
-#     # Extract the prediction data frame
-#     SR.FRic.pred <- ggpredict(SR.FRic.mod, terms = "x_variable [4:20]",  back.transform = TRUE)
-#     
-#     # Extract dataframe with only the x-variable for plotting
-#     data.x.var.only <- dplyr::select(data, SR)
-#     
-#     # Plot model outputs
-#     (SR.FRic.plot <- ggplot(SR.FRic.pred) +
-#         geom_line(aes(x = x, y = predicted), colour = "grey10") + # Adds line for predicted values of FRic vs LAT
-#         geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high), fill = "grey10", alpha = 0.2) + # Adds c.intervals for predictions as ribbon
-#         geom_point(data = combo.latest, aes(x = data.x.var.only[,1], y = FRic, fill = colour.variable), # Adds original FRic vs LAT data points and colours by region
-#                    colour = c("#000000"), alpha = 0.5, shape = 21, size = 3) +
-#         # scale_fill_viridis(option = FRic.colour, begin = 0.2, end = 1, direction = -1, discrete = colour.discrete,
-#         #                    guide = guide_colorbar(frame.colour = "black", ticks.colour = "black")) +
-#         scale_fill_gradient2(low = "#D02090",
-#                              # mid = "#228B22",
-#                              mid = "#FFFFFF",
-#                              high = "#1E90FF", midpoint = 0.5,
-#                              guide = guide_colorbar(frame.colour = "black", ticks.colour = "black")) +
-#         scale_y_continuous(limits = c(0, max(combo.latest$FRic)*1.05)) +
-#         labs(y = "FRic \n",
-#              x = "\n SR",
-#              fill = paste0(colour.by),
-#              title = paste0("CIs: ", SR.FRic.ci$"l-95% CI", " to ", SR.FRic.ci$"u-95% CI"),
-#              subtitle = paste(ifelse((SR.FRic.ci$"l-95% CI" < 0 & SR.FRic.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-#                                        (SR.FRic.ci$"l-95% CI" > 0 & SR.FRic.ci$"u-95% CI" > 0),
-#                                      "Significant: CIs do NOT span 0", "Not Significant: CIs span 0"))) +
-#         theme_1() +
-#         theme(legend.position = "right",
-#               plot.subtitle = element_text(colour = ifelse((SR.FRic.ci$"l-95% CI" < 0 & SR.FRic.ci$"u-95% CI" < 0) | # Automatically colours subtitle based on significance from CIs
-#                                                              (SR.FRic.ci$"l-95% CI" > 0 & SR.FRic.ci$"u-95% CI" > 0),
-#                                                            paste("#006400"), paste("#8b0000")))))
-#     
-#     # Export plot
-#     ggsave(SR.FRic.plot, filename = paste0("figures/outputs_new/SR_vs_FRic",
-#                                            pc.filepath, ".png"), width = 8, height = 7)
-#     
-#   } # End of not quadratic if loop
-#   
-#   # Run if loop for is quadratic
-#   if (quadratic == "Yes"){
-#     
-#     # Generate input dataframe
-#     input.data <- data %>% 
-#       dplyr::select(x.var, FRic, FEve, SurveyedArea, gridcell, SUBSITE) %>% 
-#       rename(SR = x.var) # Rename first column to x_variable
-#     
-#     # Determine mean value for centering
-#     mean.SR <- mean(input.data$SR, na.rm = TRUE)
-#     
-#     # Center the x_variable
-#     input.data <- input.data %>% 
-#       mutate(centred_SR = SR - mean.SR)
-#     
-#     # Run model in if loop
-#     if (run.model == TRUE){
-#       
-#       # Function for running the Bayesian model
-#       SR.FRic.mod <- brm(FRic ~ centred_SR + I(centred_SR^2) + (1 | gridcell / SUBSITE),
-#                          data = input.data, family = FRic.distribution, chains = chains,
-#                          warmup = warmup, iter = iterations, cores = cores,
-#                          control = list(adapt_delta = delta,
-#                                         max_treedepth = treedepth))
-#       
-#       # Export model output
-#       save(SR.FRic.mod, file = paste0("data/model_outputs_new/m_FRic_",
-#                                       FRic.distribution, "_quadratic_SR", pc.filepath, ".RData"))
-#       
-#     } else {
-#       
-#       # Load in model output
-#       SR.FRic.mod <- get(load(paste0("data/model_outputs_new/m_FRic_",
-#                                      FRic.distribution, "_quadratic_SR", pc.filepath, ".RData")))
-#       
-#     } # End of if else loop
-#     
-#     # Check summary of model
-#     summary(SR.FRic.mod)
-#     
-#     # Convert model output into a dataframe (with 4.d.p.)
-#     SR.FRic.df <- brms_SummaryTable(SR.FRic.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-#     
-#     # Extract the confidence intervals as a list for use in the plotting
-#     SR.FRic.df.ci <- SR.FRic.df %>% 
-#       filter(Covariate %in% c("centred_SR")) %>% 
-#       dplyr::select("l-95% CI", "u-95% CI") %>% 
-#       pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-#     
-#     # Save the confidence intervals as a list and remove the intermediate dataframe
-#     SR.FRic.ci <- as.list(SR.FRic.df.ci$Value) # Adding values to the list
-#     names(SR.FRic.ci) <- SR.FRic.df.ci$Interval # Adding names to the values
-#     rm(SR.FRic.df, SR.FRic.df.ci) # Remove unnecessary dataframes of summary and CIs  
-#     
-#     # Create template predictions dataframe
-#     SR.FRic.pred.df = data.frame(centred_SR = seq(0 - mean.SR, 100 - mean.SR))
-#     
-#     # Add predictions to template datframe
-#     SR.FRic.pred = add_epred_draws(SR.FRic.pred.df, SR.FRic.mod, re_formula = NA) %>% 
-#       mutate(SR = centred_SR + mean.SR) # Uncentre the x variable
-#     
-#     # Plot model outputs
-#     (SR.FRic.plot <- ggplot(data = SR.FRic.pred, aes(x = SR, y = .epred)) +
-#         geom_point(data = input.data, aes(x = SR, y = FRic), alpha = 0) +
-#         stat_lineribbon(aes(y = .epred), .width = 0.95, fill = "grey10",
-#                         alpha = 0.2, colour = "#000000", linetype = 2, linewidth = 0.1) +
-#         # scale_fill_viridis(option = FEve.colour, begin = 0.2, end = 1, direction = -1, discrete = colour.discrete,
-#         #                    guide = guide_colorbar(frame.colour = "black", ticks.colour = "black")) +
-#         scale_x_continuous(limits = c(0,max(combo.latest$SR, na.rm = TRUE))) +
-#         scale_y_continuous(limits = c(0, 61)) +
-#         labs(y = "FRic \n",
-#              x = "SR \n",
-#              fill = "FEve \n",
-#              title = paste0("CIs: ", SR.FRic.ci$"l-95% CI", " to ", SR.FRic.ci$"u-95% CI"),
-#              subtitle = paste(ifelse((SR.FRic.ci$"l-95% CI" < 0 & SR.FRic.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-#                                        (SR.FRic.ci$"l-95% CI" > 0 & SR.FRic.ci$"u-95% CI" > 0),
-#                                      "Significant: CIs do NOT span 0", "Not Significant: CIs span 0"))) +
-#         theme_1() +
-#         theme(legend.position = "right",
-#               plot.subtitle = element_text(colour = ifelse((SR.FRic.ci$"l-95% CI" < 0 & SR.FRic.ci$"u-95% CI" < 0) | # Automatically colours subtitle based on significance from CIs
-#                                                              (SR.FRic.ci$"l-95% CI" > 0 & SR.FRic.ci$"u-95% CI" > 0),
-#                                                            paste("#006400"), paste("#8b0000")))))
-#     
-#     # Export plot
-#     ggsave(SR.FRic.plot, filename = paste0("figures/outputs_new/SR_vs_FRic_quadratic",
-#                                            pc.filepath, ".png"), width = 8, height = 7)
-#     
-#     # Plot another one without line just for making final plot with points
-#     (SR.FRic.plot.points <- ggplot() +
-#         geom_point(data = input.data, aes(x = SR, y = FRic, fill = FEve),
-#                    colour = c("#000000"), alpha = 0.5, shape = 21, size = 3) +
-#         scale_fill_gradient2(low = "#D02090",
-#                              # mid = "#228B22",
-#                              mid = "#FFFFFF",
-#                              high = "#1E90FF", midpoint = 0.5,
-#                              guide = guide_colorbar(frame.colour = "black", ticks.colour = "black")) +
-#         scale_x_continuous(limits = c(0, max(combo.latest$SR, na.rm = TRUE))) +
-#         scale_y_continuous(limits = c(0, 61)) +
-#         labs(y = "FRic \n",
-#              x = "SR \n",
-#              fill = "FEve \n",
-#              title = paste0("CIs: ", SR.FRic.ci$"l-95% CI", " to ", SR.FRic.ci$"u-95% CI"),
-#              subtitle = paste(ifelse((SR.FRic.ci$"l-95% CI" < 0 & SR.FRic.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-#                                        (SR.FRic.ci$"l-95% CI" > 0 & SR.FRic.ci$"u-95% CI" > 0),
-#                                      "Significant: CIs do NOT span 0", "Not Significant: CIs span 0"))) +
-#         theme_1() +
-#         theme(legend.position = "none",
-#               plot.subtitle = element_text(colour = ifelse((SR.FRic.ci$"l-95% CI" < 0 & SR.FRic.ci$"u-95% CI" < 0) | # Automatically colours subtitle based on significance from CIs
-#                                                              (SR.FRic.ci$"l-95% CI" > 0 & SR.FRic.ci$"u-95% CI" > 0),
-#                                                            paste("#006400"), paste("#8b0000")))))
-#     
-#     # Export plot
-#     ggsave(SR.FRic.plot.points, filename = paste0("figures/outputs_new/SR_vs_FRic_quadratic_points",
-#                                                   pc.filepath, ".png"), width = 8, height = 7)
-#     
-#   } # End of quadratic if loop
-#   
-# } # End of function
-# 
-# # FUNCTION: SR VS FEve ----
-# bayesian.metric.comparison.FEve <- function(run.model, quadratic, x.var, data, colour.by, colour.discrete,
-#                                             chains, cores, warmup, iterations, delta, treedepth){
-#   
-#   # Modify combo.latest for colouring points
-#   combo.latest <- combo.latest %>% 
-#     mutate(PlotDominatingFG = ifelse(PlotDominatingFG == "Shrub-Dominated",
-#                                      "Shrub", PlotDominatingFG),
-#            PlotDominatingFG = ifelse(PlotDominatingFG == "Graminoid-Dominated",
-#                                      "Graminoid", PlotDominatingFG),
-#            PlotDominatingFG = ifelse(PlotDominatingFG == "Forb-Dominated",
-#                                      "Forb", PlotDominatingFG)) %>% 
-#     rename(colour.variable = colour.by)
-#   
-#   
-#   # Generate input dataframe
-#   input.data <- data %>% 
-#     dplyr::select(x.var, FEve, FEve, SurveyedArea, gridcell, SUBSITE) %>% 
-#     rename(x_variable = x.var) # Rename first column to x_variable
-#   
-#   # Run model in if loop
-#   if (run.model == TRUE){
-#     
-#     # Function for running the Bayesian model
-#     SR.FEve.mod <- brm(FEve ~ x_variable + log(SurveyedArea) + (1 | gridcell / SUBSITE),
-#                        data = input.data, family = FEve.distribution, chains = chains,
-#                        warmup = warmup, iter = iterations, cores = cores,
-#                        control = list(adapt_delta = delta,
-#                                       max_treedepth = treedepth))
-#     
-#     # Export model output
-#     save(SR.FEve.mod, file = paste0("data/model_outputs_new/m_FEve_",
-#                                     FEve.distribution, "_SR", pc.filepath, ".RData"))
-#     
-#   } else {
-#     
-#     # Load in model output
-#     SR.FEve.mod <- get(load(paste0("data/model_outputs_new/m_FEve_",
-#                                    FEve.distribution, "_SR", pc.filepath, ".RData")))
-#     
-#   } # End of if else loop
-#   
-#   # Convert model output into a dataframe (with 4.d.p.)
-#   SR.FEve.df <- brms_SummaryTable(SR.FEve.mod, formatOptions = list(digits = 4, nsmall = 4), round = 4)
-#   
-#   # Extract the confidence intervals as a list for use in the plotting
-#   SR.FEve.df.ci <- SR.FEve.df %>% 
-#     filter(Covariate %in% c("x_variable")) %>% 
-#     dplyr::select("l-95% CI", "u-95% CI") %>% 
-#     pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
-#   
-#   # Save the confidence intervals as a list and remove the intermediate dataframe
-#   SR.FEve.ci <- as.list(SR.FEve.df.ci$Value) # Adding values to the list
-#   names(SR.FEve.ci) <- SR.FEve.df.ci$Interval # Adding names to the values
-#   rm(SR.FEve.df, SR.FEve.df.ci) # Remove unnecessary dataframes of summary and CIs  
-#   
-#   # Extract the prediction data frame
-#   SR.FEve.pred <- ggpredict(SR.FEve.mod, terms = "x_variable [4:20]",  back.transform = TRUE)
-#   
-#   # Extract dataframe with only the x-variable for plotting
-#   data.x.var.only <- dplyr::select(data, SR)
-#   
-#   # Plot model outputs
-#   (SR.FEve.plot <- ggplot(SR.FEve.pred) +
-#       geom_line(aes(x = x, y = predicted), colour = "grey10") + # Adds line for predicted values of FEve vs LAT
-#       geom_ribbon(aes(x = x, ymin = conf.low, ymax = conf.high), fill = "grey10", alpha = 0.2) + # Adds c.intervals for predictions as ribbon
-#       geom_point(data = combo.latest, aes(x = SR, y = FEve, fill = colour.variable), # Adds original FEve vs LAT data points and colours by region
-#                  colour = c("#000000"), alpha = 0.5, shape = 21, size = 3) +
-#       # scale_fill_viridis(option = FEve.colour, begin = 0.2, end = 1, direction = -1, discrete = colour.discrete,
-#       #                    guide = guide_colorbar(frame.colour = "black", ticks.colour = "black")) +
-#       scale_fill_gradient2(low = "#D02090",
-#                            # mid = "#228B22",
-#                            mid = "#FFFFFF",
-#                            high = "#1E90FF", midpoint = 0.5,
-#                            guide = guide_colorbar(frame.colour = "black", ticks.colour = "black")) +
-#       scale_y_continuous(limits = c(0, max(combo.latest$FEve)*1.05)) +
-#       labs(y = "FEve \n",
-#            x = "\n SR",
-#            fill = paste0(colour.by),
-#            title = paste0("CIs: ", SR.FEve.ci$"l-95% CI", " to ", SR.FEve.ci$"u-95% CI"),
-#            subtitle = paste(ifelse((SR.FEve.ci$"l-95% CI" < 0 & SR.FEve.ci$"u-95% CI" < 0) | # Automatically asigns significance in subtitle based on CIs
-#                                      (SR.FEve.ci$"l-95% CI" > 0 & SR.FEve.ci$"u-95% CI" > 0),
-#                                    "Significant: CIs do NOT span 0", "Not Significant: CIs span 0"))) +
-#       theme_1() +
-#       theme(legend.position = "right",
-#             plot.subtitle = element_text(colour = ifelse((SR.FEve.ci$"l-95% CI" < 0 & SR.FEve.ci$"u-95% CI" < 0) | # Automatically colours subtitle based on significance from CIs
-#                                                            (SR.FEve.ci$"l-95% CI" > 0 & SR.FEve.ci$"u-95% CI" > 0),
-#                                                          paste("#006400"), paste("#8b0000")))))
-#   
-#   # Export plot
-#   ggsave(SR.FEve.plot, filename = paste0("figures/outputs_new/SR_vs_FEve",
-#                                          pc.filepath, ".png"), width = 8, height = 7)
-#   
-#   
-# } # End of function
+  # Make hex plots
+  (FRic.forb.hex <- ggplot() +
+      geom_hex(data = combo.latest, aes(x = ForbCover, y = FRic), bins = 18) +
+      scale_fill_gradient(low = "#FFE1FF", high = "#D02090") +
+      ylim(0,50) +
+      labs(y = "Functional Richness \n",
+           x = "\n Forb Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  (FRic.gram.hex <- ggplot() +
+      geom_hex(data = combo.latest, aes(x = GraminoidCover, y = FRic), bins = 18) +
+      scale_fill_gradient(low = "#FFE1FF", high = "#D02090") +
+      ylim(0,50) +
+      labs(y = "Functional Richness \n",
+           x = "\n Graminoid Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  (FRic.shrub.hex <- ggplot() +
+      geom_hex(data = combo.latest, aes(x = ShrubCover, y = FRic), bins = 18) +
+      scale_fill_gradient(low = "#FFE1FF", high = "#D02090") +
+      ylim(0,50) +
+      labs(y = "Functional Richness \n",
+           x = "\n Shrub Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  
+  # FEve ----
+  
+  # Load in model outputs for FEve and process the predictions
+  FEve.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+                                    "quadratic_ShrubCover", pc.filepath, ".RData")))
+  FEve.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+                                   "quadratic_ForbCover", pc.filepath, ".RData")))
+  FEve.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FEve_",
+                                   "quadratic_GraminoidCover", pc.filepath, ".RData")))
+  
+  # Determine mean value for centering
+  mean.x_variable.shrub <- mean(combo.latest$ShrubCover)
+  mean.x_variable.forb <- mean(combo.latest$ForbCover)
+  mean.x_variable.gram <- mean(combo.latest$GraminoidCover)
+  
+  # Create template predictions dataframe
+  FEve.shrub.pred.df = data.frame(centred_x_variable = seq(0 - mean.x_variable.shrub, 100 - mean.x_variable.shrub), SurveyedArea = 1)
+  FEve.forb.pred.df = data.frame(centred_x_variable = seq(0 - mean.x_variable.forb, 100 - mean.x_variable.forb), SurveyedArea = 1)
+  FEve.gram.pred.df = data.frame(centred_x_variable = seq(0 - mean.x_variable.gram, 100 - mean.x_variable.gram), SurveyedArea = 1)
+  
+  # Add predictions to template datframe
+  FEve.shrub.pred = add_epred_draws(FEve.shrub.pred.df, FEve.shrub.mod, re_formula = NA) %>% 
+    mutate(x_variable = centred_x_variable + mean.x_variable.shrub) %>% # Uncentre the x variable
+    mutate(Functional_Group = "Shrubs")
+  FEve.forb.pred = add_epred_draws(FEve.forb.pred.df, FEve.forb.mod, re_formula = NA) %>% 
+    mutate(x_variable = centred_x_variable + mean.x_variable.forb) %>% # Uncentre the x variable
+    mutate(Functional_Group = "Forbs")
+  FEve.gram.pred = add_epred_draws(FEve.gram.pred.df, FEve.gram.mod, re_formula = NA) %>% 
+    mutate(x_variable = centred_x_variable + mean.x_variable.gram) %>% # Uncentre the x variable
+    mutate(Functional_Group = "Graminoids")
+  
+  # Combine the predictions outputs into one dataframe and rename variables
+  FEve.predictions <- rbind(FEve.shrub.pred, FEve.forb.pred, FEve.gram.pred)
+  
+  # Convert model output into a dataframe (with 4.d.p.)
+  FEve.shrub.df <- brms_SummaryTable(FEve.shrub.mod, formatOptions = list(digits = 5, nsmall = 4), round = 5)
+  FEve.forb.df <- brms_SummaryTable(FEve.forb.mod, formatOptions = list(digits = 5, nsmall = 4), round = 5)
+  FEve.gram.df <- brms_SummaryTable(FEve.gram.mod, formatOptions = list(digits = 5, nsmall = 4), round = 5)
+  
+  # Extract the confidence intervals as a list for use in the plotting
+  FEve.shrub.df.ci <- FEve.shrub.df %>% 
+    filter(Covariate %in% c("Icentred_x_variableE2")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  FEve.forb.df.ci <- FEve.forb.df %>% 
+    filter(Covariate %in% c("Icentred_x_variableE2")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  FEve.gram.df.ci <- FEve.gram.df %>% 
+    filter(Covariate %in% c("Icentred_x_variableE2")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  
+  # Save the confidence intervals as a list and remove the intermediate dataframe
+  FEve.shrub.ci <- as.list(FEve.shrub.df.ci$Value) # Adding values to the list
+  names(FEve.shrub.ci) <- FEve.shrub.df.ci$Interval # Adding names to the values
+  
+  FEve.forb.ci <- as.list(FEve.forb.df.ci$Value) # Adding values to the list
+  names(FEve.forb.ci) <- FEve.forb.df.ci$Interval # Adding names to the values
+  
+  FEve.gram.ci <- as.list(FEve.gram.df.ci$Value) # Adding values to the list
+  names(FEve.gram.ci) <- FEve.gram.df.ci$Interval # Adding names to the values
+  
+  # Make line plots
+  (FEve.forb.line <- ggplot(data = FEve.predictions, aes(x = x_variable, y = .epred)) +
+      stat_lineribbon(data = filter(FEve.predictions, Functional_Group == "Forbs"),
+                      aes(y = .epred), .width = 0.95, alpha = 0.22, colour = "#0A6E0A", fill = "#0A6E0A", linewidth = 0.6,
+                      linetype = ifelse((FEve.forb.ci$"l-95% CI" < 0 & FEve.forb.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FEve.forb.ci$"l-95% CI" > 0 & FEve.forb.ci$"u-95% CI" > 0), 1, 2)) +
+      stat_lineribbon(data = filter(FEve.predictions, Functional_Group == "Forbs"),
+                      aes(y = .epred), .width = 0.95, colour = "#0A6E0A", fill = NA, linewidth = 0.6,
+                      linetype = ifelse((FEve.forb.ci$"l-95% CI" < 0 & FEve.forb.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FEve.forb.ci$"l-95% CI" > 0 & FEve.forb.ci$"u-95% CI" > 0), 1, 2)) +
+      ylim(0,1) +
+      labs(y = "Functional Evenness \n",
+           x = "\n Forb Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  
+  (FEve.gram.line <- ggplot(data = FEve.predictions, aes(x = x_variable, y = .epred)) +
+      stat_lineribbon(data = filter(FEve.predictions, Functional_Group == "Graminoids"),
+                      aes(y = .epred), .width = 0.95, alpha = 0.22, colour = "#0A6E0A", fill = "#0A6E0A", linewidth = 0.6,
+                      linetype = ifelse((FEve.gram.ci$"l-95% CI" < 0 & FEve.gram.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FEve.gram.ci$"l-95% CI" > 0 & FEve.gram.ci$"u-95% CI" > 0), 1, 2)) +
+      stat_lineribbon(data = filter(FEve.predictions, Functional_Group == "Graminoids"),
+                      aes(y = .epred), .width = 0.95, colour = "#0A6E0A", fill = NA, linewidth = 0.6,
+                      linetype = ifelse((FEve.gram.ci$"l-95% CI" < 0 & FEve.gram.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FEve.gram.ci$"l-95% CI" > 0 & FEve.gram.ci$"u-95% CI" > 0), 1, 2)) +
+      ylim(0,1) +
+      labs(y = "Functional Evenness \n",
+           x = "\n Graminoid Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  (FEve.shrub.line <- ggplot(data = FEve.predictions, aes(x = x_variable, y = .epred)) +
+      stat_lineribbon(data = filter(FEve.predictions, Functional_Group == "Shrubs"),
+                      aes(y = .epred), .width = 0.95, alpha = 0.22, colour = "#0A6E0A", fill = "#0A6E0A", linewidth = 0.6,
+                      linetype = ifelse((FEve.shrub.ci$"l-95% CI" < 0 & FEve.shrub.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FEve.shrub.ci$"l-95% CI" > 0 & FEve.shrub.ci$"u-95% CI" > 0), 1, 2)) +
+      stat_lineribbon(data = filter(FEve.predictions, Functional_Group == "Shrubs"),
+                      aes(y = .epred), .width = 0.95, colour = "#0A6E0A", fill = NA, linewidth = 0.6,
+                      linetype = ifelse((FEve.shrub.ci$"l-95% CI" < 0 & FEve.shrub.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FEve.shrub.ci$"l-95% CI" > 0 & FEve.shrub.ci$"u-95% CI" > 0), 1, 2)) +
+      ylim(0,1) +
+      labs(y = "Functional Evenness \n",
+           x = "\n Shrub Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  
+  # Make hex plots
+  (FEve.forb.hex <- ggplot() +
+      geom_hex(data = combo.latest, aes(x = ForbCover, y = FEve), bins = 18) +
+      scale_fill_gradient(low = "#CFF099", high = "#228B22") +
+      ylim(0,1) +
+      labs(y = "Functional Evenness \n",
+           x = "\n Forb Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  (FEve.gram.hex <- ggplot() +
+      geom_hex(data = combo.latest, aes(x = GraminoidCover, y = FEve), bins = 18) +
+      scale_fill_gradient(low = "#CFF099", high = "#228B22") +
+      ylim(0,1) +
+      labs(y = "Functional Evenness \n",
+           x = "\n Graminoid Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  (FEve.shrub.hex <- ggplot() +
+      geom_hex(data = combo.latest, aes(x = ShrubCover, y = FEve), bins = 18) +
+      scale_fill_gradient(low = "#CFF099", high = "#228B22") +
+      ylim(0,1) +
+      labs(y = "Functional Evenness \n",
+           x = "\n Shrub Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  # SR ----
+  
+  # Load in model outputs for SR and process the predictions
+  SR.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+                                  "quadratic_ShrubCover", pc.filepath, ".RData")))
+  SR.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+                                 "quadratic_ForbCover", pc.filepath, ".RData")))
+  SR.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_SR_",
+                                 "quadratic_GraminoidCover", pc.filepath, ".RData")))
+  
+  # Determine mean value for centering
+  mean.x_variable.shrub <- mean(combo.latest$ShrubCover)
+  mean.x_variable.forb <- mean(combo.latest$ForbCover)
+  mean.x_variable.gram <- mean(combo.latest$GraminoidCover)
+  
+  # Create template predictions dataframe
+  SR.shrub.pred.df = data.frame(centred_x_variable = seq(0 - mean.x_variable.shrub, 100 - mean.x_variable.shrub), SurveyedArea = 1)
+  SR.forb.pred.df = data.frame(centred_x_variable = seq(0 - mean.x_variable.forb, 100 - mean.x_variable.forb), SurveyedArea = 1)
+  SR.gram.pred.df = data.frame(centred_x_variable = seq(0 - mean.x_variable.gram, 100 - mean.x_variable.gram), SurveyedArea = 1)
+  
+  # Add predictions to template datframe
+  SR.shrub.pred = add_epred_draws(SR.shrub.pred.df, SR.shrub.mod, re_formula = NA) %>% 
+    mutate(x_variable = centred_x_variable + mean.x_variable.shrub) %>% # Uncentre the x variable
+    mutate(Functional_Group = "Shrubs")
+  SR.forb.pred = add_epred_draws(SR.forb.pred.df, SR.forb.mod, re_formula = NA) %>% 
+    mutate(x_variable = centred_x_variable + mean.x_variable.forb) %>% # Uncentre the x variable
+    mutate(Functional_Group = "Forbs")
+  SR.gram.pred = add_epred_draws(SR.gram.pred.df, SR.gram.mod, re_formula = NA) %>% 
+    mutate(x_variable = centred_x_variable + mean.x_variable.gram) %>% # Uncentre the x variable
+    mutate(Functional_Group = "Graminoids")
+  
+  # Combine the predictions outputs into one dataframe and rename variables
+  SR.predictions <- rbind(SR.shrub.pred, SR.forb.pred, SR.gram.pred)
+  
+  # Convert model output into a dataframe (with 4.d.p.)
+  SR.shrub.df <- brms_SummaryTable(SR.shrub.mod, formatOptions = list(digits = 5, nsmall = 4), round = 5)
+  SR.forb.df <- brms_SummaryTable(SR.forb.mod, formatOptions = list(digits = 5, nsmall = 4), round = 5)
+  SR.gram.df <- brms_SummaryTable(SR.gram.mod, formatOptions = list(digits = 5, nsmall = 4), round = 5)
+  
+  # Extract the confidence intervals as a list for use in the plotting
+  SR.shrub.df.ci <- SR.shrub.df %>% 
+    filter(Covariate %in% c("Icentred_x_variableE2")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  SR.forb.df.ci <- SR.forb.df %>% 
+    filter(Covariate %in% c("Icentred_x_variableE2")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  SR.gram.df.ci <- SR.gram.df %>% 
+    filter(Covariate %in% c("Icentred_x_variableE2")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  
+  # Save the confidence intervals as a list and remove the intermediate dataframe
+  SR.shrub.ci <- as.list(SR.shrub.df.ci$Value) # Adding values to the list
+  names(SR.shrub.ci) <- SR.shrub.df.ci$Interval # Adding names to the values
+  
+  SR.forb.ci <- as.list(SR.forb.df.ci$Value) # Adding values to the list
+  names(SR.forb.ci) <- SR.forb.df.ci$Interval # Adding names to the values
+  
+  SR.gram.ci <- as.list(SR.gram.df.ci$Value) # Adding values to the list
+  names(SR.gram.ci) <- SR.gram.df.ci$Interval # Adding names to the values
+  
+  # Make line plots
+  (SR.forb.line <- ggplot(data = SR.predictions, aes(x = x_variable, y = .epred)) +
+      stat_lineribbon(data = filter(SR.predictions, Functional_Group == "Forbs"),
+                      aes(y = .epred), .width = 0.95, alpha = 0.22, colour = "#0D3E6E", fill = "#0D3E6E", linewidth = 0.6,
+                      linetype = ifelse((SR.forb.ci$"l-95% CI" < 0 & SR.forb.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (SR.forb.ci$"l-95% CI" > 0 & SR.forb.ci$"u-95% CI" > 0), 1, 2)) +
+      stat_lineribbon(data = filter(SR.predictions, Functional_Group == "Forbs"),
+                      aes(y = .epred), .width = 0.95, colour = "#0D3E6E", fill = NA, linewidth = 0.6,
+                      linetype = ifelse((SR.forb.ci$"l-95% CI" < 0 & SR.forb.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (SR.forb.ci$"l-95% CI" > 0 & SR.forb.ci$"u-95% CI" > 0), 1, 2)) +
+      ylim(0,25) +
+      labs(y = "Species Richness \n",
+           x = "\n Forb Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  
+  (SR.gram.line <- ggplot(data = SR.predictions, aes(x = x_variable, y = .epred)) +
+      stat_lineribbon(data = filter(SR.predictions, Functional_Group == "Graminoids"),
+                      aes(y = .epred), .width = 0.95, alpha = 0.22, colour = "#0D3E6E", fill = "#0D3E6E", linewidth = 0.6,
+                      linetype = ifelse((SR.gram.ci$"l-95% CI" < 0 & SR.gram.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (SR.gram.ci$"l-95% CI" > 0 & SR.gram.ci$"u-95% CI" > 0), 1, 2)) +
+      stat_lineribbon(data = filter(SR.predictions, Functional_Group == "Graminoids"),
+                      aes(y = .epred), .width = 0.95, colour = "#0D3E6E", fill = NA, linewidth = 0.6,
+                      linetype = ifelse((SR.gram.ci$"l-95% CI" < 0 & SR.gram.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (SR.gram.ci$"l-95% CI" > 0 & SR.gram.ci$"u-95% CI" > 0), 1, 2)) +
+      ylim(0,25) +
+      labs(y = "Species Richness \n",
+           x = "\n Graminoid Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  (SR.shrub.line <- ggplot(data = SR.predictions, aes(x = x_variable, y = .epred)) +
+      stat_lineribbon(data = filter(SR.predictions, Functional_Group == "Shrubs"),
+                      aes(y = .epred), .width = 0.95, alpha = 0.22, colour = "#0D3E6E", fill = "#0D3E6E", linewidth = 0.6,
+                      linetype = ifelse((SR.shrub.ci$"l-95% CI" < 0 & SR.shrub.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (SR.shrub.ci$"l-95% CI" > 0 & SR.shrub.ci$"u-95% CI" > 0), 1, 2)) +
+      stat_lineribbon(data = filter(SR.predictions, Functional_Group == "Shrubs"),
+                      aes(y = .epred), .width = 0.95, colour = "#0D3E6E", fill = NA, linewidth = 0.6,
+                      linetype = ifelse((SR.shrub.ci$"l-95% CI" < 0 & SR.shrub.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (SR.shrub.ci$"l-95% CI" > 0 & SR.shrub.ci$"u-95% CI" > 0), 1, 2)) +
+      ylim(0,25) +
+      labs(y = "Species Richness \n",
+           x = "\n Shrub Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  
+  # Make hex plots
+  (SR.forb.hex <- ggplot() +
+      geom_hex(data = combo.latest, aes(x = ForbCover, y = SR), bins = 18) +
+      scale_fill_gradient(low = "#ABE0EB", high = "#1C86EE") +
+      ylim(0,25) +
+      labs(y = "Species Richness \n",
+           x = "\n Forb Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  (SR.gram.hex <- ggplot() +
+      geom_hex(data = combo.latest, aes(x = GraminoidCover, y = SR), bins = 18) +
+      scale_fill_gradient(low = "#ABE0EB", high = "#1C86EE") +
+      ylim(0,25) +
+      labs(y = "Species Richness \n",
+           x = "\n Graminoid Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  (SR.shrub.hex <- ggplot() +
+      geom_hex(data = combo.latest, aes(x = ShrubCover, y = SR), bins = 18) +
+      scale_fill_gradient(low = "#ABE0EB", high = "#1C86EE") +
+      ylim(0,25) +
+      labs(y = "Species Richness \n",
+           x = "\n Shrub Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  
+  # FDis ----
+  
+  # Load in model outputs for FDis and process the predictions
+  FDis.shrub.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+                                    "quadratic_ShrubCover", pc.filepath, ".RData")))
+  FDis.forb.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+                                   "quadratic_ForbCover", pc.filepath, ".RData")))
+  FDis.gram.mod <- get(load(paste0("scripts/josephjeverest/FuncDiv_v3/data/model_outputs_new/m_FDis_",
+                                   "quadratic_GraminoidCover", pc.filepath, ".RData")))
+  
+  # Determine mean value for centering
+  mean.x_variable.shrub <- mean(combo.latest$ShrubCover)
+  mean.x_variable.forb <- mean(combo.latest$ForbCover)
+  mean.x_variable.gram <- mean(combo.latest$GraminoidCover)
+  
+  # Create template predictions dataframe
+  FDis.shrub.pred.df = data.frame(centred_x_variable = seq(0 - mean.x_variable.shrub, 100 - mean.x_variable.shrub), SurveyedArea = 1)
+  FDis.forb.pred.df = data.frame(centred_x_variable = seq(0 - mean.x_variable.forb, 100 - mean.x_variable.forb), SurveyedArea = 1)
+  FDis.gram.pred.df = data.frame(centred_x_variable = seq(0 - mean.x_variable.gram, 100 - mean.x_variable.gram), SurveyedArea = 1)
+  
+  # Add predictions to template datframe
+  FDis.shrub.pred = add_epred_draws(FDis.shrub.pred.df, FDis.shrub.mod, re_formula = NA) %>% 
+    mutate(x_variable = centred_x_variable + mean.x_variable.shrub) %>% # Uncentre the x variable
+    mutate(Functional_Group = "Shrubs")
+  FDis.forb.pred = add_epred_draws(FDis.forb.pred.df, FDis.forb.mod, re_formula = NA) %>% 
+    mutate(x_variable = centred_x_variable + mean.x_variable.forb) %>% # Uncentre the x variable
+    mutate(Functional_Group = "Forbs")
+  FDis.gram.pred = add_epred_draws(FDis.gram.pred.df, FDis.gram.mod, re_formula = NA) %>% 
+    mutate(x_variable = centred_x_variable + mean.x_variable.gram) %>% # Uncentre the x variable
+    mutate(Functional_Group = "Graminoids")
+  
+  # Combine the predictions outputs into one dataframe and rename variables
+  FDis.predictions <- rbind(FDis.shrub.pred, FDis.forb.pred, FDis.gram.pred)
+  
+  # Convert model output into a dataframe (with 4.d.p.)
+  FDis.shrub.df <- brms_SummaryTable(FDis.shrub.mod, formatOptions = list(digits = 5, nsmall = 4), round = 5)
+  FDis.forb.df <- brms_SummaryTable(FDis.forb.mod, formatOptions = list(digits = 5, nsmall = 4), round = 5)
+  FDis.gram.df <- brms_SummaryTable(FDis.gram.mod, formatOptions = list(digits = 5, nsmall = 4), round = 5)
+  
+  # Extract the confidence intervals as a list for use in the plotting
+  FDis.shrub.df.ci <- FDis.shrub.df %>% 
+    filter(Covariate %in% c("Icentred_x_variableE2")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  FDis.forb.df.ci <- FDis.forb.df %>% 
+    filter(Covariate %in% c("Icentred_x_variableE2")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  FDis.gram.df.ci <- FDis.gram.df %>% 
+    filter(Covariate %in% c("Icentred_x_variableE2")) %>% 
+    dplyr::select("l-95% CI", "u-95% CI") %>% 
+    pivot_longer(cols = 1:2, names_to = "Interval", values_to = "Value")
+  
+  # Save the confidence intervals as a list and remove the intermediate dataframe
+  FDis.shrub.ci <- as.list(FDis.shrub.df.ci$Value) # Adding values to the list
+  names(FDis.shrub.ci) <- FDis.shrub.df.ci$Interval # Adding names to the values
+  
+  FDis.forb.ci <- as.list(FDis.forb.df.ci$Value) # Adding values to the list
+  names(FDis.forb.ci) <- FDis.forb.df.ci$Interval # Adding names to the values
+  
+  FDis.gram.ci <- as.list(FDis.gram.df.ci$Value) # Adding values to the list
+  names(FDis.gram.ci) <- FDis.gram.df.ci$Interval # Adding names to the values
+  
+  # Make line plots
+  (FDis.forb.line <- ggplot(data = FDis.predictions, aes(x = x_variable, y = .epred)) +
+      stat_lineribbon(data = filter(FDis.predictions, Functional_Group == "Forbs"),
+                      aes(y = .epred), .width = 0.95, alpha = 0.22, colour = "#E67300", fill = "#E67300", linewidth = 0.6,
+                      linetype = ifelse((FDis.forb.ci$"l-95% CI" < 0 & FDis.forb.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FDis.forb.ci$"l-95% CI" > 0 & FDis.forb.ci$"u-95% CI" > 0), 1, 2)) +
+      stat_lineribbon(data = filter(FDis.predictions, Functional_Group == "Forbs"),
+                      aes(y = .epred), .width = 0.95, colour = "#E67300", fill = NA, linewidth = 0.6,
+                      linetype = ifelse((FDis.forb.ci$"l-95% CI" < 0 & FDis.forb.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FDis.forb.ci$"l-95% CI" > 0 & FDis.forb.ci$"u-95% CI" > 0), 1, 2)) +
+      ylim(0,4) +
+      labs(y = "Functional Dispersion \n",
+           x = "\n Forb Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  
+  (FDis.gram.line <- ggplot(data = FDis.predictions, aes(x = x_variable, y = .epred)) +
+      stat_lineribbon(data = filter(FDis.predictions, Functional_Group == "Graminoids"),
+                      aes(y = .epred), .width = 0.95, alpha = 0.22, colour = "#E67300", fill = "#E67300", linewidth = 0.6,
+                      linetype = ifelse((FDis.gram.ci$"l-95% CI" < 0 & FDis.gram.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FDis.gram.ci$"l-95% CI" > 0 & FDis.gram.ci$"u-95% CI" > 0), 1, 2)) +
+      stat_lineribbon(data = filter(FDis.predictions, Functional_Group == "Graminoids"),
+                      aes(y = .epred), .width = 0.95, colour = "#E67300", fill = NA, linewidth = 0.6,
+                      linetype = ifelse((FDis.gram.ci$"l-95% CI" < 0 & FDis.gram.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FDis.gram.ci$"l-95% CI" > 0 & FDis.gram.ci$"u-95% CI" > 0), 1, 2)) +
+      ylim(0,4) +
+      labs(y = "Functional Dispersion \n",
+           x = "\n Graminoid Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  (FDis.shrub.line <- ggplot(data = FDis.predictions, aes(x = x_variable, y = .epred)) +
+      stat_lineribbon(data = filter(FDis.predictions, Functional_Group == "Shrubs"),
+                      aes(y = .epred), .width = 0.95, alpha = 0.22, colour = "#E67300", fill = "#E67300", linewidth = 0.6,
+                      linetype = ifelse((FDis.shrub.ci$"l-95% CI" < 0 & FDis.shrub.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FDis.shrub.ci$"l-95% CI" > 0 & FDis.shrub.ci$"u-95% CI" > 0), 1, 2)) +
+      stat_lineribbon(data = filter(FDis.predictions, Functional_Group == "Shrubs"),
+                      aes(y = .epred), .width = 0.95, colour = "#E67300", fill = NA, linewidth = 0.6,
+                      linetype = ifelse((FDis.shrub.ci$"l-95% CI" < 0 & FDis.shrub.ci$"u-95% CI" < 0) | # Automatically assigns significance in subtitle based on CIs
+                                          (FDis.shrub.ci$"l-95% CI" > 0 & FDis.shrub.ci$"u-95% CI" > 0), 1, 2)) +
+      ylim(0,4) +
+      labs(y = "Functional Dispersion \n",
+           x = "\n Shrub Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  
+  # Make hex plots
+  (FDis.forb.hex <- ggplot() +
+      geom_hex(data = combo.latest, aes(x = ForbCover, y = FDis), bins = 18) +
+      scale_fill_gradient(low = "#FFCF91", high = "#EE7600") +
+      ylim(0,4) +
+      labs(y = "Functional Dispersion \n",
+           x = "\n Forb Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  (FDis.gram.hex <- ggplot() +
+      geom_hex(data = combo.latest, aes(x = GraminoidCover, y = FDis), bins = 18) +
+      scale_fill_gradient(low = "#FFCF91", high = "#EE7600") +
+      ylim(0,4) +
+      labs(y = "Functional Dispersion \n",
+           x = "\n Graminoid Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  (FDis.shrub.hex <- ggplot() +
+      geom_hex(data = combo.latest, aes(x = ShrubCover, y = FDis), bins = 18) +
+      scale_fill_gradient(low = "#FFCF91", high = "#EE7600") +
+      ylim(0,4) +
+      labs(y = "Functional Dispersion \n",
+           x = "\n Shrub Cover (%)") +
+      theme_1() +
+      theme(legend.position = "none",
+            legend.key = element_rect(colour = "#000000")))
+  
+  
+  # Panels ----
+  
+  # Create a panel of plots
+  panel.lines <- grid.arrange(FRic.forb.line, FEve.forb.line, FDis.forb.line, SR.forb.line,
+                              FRic.gram.line, FEve.gram.line, FDis.gram.line, SR.gram.line,
+                              FRic.shrub.line, FEve.shrub.line, FDis.shrub.line, SR.shrub.line,
+                              ncol = 4)
+  
+  panel.hex <- grid.arrange(FRic.forb.hex, FEve.forb.hex, FDis.forb.hex, SR.forb.hex,
+                            FRic.gram.hex, FEve.gram.hex, FDis.gram.hex, SR.gram.hex,
+                            FRic.shrub.hex, FEve.shrub.hex, FDis.shrub.hex, SR.shrub.hex,
+                            ncol = 4)
+  
+  # Add in if statements for saving the output
+  if (censored == "Yes"){
+    
+    # Export panels
+    ggsave(panel.lines, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+                                             "all_cover_ALL_quadratic_censored_SPLIT_lines", pc.filepath, ".png"), width = 18, height = 15)
+    
+    ggsave(panel.hex, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+                                             "all_cover_ALL_quadratic_censored_SPLIT_hex", pc.filepath, ".png"), width = 18, height = 15)
+    
+  } else {
+    
+    # Export panels
+    ggsave(panel.lines, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+                                             "all_cover_ALL_quadratic_SPLIT_lines", pc.filepath, ".png"), width = 18, height = 15)
+    
+    ggsave(panel.hex, filename = paste0("scripts/josephjeverest/FuncDiv_v3/figures/outputs_new/manuscript_",
+                                             "all_cover_ALL_quadratic_SPLIT_hex", pc.filepath, ".png"), width = 18, height = 15)
+    
+  }
+  
+} # End of function

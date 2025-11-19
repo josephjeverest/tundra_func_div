@@ -1,4 +1,5 @@
 # 00 - ggplot themes created for FuncDiv outputs
+# Joseph Everest
 # February 2021, adapted February 2022
 
 # PACKAGES ----
@@ -11,7 +12,7 @@ library(ggthemes)
 
 theme_1 <- function(){
   theme_bw() +
-    theme(text = element_text(family = "Helvetica Light"),
+    theme(text = element_text(family = "Segoe UI Light"),
           axis.text = element_text(size = 16), 
           axis.title = element_text(size = 18),
           axis.line.x = element_line(color="black"), 
@@ -39,7 +40,7 @@ theme_1 <- function(){
 
 theme_2 <- function(){
   theme_bw() +
-    theme(text = element_text(family = "Helvetica Light"),
+    theme(text = element_text(family = "Segoe UI Light"),
           axis.text = element_text(size = 16), 
           axis.title = element_text(size = 18),
           axis.line.x = element_line(color="black"), 
@@ -67,7 +68,7 @@ theme_2 <- function(){
 
 theme_3_map <- function(){
   theme_map() +
-    theme(text = element_text(family = "Helvetica Light"),
+    theme(text = element_text(family = "Segoe UI Light"),
           axis.text = element_text(size = 10), 
           axis.title = element_text(size = 14),
           axis.line.x = element_line(color="black"), 
@@ -94,7 +95,7 @@ theme_3_map <- function(){
 # THEME 4: MAPS produced using ggOceanMaps ----
 
 theme_4_map <- function(){
-    theme(text = element_text(family = "Helvetica Light"),
+    theme(text = element_text(family = "Segoe UI Light"),
           plot.margin = unit(c(1, 1, 1, 1), units = , "cm"),
           plot.title = element_text(size = 16, vjust = 1, hjust = 0.5, face = "bold"),
           plot.subtitle = element_text(size = 14, hjust = 0.5, face = "plain"),
